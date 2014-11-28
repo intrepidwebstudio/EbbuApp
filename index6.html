@@ -1,0 +1,2129 @@
+<!DOCTYPE html> 
+<html><head> 
+	<title>Page Title</title> 
+	
+	        <meta name="format-detection" content="telephone=no" />
+        	<meta name="msapplication-tap-highlight" content="no" />
+        
+        <meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
+  <!--<script src="phonegap.js"></script>-->
+  
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+  
+  <link rel="stylesheet" type="text/css" href="css/font.css">	  
+  
+  
+
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
+  
+  <script>
+  
+document.onreadystatechange = function(e)
+{
+    if (document.readyState === 'complete')
+    {
+	      // navigator.splashscreen.show();
+	//	  //window.plugins.spinnerDialog.show();
+		  
+	        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+};
+  </script>
+  
+  
+  <script defer src="js/idangerous.swiper.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script type="text/javascript" src="js/settings.js"></script>
+   
+  <style>
+ div
+{
+backface-visibility:hidden !important;
+-webkit-backface-visibility:hidden !important; /* Chrome and Safari */
+-moz-backface-visibility:hidden !important; /* Firefox */
+}
+
+/* Styling for the popup */
+#confirm p {
+    text-align: center;
+    font-size: inherit;
+    margin-bottom: .75em;
+}
+
+
+
+
+.title_bac{
+/*	background-color:#F0525B;
+	opacity:.65;
+	
+*/	position:absolute; bottom:0px;
+color:#FFF;
+
+ color:#52b7b6 !important;
+background: rgba(255, 255, 255, 0.95) !important;
+	}
+
+	.ui-listview>li p{
+		
+		white-space:normal;
+		max-height:30px;
+		text-overflow:ellipsis !important;
+		}
+	
+    .behind {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+		
+	  }
+	
+	.behind  a{
+			display:table-cell;
+			height:100% !important;
+			vertical-align:middle !important;
+			background-color:#936;
+		}
+		
+		
+/*	.behind a:first-child img{
+		}
+		
+	.behind a img{
+		vertical-align:middle !important;
+		}	
+		
+		.behind a:last-child img{
+		}	
+	*/
+	.socialicon{
+	
+	width:77px !important;	
+	vertical-align:middle !important;
+	text-align:center;
+		
+		}
+			
+	.socialicon img {
+		
+		padding-top:35%;
+		padding-bottom:30%;	
+		 width:35px;
+		 vertical-align:middle !important;
+	}	
+	
+	
+    .behind a.ui-btn {
+        
+        float: right;
+        border: none;
+		
+		
+    }
+    .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
+      	  	
+        text-shadow: none;
+    }
+	
+	
+	
+
+	
+	.socialicon{
+		
+		float:right;
+		vertical-align:middle !important;
+		
+				
+		}
+
+	
+	
+		
+	.sourceicon{
+				padding-left:7px;
+				padding-top:8.5px;	
+				width: 22% !important;
+				vertical-align:middle !important;
+		}	
+		
+		
+		
+		.ui-boday-a input {
+    border: none !important;
+    border-color: transparent !important;
+}
+	.adddddd{}
+		
+	.topplace{
+		
+		background-image:url("img/inputbackground.png") ;
+		background-size:cover;
+		background-repeat:no-repeat;
+		opacity:.7;
+	
+	/*	background:rgba(255,255,255,0.5) !important; */
+		
+		
+		position:relative !important;
+		top:0px;
+		width:100%;
+		text-align:center !important;
+		z-index:-999px !important;
+		vertical-align:middle;
+		cursor:vertical-text #FFF !important;
+		
+		
+		
+		
+		}
+
+topplace_empty{
+			position:relative !important;
+		top:0px;
+		width:100%;
+
+	
+	}	
+	
+	.lefticon img{
+			
+			
+			width:40%;
+			max-width:70px;
+			padding-top:9px;
+			
+			
+		}	
+	.lefticon{
+		float:left;
+			min-height:40px !important;	
+			min-width:40px !important;
+			text-align:center;
+			
+		
+		}		
+		
+		
+	.righticon{
+			min-height:40px !important;	
+			min-width:40px !important;
+			float:right;
+			text-align:center;
+		
+		}	
+		
+	.righticon img{
+			
+			
+			width:40%;
+			max-width:70px;	
+			padding-top:9px;
+			
+		}	
+	
+	
+	
+	
+		
+	.midicon{
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center !important;	
+
+		padding-top:9px;
+		width: 25% !important;
+		opacity: .9 ;
+		
+		}	
+		
+		
+		
+		
+	 .searchsettings{
+	 
+	 position:relative !important;
+	 top:10px !important;
+	 
+	 }		
+	
+	
+		
+		.topmenucontainer{
+			
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			}
+		
+	
+		
+		
+		
+		
+	.ebooheader{
+		
+		width:100%;   
+		margin-top:0px !important; 
+		max-height:400px;
+		
+		}	
+	
+
+  
+  	
+  .ui-icon-ebootoggleoff {
+    background-image: url("icons/ebootoggleoff.png");
+  }
+
+  .nav .ui-btn .ui-btn-inner {
+    padding-top: 40px !important;
+  }
+
+  .nav .ui-btn .ui-icon-ebootoggleoff {
+    width: 45px!important;
+    height: 35px!important;
+    margin-left: -24px !important;
+    box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+  }
+
+   .ui-icon-ebootoggleoff {
+    background-image: url(icons/ebootoggleoff.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+	
+	
+	.ebooicons{
+		width:16px;
+		vertical-align:middle !important;
+		}
+	
+	/******************* ADDING CUSTOM UI ICONS ******************/
+	
+		
+		
+		.forceinline{  /* Prevent fieldcontain from doing a BLOCK thing */
+    display:inline !important;
+}
+
+.min_height{
+	min-height:30px !important;
+
+	}
+
+ 
+ 
+.ui-content {
+    padding: 0 !important;
+}
+
+.ui-listview {
+    margin: 0 !important;
+}
+
+.example-wrapper, .example-wrapper div.iscroll-scroller {
+    width: 100% !important;
+}
+
+.padding_left{
+	
+	text-align:justify !important;
+	
+	
+	}
+.padding_left p{
+	 margin-left:5%;
+	margin-right:5%;
+	}
+.padding_left h3{
+	
+	 margin-left:5%;
+	 margin-right:5%;
+	}		
+	
+	
+.terms_of_service{
+	
+	padding-bottom:20px;
+	
+/*	background-color:#171514 !important  ; */
+	
+	}	
+	
+.terms_of_service p{
+	 
+	 color:#9F9F9F !important;
+	 font-size:12px !important;
+	}
+.privacy p{
+	 font-size:12px !important;
+	
+	}	
+	
+.terms_of_service  h3{
+	
+	color:#171514 !important;
+	
+	}		
+
+ul li a.outer_a{ background-color: #FFFFFF  !important; }
+ul li:nth-child(odd) a.outer_a{ background-color: #F7F7F7 !important; }
+
+
+ul li div{ background-color:#F7F7F7 !important;	} 
+ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
+
+
+
+ul li a.settingsmenu{ background-color: #FFFFFF  !important; }
+ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
+
+
+ul li a.settingsmenu{ padding: 1.3em 1.1em !important; }
+
+ul li a.settingsmenu p{ font-size:15px !important; font-weight:100 !important;   }
+
+
+
+
+
+.behind a.socialicon , .behind a.socialicon img , .behind{
+		
+		}
+
+
+
+input{
+	
+		vertical-align:middle !important;
+		text-align:center !important;
+		cursor:vertical-text !important;
+	
+	
+	}
+
+::-webkit-input-placeholder {
+   color: #999 !important;
+  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #999 !important;
+  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999 !important;
+}
+
+:-ms-input-placeholder {  
+   color: #999 !important;
+}
+
+.loader_icon_intro{
+	
+  alignment-adjust:middle !important;
+  background: url(img/ajax-loader.gif) 0 0 no-repeat;
+ 	position:absolute;
+	}
+	
+.facebookBackground{  background-color:#3B5998 !important; 	}	
+.twitterBackground{  background-color:#4099FF !important;  }
+.emailBackground{  background-color:#EA6D6C !important;  }	
+
+.lefticonAlign{
+	
+	width:34% !important;
+	margin-left:-7px;
+	margin-right:7px;
+	
+	}
+
+  </style>
+  
+  <style>
+
+  #loaderScreen {
+    -webkit-animation: rotationLoader 2s infinite linear;
+}
+
+
+@-webkit-keyframes rotationLoader {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotationLoader {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rotationLoader {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@-keyframes rotationLoader {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
+
+
+
+</style>
+  
+
+</head>
+
+
+<body>
+
+
+<div class="ui-panel-page-container">
+
+<img id="loaderScreen" style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
+
+
+<div data-role="page" id="6page1" data-title="Ebbu" >
+
+    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+    
+    	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999 !important;  right:16px;  vertical-align:middle !important" >	
+        	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important;"   >
+        </div>
+    
+	      <div class="ui-field-contain forceinline">
+	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+         </div>  
+    
+        <img  src="img/750.png"  class="iphone6"  style="margin-bottom:-5px !important; width:100%" >
+
+        <div class="topmenucontainer"  >
+        
+        <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
+        
+        
+        <div class="searchsettings " id="top_menu" >
+       
+       		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
+        
+        	<a href="#6settings" class="righticon" ontap="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+        
+        
+		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
+        
+      </div>  
+        
+        
+        </div>
+                    
+    <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    <div class="example-wrapper" data-iscroll >
+        <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        
+        </ul>
+          <div class="iscroll-pullup">
+          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important; font-size:8px;" class="iscroll-pull-label Conv_MuseoSans-300Italic"  data-iscroll-loading-text="" ></span></center>
+        </div>
+          
+           
+                                     
+    </div><!-- /content -->
+    
+ </div>
+
+
+<div data-role="page" data-position="fixed"  id="6page" data-title="Ebbu" >
+
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <!--First Slide-->
+      <div class="swiper-slide "> 
+             <img  src="img/introscreen/750x1334/01wcircles.jpg"  style="width:375px !important; height:667px !important; " >
+      </div>
+      
+      <!--Second Slide-->
+      <div class="swiper-slide">
+            <img src="img/introscreen/750x1334/02wcircles.jpg"  style="width:375px !important; height:667px !important; " >
+     <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
+        <!-- Any HTML content of the second slide goes here -->
+      </div>
+      
+      <!--Third Slide-->
+      <div class="swiper-slide "> 
+             <img src="img/introscreen/750x1334/03empty.jpg"  style="width:375px !important; height:667px !important; " >
+       <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
+        <!-- Any HTML content of the third slide goes here -->
+        
+        <div style="position:relative; bottom:58%; box-shadow:none !important; border:none !important;  " id="textinput"  >
+        
+        
+        <div style="color:#FFF !important;">
+        		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
+         </div>
+       
+        <center> <div style=" font-size:21px; color:#FFF !important; padding-bottom:5% !important;
+		 text-align:center  !important; width:70% !important ;  " class="Conv_MuseoSans_500"  >Feed <strong><span class="Conv_MuseoSans-700Italic" style="font-size:21px;">your curiosity.</span></strong></div></center>
+        
+        <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
+		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
+
+		<center>
+        <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style=" margin-top:3px; color:#FFF !important ; background-color:#0a9bb8 !important;   min-height: 2.8em !important; 
+           								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
+        Start Using Ebbu</button>
+        </center>
+        
+        <center> <img id="loaderScreen1" src="loader.png" style="display:none; width:25px;  z-index:99999999;" ></center>
+             
+               
+         
+        
+        </div>
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      <!--Etc..-->
+  </div>
+</div>
+
+
+
+</div>
+  
+
+<div data-role="page" id="6settings" data-transition="slide" >
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
+        <img  src="img/750.png"  class="iphone6"  style="margin-bottom:-5px !important; width:100%" >
+    <div class="topmenucontainer" >
+     
+     <div class="searchsettings">
+
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign"  src="icons/57x57/back.png" ></a>
+             <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
+   		     <center><img  class="midicon"  src="img/header.png" ></center>
+
+               
+     </div>  
+        
+    </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Settings</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+    
+   
+   	<div  role="main" class="ui-content" >
+    <div class="example-wrapper" data-iscroll >
+          <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
+                <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
+                		<p style="float:left;" class="Conv_MuseoSans_500" >Twitter  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
+                        
+                </a> </li>
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
+                		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
+                        <img src="icons/57x57/toggleoff.png" class="ebooicons" id="facebooklogout" ></p>
+                        
+                </a> </li>
+               
+                <li><a class="settingsmenu" data-transition="slide" href="#6termsofservice" data-prefetch="true" >
+                		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of service  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/terms.png" class="ebooicons" ></p>
+                        
+                </a> </li>
+                <li><a class="settingsmenu" data-transition="slide" href="#6privacy" data-prefetch="true" >
+                		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
+                		<p  style="vertical-align:middle !important; float:right">
+                        <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
+                        
+                </a> </li>
+                
+                
+         </ul>
+         
+<!-- <img id="loaderScreen" src="loader.png" >-->
+
+         
+        </div> 
+    </div><!-- /content -->
+    
+   
+    	
+    	
+</div>
+
+
+<div data-role="page" id="6termsofservice">
+         
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
+	  
+      <img  src="img/750.png"  class="iphone6"  style="margin-bottom:-5px !important; width:100%" >
+        
+        <div class="topmenucontainer" >
+     
+     <div class="searchsettings">
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
+             <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
+        <center><img  class="midicon"  src="img/header.png" ></center>
+        
+                
+      </div>  
+        
+        
+        </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Terms of Service</p>
+    </div>
+ 
+</div><!-- /header -->
+	   	<div  role="main" class="ui-content"  >
+        
+        <div class="example-wrapper padding_left terms_of_service " data-iscroll  >
+        
+          <h3 class="Conv_MuseoSans_700">Eboo Terms of Service </h3>
+          <p class="Conv_MuseoSans_500  "  >
+Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
+By using or accessing the Site in any way, viewing or <strong class="Conv_MuseoSans_700">browsing</strong> the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
+
+<h3 class="Conv_MuseoSans_700" >Heading 2</h3>
+<p class="Conv_MuseoSans_500 "  >The Site and all of its original content are the sole property<strong class="Conv_MuseoSans_700">browsing</strong> of Your Nowhere Town and are, as such</p>
+
+<h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
+<p class="Conv_MuseoSans_500" >Our Site contain a number of links to other websites and <strong class="Conv_MuseoSans_700">browsing</strong>online resources that are  owned or controlled by eboo.Your app has no control over, and 
+therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
+Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
+
+
+          </p>
+          
+          
+        
+          
+                    
+          </div>
+    </div><!-- /content -->
+</div>
+
+
+<div data-role="page" id="6privacy">
+         
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
+    
+        <img  src="img/750.png"  class="iphone6"  style="margin-bottom:-5px !important; width:100%" >
+
+        <div class="topmenucontainer" >
+    
+     
+     <div class="searchsettings">
+       		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
+             <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
+        <center><img  class="midicon"  src="img/header.png" ></center>
+      </div>  
+    </div>
+                    
+    <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
+        		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
+    </div>
+      
+ 
+</div><!-- /header -->
+	   	<div  role="main" class="ui-content" >
+        <div class="example-wrapper padding_left terms_of_service  " data-iscroll >
+        
+          <h3 class="Conv_MuseoSans_700" >Privacy Policy</h3>
+          <p class="Conv_MuseoSans_500 " >
+Please read these Terms of Service completely using app which is owned and operated by Your eboo app. This Agreement documents the legally binding terms and conditions attached to the use of the app.
+By using or accessing the Site in any way, viewing or browsing the Site, or adding your own content to the Site, you are agreeing to be bound by these Terms of Service.</p>
+
+<h3 class="Conv_MuseoSans_700" >Heading 2</h3>
+<p class="Conv_MuseoSans_500 ">The Site and all of its original content are the sole property of Your Nowhere Town and are, as such</p>
+
+<h3 class="Conv_MuseoSans_700" >Links to Other Websites</h3>
+<p class="Conv_MuseoSans_500 " >Our Site contain a number of links to other websites and online resources that are  owned or controlled by eboo.Your app has no control over, and 
+therefore cannot assume responsibility for, the content or general practices of any of these third party sites and/or services. 
+Therefore, we strongly advise you to read the entire terms and conditions and privacy policy of any site that you visit as a result of following a link that is posted on our site.
+
+
+          </p>
+          </div>
+    </div><!-- /content -->
+</div>
+
+</div>
+
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
+  
+ <!-- <script type="text/javascript" src="js/hammer.js"></script>-->
+  
+   <script type="text/javascript" src="js/SocialSharing.js"></script>
+   <script type="text/javascript" src="js/nonbounce.js"></script>
+<script type="text/javascript" src="js/swipeleft.js"></script>
+
+
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
+<script type="text/javascript" src="js/fastbutton.js"></script>
+<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+<!-- <script type="text/javascript" src="js/touchevents.js"></script> --->
+
+
+
+ <script>
+    
+
+
+ $('#searcharea').hide();
+ $('.search_empty').hide();
+ 
+
+	function show_focus(){
+		
+		$('#searcharea').focus();
+	
+	}
+	
+
+  
+  function show_search()
+  {
+	  
+	  $('#searcharea').show();
+	   $('.search_empty').show();
+	  $('input').focus();
+	  $('#searcharea').focus();
+	
+	
+	  } 
+
+ 
+$('#searcharea').on('blur',function(){ 
+									$('.search_empty').hide();		
+								    	$('#searcharea').hide();	
+									    
+										$('#searcharea').blur();
+										
+										 
+										  });
+
+
+
+
+   
+//global declarations
+
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+		
+		
+		
+	//	console.log(ajax_path + ' asdasd');
+		//window.plugins.spinnerDialog.show();
+	   if( $('#searcharea').val()!='')
+	   {
+	   //start  my loader here !!!!
+		$.support.cors = true;
+		
+		search_pageCount = 0;
+		
+		$('#loaderScreen').show();
+		
+		
+		
+		$.ajax({
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token, 
+			type:'POST',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				SearchQueryId=data.SearchQueryId;
+				
+			//	alert(SearchQueryId);
+				
+				if(FeedStatus=='success')
+				{
+					feed_conducted=1;
+				$('#searchvalue').html($('#searcharea').val());
+				$('#searcharea').hide();
+				 $('.search_empty').hide();
+				$('#searcharea').blur();
+				$('.search_empty').blur();
+				
+			  	   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+				//	pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+					var article_title_unescaped = article_title;
+					var source_name_unescaped = source_name;
+					 
+					article_title = article_title.replace(/'/g, "\\'");
+					
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					article_link = encodeURI(article_link);
+					
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+					append_data+='<li><div class="behind" >';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+ 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							
+							$('#list_view').html('');
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+									
+										$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+											
+									//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+										
+										
+					search_pageCount = search_pageCount + 1;					
+								$('#loaderScreen').hide();		
+												
+							//window.plugins.spinnerDialog.hide();					
+				}//user data match if
+				else{
+					
+					// user data doent match
+					//window.plugins.spinnerDialog.hide();
+					
+					
+					$('#loaderScreen').hide();
+			navigator.notification.alert("We couldn't find any articles on your topic.", alertCallback, "Ebbu", "OK");
+			
+
+										
+					}
+			
+			
+			last_search = $('#searcharea').val();
+			
+			
+			$('#searcharea').val('');
+			
+			
+			
+				},
+		error: function(e) {
+			//window.plugins.spinnerDialog.hide();
+			
+			
+			$('#loaderScreen').hide();
+			
+			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
+			
+     //  alert(' please try after sometime');		
+	//	console.log(e.status);
+
+			
+			
+		}
+			
+			
+			
+			
+			});
+		
+		
+	}//ifclose
+	else{
+		
+		
+		load_trending();
+		
+		
+		}
+	//window.plugins.spinnerDialog.hide();	
+		
+    }
+});
+
+
+
+
+
+//Let's say the /profile endpoint on the provider waits for
+//a PATCH request to update the authenticated user's profile 
+//containing the field "name" and returns the field "name" 
+//containing the new name
+
+
+
+
+function load_trending()
+{
+	last_search = '';
+	
+		
+ pageCount = 0;
+
+
+
+	$('#loaderScreen').show();
+	
+	//alert(EbooUSER_ID + 'pronnn');
+	
+//window.plugins.spinnerDialog.show();
+	$.ajax({
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
+			type:'POST',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				if(FeedStatus=='success')
+				{
+					feed_conducted=0;
+					
+					
+				$('#searchvalue').html('Most Popular Articles');
+				
+				   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					//pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+				 var article_title_unescaped = article_title;
+					
+				 var source_name_unescaped = source_name;	
+					
+					
+					article_title = article_title.replace(/'/g, "\\'");
+					
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					
+						article_link = encodeURI(article_link);
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+						
+					append_data+='<li><div class="behind"  >';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+					
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							$('#list_view').html('');
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+							console.log(append_data);
+											$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+										//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+						//window.plugins.spinnerDialog.hide();
+						pageCount = pageCount +1;
+						
+						$('#loaderScreen').hide();
+						
+						
+				}//user data match if
+				else{
+					//window.plugins.spinnerDialog.hide();
+					// user data doent match
+					
+					$('#loaderScreen').hide();
+					
+			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
+					
+					}
+			
+			
+				},
+		error: function(e) {
+			$('#loaderScreen').hide();
+			
+      //window.plugins.spinnerDialog.hide();
+	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
+		
+			
+		//	console.log(e);
+		
+			
+		}
+		
+		
+		
+		
+			
+	});
+	
+	
+}
+
+
+	
+	/*
+$(document).on('pagebeforeshow', '#index', function(){ 
+  for(i = 0; i < 30; i++) {
+       $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
+  }
+    $('[data-role="content"]').trigger('create');
+    $(".example-wrapper").iscrollview("refresh");
+});
+
+*/
+
+
+
+function startswiperfunction(){
+	var mySwiper = $('.swiper-container').swiper({
+    //Your options here:
+    mode:'horizontal',
+    loop: false,
+	resistance:'0%',
+	freeMode:false,
+	momentumBounce:false,
+	swipeToPrev:true,
+	paginationClickable:true,
+	watchActiveIndex:true
+  });
+  /* FULLSCREEN SWIPER*/
+$(window).resize(function(){
+    var height = $(window).height();
+    var width  = $(window).width();
+    $('.swiper-container, .swiper-slide').height(height);
+    $('.swiper-container, .swiper-slide').width(width);
+    //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
+	mySwiper.reInit();
+	swiper.reInit();
+	
+})
+$(window).resize(); 
+	}
+
+
+//alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ window.screen.width);
+//add listener when device ready
+
+  // device APIs are available
+    //
+  
+
+
+
+   //  document.addEventListener("onDeviceReady", onDeviceReady, false);
+	
+//alert('sasdasds');
+	    
+//	$('#loaderScreen').show();
+	    setTimeout(function() {
+			
+//		startswiperfunction();
+//	$('#loaderScreen').hide();
+        navigator.splashscreen.hide();
+		
+	//	//window.plugins.spinnerDialog.show();
+		
+   			 }, 3000);
+	
+	
+	
+    var db = window.openDatabase("Eboo_user", "1.0", "Eboo user local Database", 200000); //will create database Dummy_DB or open it
+ 
+    //function will be called when device ready
+    function onDeviceReady(){
+		
+		
+		
+		
+	//	$.mobile.page.prototype.options.domCache = false;
+		
+//	alert('called');
+		
+		 
+  //  var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+
+	//alert(deviceType + navigator.userAgent);
+	
+	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
+		
+		
+//	alert(' width  = '+ window.screen.width +' height  = '+ window.screen.height );
+
+	
+
+db.transaction(populateDB, errorCB, successCB);
+
+
+
+										
+    }
+	
+	function start_timer(){
+		
+		//alert('aa');
+			 setInterval(
+							function(){
+								
+				//			console.log(user_active+'---time --'+user_time)	
+								//alert('ss');
+							if(user_active==1)
+							{
+							user_time = user_time+30000;
+							user_active=0;	
+								}
+							else{
+							user_active=0;
+							update_timer();	
+							} 
+						}
+							,30000); 
+							
+							
+	}
+	
+	function update_timer(){
+		//					console.log('started update');
+							setInterval( function update_user_time(){
+							
+							if(user_time!=0)
+							{
+								
+							//	console.log('user_id='+EbooUSER_ID+'&seconds='+user_time);
+								
+								$.post(ajax_path+'updatetime.php?user_id='+EbooUSER_ID+'&seconds='+user_time+'&security_token = '+security_token);
+			//					console.log('user_time = '+user_time);
+								
+								user_time= 0;
+								user_active=0;
+								}
+							}	 ,120000 );
+	 
+	}
+	
+
+ 
+    //create table and insert some record
+    function populateDB(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
+		
+    }
+ 
+    //function will be called when an error occurred
+    function errorCB(err) {
+//      alert("Error processing SQL: "+err.message+' anoyin ?');
+		
+		
+    }
+ 
+    //function will be called when process succeed
+    function successCB() {
+      
+        db.transaction(queryDB,errorCB);
+//		alert("successaa!");
+    }
+ 
+    //select all from table
+    function queryDB(tx){
+        tx.executeSql('SELECT * FROM ebooUser ',[],querySuccess,errorCB);
+    }
+ 
+    function querySuccess(tx,result){
+       
+	  console.log(result.rows.item);
+	   
+	   var length = result.rows.length;
+	  	console.log("DEMO table: " + length + " rows found.");	
+		
+		
+		
+		if(length >0)
+		{
+		//	$( "body" ).pagecontainer( "change", '#6page1'  ,  { transition:'pop'  });
+
+//		alert('ssss');
+
+			$.mobile.changePage('#6page1' , { transition:'slide'  });
+		
+				for(var i=0; i< length ; i++)
+				{
+					EbooUSER_ID = result.rows.item(i).user_id;
+					eboo_twitter= result.rows.item(i).twitter;
+					eboo_tumblr= result.rows.item(i).tumblr;
+					eboo_linkedin= result.rows.item(i).linkedin;
+					eboo_facebook= result.rows.item(i).facebook;
+			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
+					//	alert(EbooUSER_ID);
+				//	console.log(EbooUSER_ID);
+					}
+					
+					
+					if( eboo_twitter == '0' )
+					{
+						$('#twitterlogout').css('display','block');
+						$('#twitterlogged').css('display','none');
+						}else{
+						$('#twitterlogout').css('display','none');
+						$('#twitterlogged').css('display','block');	
+							}
+					if( eboo_tumblr == '0' )
+					{
+						$('#tumblrlogout').css('display','block');
+						$('#tumblrlogged').css('display','none');
+						
+						}else{
+							
+						$('#tumblrlogout').css('display','none');
+						$('#tumblrlogged').css('display','block');	
+						}
+					if( eboo_facebook == '0' )
+					{
+						$('#facebooklogout').css('display','block');
+						$('#facebooklogged').css('display','none');
+						}else{
+						$('#facebooklogout').css('display','none');
+						$('#facebooklogged').css('display','block');	
+							}
+					
+	
+	
+					if( eboo_linkedin == '0' )
+					{
+						$('#linkedinlogout').css('display','block');
+						$('#linkedinlogged').css('display','none');
+						
+						}else{
+							
+						$('#linkedinlogout').css('display','none');
+						$('#linkedinlogged').css('display','block');	
+							
+							}
+				
+	
+					
+					
+					
+				//tx.executeSql('DELETE FROM ebooUser');	
+			
+				load_trending();
+				browser_setting();
+				
+				start_timer();
+				
+				update_timer();
+				
+		//	alert('1');
+//swipe_list_items();
+		
+		//window.plugins.spinnerDialog.hide();
+						
+		}else{
+	//		alert('1');
+	//$( "body" ).pagecontainer( "change", '#6page'  ,  { transition:'pop'  });
+			
+	 	$.mobile.changePage('#6page' , { transition:'slide' });
+		
+		   start_timer();
+		   update_timer();
+			
+	       startswiperfunction();
+				
+				//window.plugins.spinnerDialog.hide();
+			
+		}
+  
+    }
+	
+	
+	
+	function ErrorCallBack(err){
+		
+	//	alert('Error'+err.code+'----'+err.message);
+		
+		}
+	
+	function alertCallback(){
+		
+		}
+	
+	function validate_email()
+	{ 
+	//window.plugins.spinnerDialog.show();
+	
+	$("#loaderScreen1").show();
+	
+	var	useremail = $('#useremail').val();
+	var checkk = 	IsEmail(useremail);
+	if(checkk== false)
+	{
+		//window.plugins.spinnerDialog.hide();
+		
+	$("#loaderScreen1").hide();	
+		
+	navigator.notification.alert("Enter a Valid E-mail Address", alertCallback, "Error !!", "OK");
+	//	alert('enter a vaild email');
+	
+		}
+	else{
+	//	db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
+		$.ajax({
+			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token = '+security_token,
+			type:'POST',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			success: function(data)
+							{
+							var	login_Response = data.LoginResponse;
+					eboo_twitter= '0';
+					eboo_tumblr= '0';
+					eboo_linkedin= '0';
+					eboo_facebook= '0';
+							
+							
+							
+								if(login_Response.status=='100')
+								{
+								//	alert(login_Response.message);
+							//		alert(login_Response.user_id)
+									//window.plugins.spinnerDialog.hide();
+									$("#loaderScreen1").hide();
+									
+							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
+								}else if(login_Response.status=='101'){
+									//	alert('User Already Exists' );
+									//window.plugins.spinnerDialog.hide();
+									$("#loaderScreen1").hide();
+									
+									db.transaction( function(tx){ insertvalues(tx, useremail , login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
+									}
+								else{
+									//window.plugins.spinnerDialog.hide();
+									
+									$("#loaderScreen1").hide();
+											navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
+								
+									}	
+								
+								
+								},
+			error: function(e)
+				{
+					//window.plugins.spinnerDialog.hide();
+					
+				$("#loaderScreen1").hide();	
+					
+				navigator.notification.alert("Network Error !!", alertCallback, "Ebbu", "Done");
+					
+					}
+			
+			
+			});
+		
+		
+		
+		}	
+    }
+		
+		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
+		{
+			
+		//	alert('ss');
+		EbooUSER_ID = parameter2;
+		eboo_twitter= p3;
+			eboo_tumblr= p4;
+			eboo_linkedin= p5;
+			eboo_facebook= p6;
+			
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
+			
+//			EbooUSER_ID = parameter2;
+			
+			
+			
+			
+			
+			
+		console.log(parameter2)
+		}
+		
+		
+		function userinsert()
+		{
+			
+			
+			load_trending();
+			browser_setting();
+			
+		window.plugins.spinnerDialog.show();
+			
+			$.mobile.changePage('#6page1' , { transition:'slide' }  );
+			
+		window.plugins.spinnerDialog.hide();
+			
+		}
+		
+
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+	
+	
+/*
+	 $('#twitterauthorize').on('click', function() {
+		 
+		 
+		 				
+		 						$('#twitterlogout').css('display','none');
+								$('#twitterlogged').css('display','block');
+
+		 
+		 });
+	
+	*/
+	
+	
+
+	
+
+				
+		/*		
+			    OAuth.popup('tumblr')
+                        .done(function (r) {
+                            // the access_token is available via r.access_token
+                            // but the http functions automagically wrap the jquery calls
+                            r.get('/1.1/account/verify_credentials.json')
+                                .done(function(data) {
+									
+									console.log("twitter: Hello, " + data.name + " ! ");
+									
+									$('#tumblrlogout').css('display','none');
+									$('#tumblrlogged').css('display','block');
+									
+									
+                                //    $('#result').html("twitter: Hello, " + data.name + " !");
+                                })
+                                .fail(function( jqXHR, textStatus, errorThrown) {
+                                    $('#result').html("req error: " + textStatus);
+                                });
+                        })
+                        .fail(function (e) {
+                            $('#result').html('error: ' + e.message);
+                        });
+                }
+
+
+*/
+	
+	
+	
+	
+
+
+
+
+$(document).on("tap",function(){
+ 
+user_active = 1;
+ 
+});
+
+$(document).on("taphold",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipe",function(){
+
+ user_active = 1;
+ 
+});
+
+$(document).on("swiperight",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("swipeleft",function(){
+ 
+ user_active = 1;
+ 
+});
+
+$(document).on("scrollstart",function(){
+ 
+ user_active = 1;
+ 
+});
+
+
+function bringdown()
+{
+	
+	
+
+	
+	
+$('#textinput').css('position','relative');
+$('#textinput').animate({'bottom':'58%'},100,'linear');
+
+	
+	}
+
+
+function bringup()
+{
+	
+
+
+  $('#textinput').css('position','relative');
+  $('#textinput').animate({'bottom':'100%'},100,'linear');
+ 
+  
+// See if keyboard is open or not
+
+
+// Get height of open keyboard (including inputAccessoryView toolbar)
+//var height = Keyboard.getHeight();
+
+// The following jQuery events are available:
+// keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
+
+
+}
+
+
+function get_more_data()
+{
+	
+	
+	if( $('#searcharea').val() =='' && last_search =='' )
+	{
+		last_search='';
+		
+ 		$.ajax({
+			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token = '+security_token,
+			type:'POST',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				if(FeedStatus=='success')
+				{
+					feed_conducted=0;
+					
+					
+				$('#searchvalue').html('Most Popular Articles');
+				
+				   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+					
+					//pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+				 var article_title_unescaped = article_title;
+					
+				 var source_name_unescaped = source_name;	
+					
+					
+					article_title = article_title.replace(/'/g, "\\'");
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					
+						article_link = encodeURI(article_link);
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+						
+					append_data+='<li><div class="behind"  >';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+					
+					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+							//alert(append_data);
+							
+									$('#list_view *').unbind('touchstart');
+									$('#list_view *').unbind('touchmove');
+									$('#list_view *').unbind('touchend');
+	
+							//$('#settingList *').unbind();
+							
+							
+											$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+										
+										
+			
+										
+										
+										
+										//	$('#list_view').refresh();
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+						//window.plugins.spinnerDialog.hide();
+				}//user data match if
+				
+				
+
+			pageCount = pageCount+1;
+			
+			
+				},
+		error: function(e) {
+      //window.plugins.spinnerDialog.hide();
+	  
+	 		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
+	
+			
+		//	console.log(e);
+			
+		}
+			
+	});
+	
+	}else if(last_search!=''){
+		
+	//	alert('last_search = '+ last_search);
+	
+	   //start  my loader here !!!!
+		$.support.cors = true;
+		$.ajax({
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbooUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token = '+security_token,
+			type:'POST',
+			contentType: "application/json",
+        	async: true,
+       		dataType: 'json',
+        	crossDomain: true,
+			beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                       //window.plugins.spinnerDialog.show();
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete
+                     //window.plugins.spinnerDialog.hide();  
+                    },
+			success: function(data)
+			{
+				
+				
+				feedData=data.Feeds;
+				FeedStatus=data.FeedStatus;
+				
+				SearchQueryId=data.SearchQueryId;
+				
+			//	alert(SearchQueryId);
+				
+				if(FeedStatus=='success')
+				{
+					
+					
+					feed_conducted=1;
+				
+		//		$('#searchvalue').html($('#searcharea').val());
+				
+			  	   	var append_data =  '';
+					$.each(feedData, function(index, element) {
+					var article_id = element.id;			
+					var article_title =  element.title ;
+					var article_link = element.article_link ;
+					var source_name = element.source ;
+					var source_image = element.sourceimage ;
+					var pubdate = element.pubdate ;
+					
+					var viewstatus=element.viewstatus; 
+				//	pubdate = pubdate.substr(5,11);
+					// checking the variable length
+					var len = 0;
+					var len=article_title.length;
+					
+					 var article_title_unescaped = article_title;
+					 var source_name_unescaped = source_name;
+					 
+					article_title = article_title.replace(/'/g, "\\'");
+					
+					source_name = source_name.replace(/'/g, "\\'");
+					
+					article_link = encodeURI(article_link);
+					
+					
+					if(len>55)
+					{ 
+					article_title = article_title.substr(0,55);
+					article_title = article_title + '...';	
+						}
+					append_data+='<li><div class="behind" >';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+					
+					if(viewstatus=='1')
+					{
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					}
+					else{
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+ 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+					append_data+='<p class="min_height Conv_MuseoSans_700">'+article_title_unescaped+'</p>';
+					append_data+='<p class="ui-li-divider "><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+		
+						}
+							);			
+							//console.log('appended data = ');
+						
+						//colose my loader here !!!!
+							$('#list_view').append(append_data);
+							
+									$('#list_view *').unbind('touchstart');
+									$('#list_view *').unbind('touchmove');
+									$('#list_view *').unbind('touchend');
+									
+									//$('#settingList *').unbind();
+									
+	
+							
+									
+										$('#list_view').trigger("create");
+										$('#list_view').listview().listview('refresh');
+											
+									//	$('#list_view').refresh();
+									
+									
+									
+										browser_setting();
+										$.getScript("js/SocialSharing.js");
+										SocialSharing();
+										$.getScript("js/swipeleft.js");
+												
+							//window.plugins.spinnerDialog.hide();					
+							
+							
+							search_pageCount = search_pageCount+1;
+							
+				}//user data match if
+				
+			
+		//	$('#searcharea').val('');
+			
+			
+			
+			
+			
+				},
+		error: function(e) {
+			//window.plugins.spinnerDialog.hide();
+     		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
+	
+			
+		//	console.log(e.status);
+			
+		}
+			
+			
+			
+			
+			});
+		
+		
+	
+		
+		
+		}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+/*jslint browser: true, sloppy: true, white: true, nomen: true, plusplus:true, maxerr: 50, indent: 2 */
+/*global jQuery:false, iScroll:false */
+
+/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true,
+         undef:true, curly:true, browser:true, jquery:true, indent:2, maxerr:50,
+         white:false, nomen:false */
+
+//-------------------------------------------------------
+// Pull-Up and Pull-Down callbacks for "Pull" page
+//-------------------------------------------------------
+(function pullPagePullImplementation($) {
+  "use strict";
+  var pullDownGeneratedCount = 0,
+      pullUpGeneratedCount = 0,
+      listSelector = "div.6page1 ul.ui-listview",
+      lastItemSelector = listSelector + " > li:last-child";
+    
+  /* For this example, I prepend three rows to the list with the pull-down, and append
+   * 3 rows to the list with the pull-up. This is only to make a clear illustration that the
+   * action has been performed. A pull-down or pull-up might prepend, append, replace or modify
+   * the list in some other way, modify some other page content, or may not change the page 
+   * at all. It just performs whatever action you'd like to perform when the gesture has been 
+   * completed by the user.
+   */
+  function gotPullDownData(event, data) {
+    var i,
+        newContent = "";        
+    for (i=0; i<3; i+=1) {  // Generate some fake new content
+      newContent = "<li>Pulldown-generated row " + (++pullDownGeneratedCount) + "</li>" + newContent;
+      }
+	  
+    $(listSelector).prepend(newContent).listview("refresh");  // Prepend new content and refresh listview
+    data.iscrollview.refresh();    // Refresh the iscrollview
+    }
+  
+  function gotPullUpData(event, data) {
+    var i,
+        iscrollview = data.iscrollview,
+        newContent = "";
+		get_more_data();
+		
+	  
+    $(listSelector).append(newContent).listview("refresh");
+  
+    // The refresh is a bit different for the pull-up, because I want to demonstrate the use
+    // of refresh() callbacks. The refresh() function has optional pre and post-refresh callbacks.
+    // Here, I use a post-refresh callback to do a timed scroll to the bottom of the list
+    // after the new elements are added. The scroller will smoothly scroll to the bottom over
+    // a 400mSec period. It's important to use the refresh() callback to insure that the scroll
+    // isn't started until the scroller has first been refreshed.
+    iscrollview.refresh(null, null,
+      $.proxy(function afterRefreshCallback(iscrollview) { 
+        this.scrollToElement(lastItemSelector, 400); 
+        }, iscrollview) ); 
+    }
+  
+  // This is the callback that is called when the user has completed the pull-down gesture.
+  // Your code should initiate retrieving data from a server, local database, etc.
+  // Typically, you will call some function like jQuery.ajax() that will make a callback
+  // once data has been retrieved.
+  //
+  // For demo, we just use timeout to simulate the time required to complete the operation.
+  function onPullDown (event, data) { 
+    setTimeout(function fakeRetrieveDataTimeout() {
+      gotPullDownData(event, data);
+      }, 
+      1500); 
+    }    
+
+  // Called when the user completes the pull-up gesture.
+  function onPullUp (event, data) { 
+    setTimeout(function fakeRetrieveDataTimeout() {
+      gotPullUpData(event, data);
+      }, 
+      1500); 
+    }    
+  
+  // Set-up jQuery event callbacks
+  $(document).delegate("#6page1", "pageinit", 
+    function bindPullPagePullCallbacks(event) {
+      $(".iscroll-wrapper", this).bind( {
+      iscroll_onpulldown : onPullDown,
+      iscroll_onpullup   : onPullUp
+      } );
+    } );  
+
+  }(jQuery));
+
+
+
+$('#mostpopular').on("touchstart",function(e){	})
+.on("touchmove",function(e){  })	
+.on("touchend",function(e){
+	
+	 load_trending();
+	
+	  });	
+
+	
+
+
+
+
+</script>
+ 
+
+
+</body>
+</html>

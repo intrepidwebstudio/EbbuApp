@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Page Title</title> 
+	
+	        <meta name="format-detection" content="telephone=no" />
+        	<meta name="msapplication-tap-highlight" content="no" />
+        
+        <meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
+  <!--<script src="phonegap.js"></script>-->
+  
+  <link rel="stylesheet" type="text/css" href="css/font.css">	  
+  
+  <script defer src="js/idangerous.swiper.js"></script>
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script>
+    // Wait for Cordova to load
+   
+   
+</script>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
+  
+ <!-- <script type="text/javascript" src="js/hammer.js"></script>-->
+    <script type="text/javascript" src="js/fastbutton.js"></script>
+    
+    
+<script>
+	var screen_width;
+	var screen_height
+	
+	
+	  document.addEventListener("deviceready", onDeviceReady, false);
+	
+	
+	
+	
+	 //   setTimeout(function() {
+      //  navigator.splashscreen.hide();
+		
+		
+   	//		 }, 8000);
+	
+	
+	
+	function onDeviceReady()
+	{
+		screen_width  =  window.screen.width;
+		screen_height  =  window.screen.height;
+	
+		if(screen_width == 320 && screen_height == 480 )	
+			{
+			window.location = 'indexfours.html';
+				}
+			else if(screen_width == 320 && screen_height == 568 )	
+			{
+							
+			window.location = 'index5s.html';
+				}
+			else if(screen_width == 375 && screen_height == 667 )	
+			{
+				alert('6');
+				window.location = 'index6.html';
+				
+				
+				}	
+			else if(screen_width == 414 && screen_height == 736 )	
+			{
+				
+				window.location = 'index6plus.html';
+				
+				}		
+			else{
+			//	window.location = 'index6plus.html';
+				
+				 alert('ipad or iphone6');
+				}
+
+	
+		
+		
+		
+		}
+	
+</script>
+
+
+
+
+
+  
+  
+
+</head>
+
+
+<body>
+
+
+
+
+
+
+ 
+
+
+</body>
+</html>
