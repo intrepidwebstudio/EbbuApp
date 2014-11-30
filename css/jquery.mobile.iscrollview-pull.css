@@ -18,7 +18,8 @@
 .iscroll-pulldown,
 .iscroll-pullup {
   background: #fff;
-  height: 55px;
+  height: 30px;
+  padding-top:10px;
   line-height: 40px;    /* Center text vertically */
   font-weight: bold;
   font-size: 14px;
