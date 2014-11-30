@@ -51,14 +51,14 @@ var	eboo_facebook;
         var iabRef = null;
 	    function iabLoadStart(event) {
 			
-			StatusBar.backgroundColorByHexString("#FFF");
+		//	StatusBar.backgroundColorByHexString("#FFF");
 			
-			window.plugins.spinnerDialog.show();
+		//	window.plugins.spinnerDialog.show();
 //			$('#loaderScreen').show();	
         }
 	   function iabLoadStop(event) {
 		   
-		   	window.plugins.spinnerDialog.hide();
+	//	   	window.plugins.spinnerDialog.hide();
 //			$('#loaderScreen').hide();
 		}
         function iabClose(event) {

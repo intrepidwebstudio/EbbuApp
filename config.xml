@@ -155,7 +155,7 @@
 	
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
-	<preference name="StatusBarBackgroundColor" value="#000000" />
+	<preference name="StatusBarBackgroundColor" value="#FFFFFF" />
 	
 	<feature name="StatusBar">
 	<param name="ios-package" value="CDVStatusBar" onload="false" />
@@ -197,6 +197,8 @@
 
 <feature name="InAppBrowser">
     <param name="ios-package" value="CDVInAppBrowser" />
+	
+	
 </feature>
 
 
