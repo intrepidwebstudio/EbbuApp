@@ -126,6 +126,10 @@ function hex(x) {
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
 			
+			
+			Global_share_titleee = title_aaa;
+			Global_share_linkkk = title_linkkk;
+			
 		if( media_link == "twitter" )
 			{
 				if( eboo_twitter == "1" ){
@@ -141,7 +145,7 @@ function hex(x) {
             'Cancel,Allow'          // buttonLabels
         );
 			
-			window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);			
+					
 				}
 				}
 			else if( media_link == "facebook"  )
@@ -159,7 +163,7 @@ function hex(x) {
         );
 					
 		
-		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
+		
 		
 					
 					}
@@ -195,7 +199,12 @@ function onfacebookconfirm(button1){
 
 		var socialName = 'facebook';
 		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+		
+		
+		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
+		
 	}
+	
 	
 }
 
@@ -210,7 +219,12 @@ function ontwitterconfirm(button2)
 
 		var socialName = 'twitter';
 		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
+		
+		window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);	
+		
 	}
+	
+
 	
 	
 	}
