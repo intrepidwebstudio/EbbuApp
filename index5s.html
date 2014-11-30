@@ -560,15 +560,20 @@ input{
 
 
 
-
-.modalWindow{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1500;
-    background: white;
-    opacity: 0.7;
-}
+.backgroundmask{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background-color:#000 !important;
+	opacity:.15;
+	z-index:15000 !important;	
+	display:none;
+		}
+	
+	
+	
 
 </style>
   
@@ -581,14 +586,9 @@ input{
 
 <div class="ui-panel-page-container">
 
+<div class="backgroundmask loaderScreen" ></div>
+<img  class="loaderScreen" style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
 
-<div class="ui-overlay-a"  id="loaderScreen" style="width:100%; height:100%;" >
-
-Loading
-
-<img style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
-
-</div>
 
 <div data-role="page" id="5spage1" data-title="Ebbu" >
 
@@ -952,7 +952,7 @@ $('#searcharea').on('blur',function(){
 
 function hideModal(){
  $(".modalWindow").remove();
-   	$('#loaderScreen').show();
+   	$('.loaderScreen').show();
 
 }
 	
@@ -980,7 +980,7 @@ $('#searcharea').keypress(function(e) {
 	$('.search_empty').blur();
 
 		
-		$('#loaderScreen').show();
+		$('.loaderScreen').show();
 
 		
 		
@@ -1079,7 +1079,7 @@ $('#searcharea').keypress(function(e) {
 										
 										
 					search_pageCount = search_pageCount + 1;					
-								$('#loaderScreen').hide();		
+								$('.loaderScreen').hide();		
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -1089,7 +1089,7 @@ $('#searcharea').keypress(function(e) {
 					//window.plugins.spinnerDialog.hide();
 					
 					
-					$('#loaderScreen').hide();
+					$('.loaderScreen').hide();
 			navigator.notification.alert("We couldn't find any articles on your topic.", alertCallback, "Ebbu", "OK");
 			
 
@@ -1109,7 +1109,7 @@ $('#searcharea').keypress(function(e) {
 			//window.plugins.spinnerDialog.hide();
 			
 			
-			$('#loaderScreen').hide();
+			$('.loaderScreen').hide();
 			
 			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
 			
@@ -1158,9 +1158,9 @@ function load_trending()
 		
  pageCount = 0;
 
+$('.backgroundmask').show();
 
-
-	$('#loaderScreen').show();
+	$('.loaderScreen').show();
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
@@ -1260,7 +1260,7 @@ function load_trending()
 						//window.plugins.spinnerDialog.hide();
 						pageCount = pageCount +1;
 						
-						$('#loaderScreen').hide();
+						$('.loaderScreen').hide();
 						
 						
 				}//user data match if
@@ -1268,7 +1268,7 @@ function load_trending()
 					//window.plugins.spinnerDialog.hide();
 					// user data doent match
 					
-					$('#loaderScreen').hide();
+					$('.loaderScreen').hide();
 					
 			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
 					
@@ -1277,7 +1277,7 @@ function load_trending()
 			
 				},
 		error: function(e) {
-			$('#loaderScreen').hide();
+			$('.loaderScreen').hide();
 			
       //window.plugins.spinnerDialog.hide();
 	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
@@ -1352,11 +1352,11 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-//	$('#loaderScreen').show();
+//	$('.loaderScreen').show();
 	    setTimeout(function() {
 			
 //		startswiperfunction();
-//	$('#loaderScreen').hide();
+//	$('.loaderScreen').hide();
         navigator.splashscreen.hide();
 		
 	//	//window.plugins.spinnerDialog.show();
