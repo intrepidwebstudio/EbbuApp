@@ -141,7 +141,7 @@ function hex(x) {
             'Cancel,Allow'          // buttonLabels
         );
 			
-					
+			window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);			
 				}
 				}
 			else if( media_link == "facebook"  )
@@ -158,6 +158,9 @@ function hex(x) {
             'Cancel,Allow'          // buttonLabels
         );
 					
+		
+		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
+		
 					
 					}
 				
