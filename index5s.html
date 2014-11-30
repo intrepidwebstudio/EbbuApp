@@ -578,7 +578,7 @@ input{
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans-300Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
@@ -891,9 +891,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 
 	function show_focus(){
-		
 		$('#searcharea').focus();
-	
 	}
 	
 
@@ -926,10 +924,10 @@ $('#searcharea').on('blur',function(){
 //global declarations
 
 
-$(document).keypress(function(e) {
+$('#searcharea').keypress(function(e) {
     if(e.which == 13) {
 		
-		
+		cordova.plugins.Keyboard.close;
 		
 	//	console.log(ajax_path + ' asdasd');
 		//window.plugins.spinnerDialog.show();
