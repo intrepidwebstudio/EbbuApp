@@ -505,6 +505,33 @@ input{
 
 
 
+  #loaderScreen1 {
+    -webkit-animation: rotationLoader1 2s infinite linear;
+}
+
+
+@-webkit-keyframes rotationLoader1 {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotationLoader1 {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rotationLoader1 {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@-keyframes rotationLoader1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
+
+
+
 </style>
   
 
@@ -1473,7 +1500,7 @@ db.transaction(populateDB, errorCB, successCB);
 	//		alert('1');
 	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#5spage' , { transition:'slide' });
+	 //	$.mobile.changePage('#5spage' , { transition:'slide' });
 		
 		   start_timer();
 		   update_timer();
