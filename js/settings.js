@@ -50,6 +50,9 @@ var	eboo_facebook;
 	        // Global InAppBrowser reference
         var iabRef = null;
 	    function iabLoadStart(event) {
+			
+			StatusBar.backgroundColorByHexString("#FFF");
+			
 //			window.plugins.spinnerDialog.show();
 //			$('#loaderScreen').show();	
         }
