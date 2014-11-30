@@ -938,8 +938,17 @@ $('#searcharea').keypress(function(e) {
 		
 		search_pageCount = 0;
 		
+		
+		
+	$('#searcharea').hide();
+	$('.search_empty').hide();
+	$('#searcharea').blur();
+	$('.search_empty').blur();
+
+		
 		$('#loaderScreen').show();
 		
+
 		
 		
 		$.ajax({
@@ -972,10 +981,6 @@ $('#searcharea').keypress(function(e) {
 				{
 					feed_conducted=1;
 				$('#searchvalue').html($('#searcharea').val());
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
