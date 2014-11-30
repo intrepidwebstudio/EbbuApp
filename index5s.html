@@ -619,7 +619,7 @@ input{
        
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+        	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="flip"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
@@ -717,7 +717,7 @@ input{
 </div>
   
 
-<div data-role="page" id="5ssettings" data-transition="slide" >
+<div data-role="page" id="5ssettings" data-transition="flip" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
@@ -744,14 +744,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
+                <li id="twitterautho" ><a class="settingsmenu" data-transition="flip"  >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="flip"   >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -759,13 +759,13 @@ input{
                         
                 </a> </li>
                
-                <li><a class="settingsmenu" data-transition="slide" href="#5stermsofservice" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="flip" href="#5stermsofservice" data-prefetch="true" >
                 		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" data-transition="slide" href="#5sprivacy" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="flip" href="#5sprivacy" data-prefetch="true" >
                 		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -1487,7 +1487,7 @@ db.transaction(populateDB, errorCB, successCB);
 
 //		alert('ssss');
 
-			$.mobile.changePage('#5spage1' , { transition:'slide'  });
+			$.mobile.changePage('#5spage1' , { transition:'flip'  });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1565,7 +1565,7 @@ db.transaction(populateDB, errorCB, successCB);
 	//		alert('1');
 	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#5spage' , { transition:'slide' });
+	 	$.mobile.changePage('#5spage' , { transition:'flip' });
 		
 		   start_timer();
 		   update_timer();
@@ -1702,7 +1702,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	//	window.plugins.spinnerDialog.show();
 			
-			$.mobile.changePage('#5spage1' , { transition:'slide' }  );
+			$.mobile.changePage('#5spage1' , { transition:'flip' }  );
 			
 	//	window.plugins.spinnerDialog.hide();
 			
