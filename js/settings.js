@@ -53,12 +53,12 @@ var	eboo_facebook;
 			
 			StatusBar.backgroundColorByHexString("#FFF");
 			
-//			window.plugins.spinnerDialog.show();
+			iabRef.plugins.spinnerDialog.show();
 //			$('#loaderScreen').show();	
         }
 	   function iabLoadStop(event) {
 		   
-//		   	window.plugins.spinnerDialog.show();
+		   	iabRef.plugins.spinnerDialog.hide();
 //			$('#loaderScreen').hide();
 		}
         function iabClose(event) {
