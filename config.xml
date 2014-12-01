@@ -6,10 +6,10 @@
         id        = "com.inpws.www"
         version   = "1.0.0">
 
-    <name>Eboo App</name>
+    <name>Ebbu</name>
 
     <description>
-        Eboo Online article app
+        Ebbu Online article app
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">

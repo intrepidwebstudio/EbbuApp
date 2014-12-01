@@ -39,6 +39,31 @@ document.onreadystatechange = function(e)
    <script type="text/javascript" src="js/settings.js"></script>
    
   <style>
+ /* 
+  .inAppBrowserWrap {
+  background-color: rgba(0,0,0,0.75);
+  color: rgba(235,235,235,1.0);
+}
+.inAppBrowserWrap menu {
+  overflow: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+.inAppBrowserWrap menu li {
+  font-size: 25px;
+  height: 25px;
+  float: left;
+  margin: 0 10px;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #ccc;
+  display: block;
+  background: rgba(30,30,30,0.50);
+}
+.inAppBrowserWrap menu li.disabled {
+    color: #777;
+}
+  */
  div
 {
 backface-visibility:hidden !important;
@@ -89,30 +114,36 @@ background: rgba(255, 255, 255, 0.95) !important;
 			background-color:#936;
 		}
 		
-		
-/*	.behind a:first-child img{
+	.behind a:first-child {
+				width:73px !important;	
+				vertical-align:middle !important;
+				text-align:center;
 		}
 		
-	.behind a img{
-		vertical-align:middle !important;
-		}	
-		
-		.behind a:last-child img{
-		}	
-	*/
-	.socialicon{
-	
-	width:77px !important;	
+	.behind a {
+			width:79px !important;	
 	vertical-align:middle !important;
 	text-align:center;
+	
+		}	
 		
+		.behind a:last-child {
+			width:79px !important;	
+	vertical-align:middle !important;
+	text-align:center;
+			
+			
+		}	
+	
+	.socialicon{
+	
 		}
 			
 	.socialicon img {
 		
-		padding-top:35%;
+		padding-top:38%;
 		padding-bottom:30%;	
-		 width:35px;
+		 width:30px;
 		 vertical-align:middle !important;
 	}	
 	
@@ -146,9 +177,10 @@ background: rgba(255, 255, 255, 0.95) !important;
 		
 	.sourceicon{
 				padding-left:7px;
-				padding-top:8.5px;	
-				width: 22% !important;
-				vertical-align:middle !important;		}	
+				padding-top:7px;	
+				width: 21% !important;
+				vertical-align:middle !important;
+		}	
 		
 		
 		
@@ -183,8 +215,8 @@ background: rgba(255, 255, 255, 0.95) !important;
 
 topplace_empty{
 			position:relative !important;
-		top:0px;
-		width:100%;
+			top:0px;
+			width:100%;
 
 	
 	}	
@@ -452,7 +484,7 @@ input{
   
   <style>
 
-  #loaderScreen {
+  .loaderScreen2 {
     -webkit-animation: rotationLoader 2s infinite linear;
 }
 
@@ -479,6 +511,79 @@ input{
 
 
 
+  #loaderScreen1 {
+    -webkit-animation: rotationLoader1 2s infinite linear;
+}
+
+
+@-webkit-keyframes rotationLoader1 {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotationLoader1 {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rotationLoader1 {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@-keyframes rotationLoader1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
+
+
+.inAppBrowserWrap {
+  background-color: #09F !important;
+  color: rgba(235,235,235,1.0);
+}
+.inAppBrowserWrap menu {
+  overflow: auto;
+  list-style-type: none;
+  padding-left: 0;
+  background-color:#9F3 !important;
+}
+.inAppBrowserWrap menu li {
+  font-size: 25px;
+  height: 25px;
+  float: left;
+  margin: 0 10px;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #ccc;
+  display: block;
+  background: #0C0 !important;
+}
+.inAppBrowserWrap menu li.disabled {
+    color: #777;
+}
+
+
+
+
+
+.backgroundmask{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background-color:#000 !important;
+	opacity:.15;
+	z-index:15000 !important;	
+	display:none;
+		}
+	.title_bac p{
+		font-size: 1.1em !important;
+	}
+	
+	
+	
+
 </style>
   
 
@@ -488,24 +593,22 @@ input{
 <body>
 
 
-<div class="ui-panel-page-container">
-
-<img id="loaderScreen" style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
 
 
-<div data-role="page" id="5spage1" data-title="Ebbu" >
 
-    <div data-role="header" data-position="fixed" data-theme="a" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+<div data-role="page" id="6ppage1" data-title="Ebbu" >
+
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
     
     	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999 !important;  right:16px;  vertical-align:middle !important" >	
         	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important;"   >
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans_500_Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans-300Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
-        <img  src="img/1242.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/1242.png"  class="iphone6p"  style="margin-bottom:-5px !important; width:100%" >
 
         <div class="topmenucontainer"  >
         
@@ -516,7 +619,7 @@ input{
        
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slide"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+        	<a href="#6psettings" class="righticon" ontap="settings()" id="settingspage" data-transition="flip"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
@@ -537,7 +640,7 @@ input{
         
         </ul>
           <div class="iscroll-pullup">
-          <center><span class="iscroll-pull-icon"></span><span style="margin-top:0px !important; font-size:8px;" class="iscroll-pull-label Conv_MuseoSans-300Italic"  data-iscroll-loading-text="" ></span></center>
+          <center><span class="iscroll-pull-icon"></span></center>
         </div>
           
            
@@ -547,7 +650,7 @@ input{
  </div>
 
 
-<div data-role="page" data-position="fixed"  id="5spage" data-title="Ebbu" >
+<div data-role="page" data-position="fixed"  id="6ppage" data-title="Ebbu" >
 
 
 <div class="swiper-container">
@@ -614,9 +717,9 @@ input{
 </div>
   
 
-<div data-role="page" id="5ssettings" data-transition="slide" >
+<div data-role="page" id="6psettings" data-transition="flip" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-        <img  src="img/1242.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/1242.png"  class="iphone6p"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
      
      <div class="searchsettings">
@@ -641,14 +744,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a class="settingsmenu" data-transition="slide"  >
+                <li id="twitterautho" ><a class="settingsmenu" data-transition="flip"  >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slide"   >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="flip"   >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -656,13 +759,13 @@ input{
                         
                 </a> </li>
                
-                <li><a class="settingsmenu" data-transition="slide" href="#5stermsofservice" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="flip" href="#6ptermsofservice" data-prefetch="true" >
                 		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" data-transition="slide" href="#5sprivacy" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="flip" href="#6pprivacy" data-prefetch="true" >
                 		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -684,11 +787,11 @@ input{
 </div>
 
 
-<div data-role="page" id="5stermsofservice">
+<div data-role="page" id="6ptermsofservice">
          
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
 	  
-      <img  src="img/1242.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+      <img  src="img/1242.png"  class="iphone6p"  style="margin-bottom:-5px !important; width:100%" >
         
         <div class="topmenucontainer" >
      
@@ -737,11 +840,11 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 </div>
 
 
-<div data-role="page" id="5sprivacy">
+<div data-role="page" id="6pprivacy">
          
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
     
-        <img  src="img/1242.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <img  src="img/1242.png"  class="iphone6p"  style="margin-bottom:-5px !important; width:100%" >
 
         <div class="topmenucontainer" >
     
@@ -781,10 +884,12 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
     </div><!-- /content -->
 </div>
 
-</div>
 
 
 
+
+<div class="backgroundmask loaderScreen" ></div>
+<img  class="loaderScreen loaderScreen2" style="position:absolute;bottom:43%; left:50%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
 
 
 
@@ -815,9 +920,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
  
 
 	function show_focus(){
-		
 		$('#searcharea').focus();
-	
 	}
 	
 
@@ -849,11 +952,24 @@ $('#searcharea').on('blur',function(){
    
 //global declarations
 
+		function showModal(){
+  $("body").append('<div class="modalWindow"/>');
 
-$(document).keypress(function(e) {
+  setTimeout('hideModal()', 2000);
+}
+
+function hideModal(){
+ $(".modalWindow").remove();
+   	$('.loaderScreen').show();
+
+}
+	
+
+
+$('#searcharea').keypress(function(e) {
     if(e.which == 13) {
 		
-		
+		cordova.plugins.Keyboard.close;
 		
 	//	console.log(ajax_path + ' asdasd');
 		//window.plugins.spinnerDialog.show();
@@ -864,8 +980,16 @@ $(document).keypress(function(e) {
 		
 		search_pageCount = 0;
 		
-		$('#loaderScreen').show();
 		
+		
+	$('#searcharea').hide();
+	$('.search_empty').hide();
+	$('#searcharea').blur();
+	$('.search_empty').blur();
+
+		
+		$('.loaderScreen').show();
+
 		
 		
 		$.ajax({
@@ -898,10 +1022,6 @@ $(document).keypress(function(e) {
 				{
 					feed_conducted=1;
 				$('#searchvalue').html($('#searcharea').val());
-				$('#searcharea').hide();
-				 $('.search_empty').hide();
-				$('#searcharea').blur();
-				$('.search_empty').blur();
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -967,7 +1087,7 @@ $(document).keypress(function(e) {
 										
 										
 					search_pageCount = search_pageCount + 1;					
-								$('#loaderScreen').hide();		
+								$('.loaderScreen').hide();		
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -977,7 +1097,7 @@ $(document).keypress(function(e) {
 					//window.plugins.spinnerDialog.hide();
 					
 					
-					$('#loaderScreen').hide();
+					$('.loaderScreen').hide();
 			navigator.notification.alert("We couldn't find any articles on your topic.", alertCallback, "Ebbu", "OK");
 			
 
@@ -997,7 +1117,7 @@ $(document).keypress(function(e) {
 			//window.plugins.spinnerDialog.hide();
 			
 			
-			$('#loaderScreen').hide();
+			$('.loaderScreen').hide();
 			
 			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
 			
@@ -1046,9 +1166,9 @@ function load_trending()
 		
  pageCount = 0;
 
+$('.backgroundmask').show();
 
-
-	$('#loaderScreen').show();
+	$('.loaderScreen').show();
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
@@ -1148,7 +1268,7 @@ function load_trending()
 						//window.plugins.spinnerDialog.hide();
 						pageCount = pageCount +1;
 						
-						$('#loaderScreen').hide();
+						$('.loaderScreen').hide();
 						
 						
 				}//user data match if
@@ -1156,7 +1276,7 @@ function load_trending()
 					//window.plugins.spinnerDialog.hide();
 					// user data doent match
 					
-					$('#loaderScreen').hide();
+					$('.loaderScreen').hide();
 					
 			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
 					
@@ -1165,7 +1285,7 @@ function load_trending()
 			
 				},
 		error: function(e) {
-			$('#loaderScreen').hide();
+			$('.loaderScreen').hide();
 			
       //window.plugins.spinnerDialog.hide();
 	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
@@ -1240,11 +1360,11 @@ $(window).resize();
 	
 //alert('sasdasds');
 	    
-//	$('#loaderScreen').show();
+//	$('.loaderScreen').show();
 	    setTimeout(function() {
 			
 //		startswiperfunction();
-//	$('#loaderScreen').hide();
+//	$('.loaderScreen').hide();
         navigator.splashscreen.hide();
 		
 	//	//window.plugins.spinnerDialog.show();
@@ -1365,11 +1485,11 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		if(length >0)
 		{
-		//	$( "body" ).pagecontainer( "change", '#5spage1'  ,  { transition:'pop'  });
+		//	$( "body" ).pagecontainer( "change", '#6ppage1'  ,  { transition:'pop'  });
 
 //		alert('ssss');
 
-			$.mobile.changePage('#5spage1' , { transition:'slide'  });
+			$.mobile.changePage('#6ppage1' , { transition:'flip'  });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1445,9 +1565,9 @@ db.transaction(populateDB, errorCB, successCB);
 						
 		}else{
 	//		alert('1');
-	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
+	//$( "body" ).pagecontainer( "change", '#6ppage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#5spage' , { transition:'slide' });
+	 	$.mobile.changePage('#6ppage' , { transition:'flip' });
 		
 		   start_timer();
 		   update_timer();
@@ -1582,11 +1702,11 @@ db.transaction(populateDB, errorCB, successCB);
 			load_trending();
 			browser_setting();
 			
-		window.plugins.spinnerDialog.show();
+	//	window.plugins.spinnerDialog.show();
 			
-			$.mobile.changePage('#5spage1' , { transition:'slide' }  );
+			$.mobile.changePage('#6ppage1' , { transition:'flip' }  );
 			
-		window.plugins.spinnerDialog.hide();
+	//	window.plugins.spinnerDialog.hide();
 			
 		}
 		
@@ -1691,6 +1811,9 @@ function bringdown()
 {
 	
 	
+
+	
+	
 $('#textinput').css('position','relative');
 $('#textinput').animate({'bottom':'58%'},100,'linear');
 
@@ -1704,7 +1827,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'100%'},100,'linear');
+  $('#textinput').animate({'bottom':'90%'},100,'linear');
  
   
 // See if keyboard is open or not
@@ -2028,7 +2151,7 @@ function get_more_data()
   "use strict";
   var pullDownGeneratedCount = 0,
       pullUpGeneratedCount = 0,
-      listSelector = "div.5spage1 ul.ui-listview",
+      listSelector = "div.6ppage1 ul.ui-listview",
       lastItemSelector = listSelector + " > li:last-child";
     
   /* For this example, I prepend three rows to the list with the pull-down, and append
@@ -2092,7 +2215,7 @@ function get_more_data()
     }    
   
   // Set-up jQuery event callbacks
-  $(document).delegate("#5spage1", "pageinit", 
+  $(document).delegate("#6ppage1", "pageinit", 
     function bindPullPagePullCallbacks(event) {
       $(".iscroll-wrapper", this).bind( {
       iscroll_onpulldown : onPullDown,

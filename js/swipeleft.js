@@ -201,7 +201,7 @@ function onfacebookconfirm(button1){
 		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 		
 		
-		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
+		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+Global_share_titleee, null /* img */,Global_share_linkkk);
 		
 	}
 	
@@ -220,7 +220,7 @@ function ontwitterconfirm(button2)
 		var socialName = 'twitter';
 		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 		
-		window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);	
+		window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+Global_share_titleee, null /* img */,Global_share_linkkk);	
 		
 	}
 	
