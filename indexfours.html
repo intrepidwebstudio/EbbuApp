@@ -616,7 +616,7 @@ input{
        
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         
-        	<a href="#4ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="flip"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+        	<a href="#4ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slidefade"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
         
         
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
@@ -677,8 +677,8 @@ input{
         		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
          </div>
        
-        <center> <div style=" font-size:21px; color:#FFF !important; padding-bottom:5% !important;
-		 text-align:center  !important; width:70% !important ;  " class="Conv_MuseoSans_500"  >Feed <strong><span class="Conv_MuseoSans-700Italic" style="font-size:21px;">your curiosity.</span></strong></div></center>
+        <center> <div style="color:#FFF !important; padding-bottom:5% !important;
+		 text-align:center  !important; width:70% !important ;  "   ><strong><span class="Conv_MuseoSans_700" style="font-size:20px;" >Feed</span></strong> <strong><span class="Conv_MuseoSans-700Italic" style="font-size:20px;">your curiosity.</span></strong></div></center>
         
         <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
@@ -714,7 +714,7 @@ input{
 </div>
   
 
-<div data-role="page" id="4ssettings" data-transition="flip" >
+<div data-role="page" id="4ssettings" data-transition="slidefade" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.png"  class="iphone4s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
@@ -741,14 +741,14 @@ input{
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
-                <li id="twitterautho" ><a class="settingsmenu" data-transition="flip"  >
+                <li id="twitterautho" ><a class="settingsmenu" data-transition="slidefade"  >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Twitter  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebooicons" id="twitterlogout" ></p>
                         
                 </a> </li>
-                <li id="facebookautho"  ><a class="settingsmenu" data-transition="flip"   >
+                <li id="facebookautho"  ><a class="settingsmenu" data-transition="slidefade"   >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebooicons" id="facebooklogged" style="display:none;" >
@@ -756,13 +756,13 @@ input{
                         
                 </a> </li>
                
-                <li><a class="settingsmenu" data-transition="flip" href="#4stermsofservice" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="slidefade" href="#4stermsofservice" data-prefetch="true" >
                 		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebooicons" ></p>
                         
                 </a> </li>
-                <li><a class="settingsmenu" data-transition="flip" href="#4sprivacy" data-prefetch="true" >
+                <li><a class="settingsmenu" data-transition="slidefade" href="#4sprivacy" data-prefetch="true" >
                 		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebooicons" ></p>
@@ -966,7 +966,7 @@ function hideModal(){
 $('#searcharea').keypress(function(e) {
     if(e.which == 13) {
 		
-		cordova.plugins.Keyboard.close;
+	//	cordova.plugins.Keyboard.close;
 		
 	//	console.log(ajax_path + ' asdasd');
 		//window.plugins.spinnerDialog.show();
@@ -1486,7 +1486,7 @@ db.transaction(populateDB, errorCB, successCB);
 
 //		alert('ssss');
 
-			$.mobile.changePage('#4spage1' , { transition:'flip'  });
+			$.mobile.changePage('#4spage1' , { transition:'slidefade'  });
 		
 				for(var i=0; i< length ; i++)
 				{
@@ -1564,7 +1564,7 @@ db.transaction(populateDB, errorCB, successCB);
 	//		alert('1');
 	//$( "body" ).pagecontainer( "change", '#4spage'  ,  { transition:'pop'  });
 			
-	 	$.mobile.changePage('#4spage' , { transition:'flip' });
+	 	$.mobile.changePage('#4spage' , { transition:'slidefade' });
 		
 		   start_timer();
 		   update_timer();
@@ -1701,7 +1701,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	//	window.plugins.spinnerDialog.show();
 			
-			$.mobile.changePage('#4spage1' , { transition:'flip' }  );
+			$.mobile.changePage('#4spage1' , { transition:'slidefade' }  );
 			
 	//	window.plugins.spinnerDialog.hide();
 			
@@ -1824,7 +1824,7 @@ function bringup()
 
 
   $('#textinput').css('position','relative');
-  $('#textinput').animate({'bottom':'90%'},100,'linear');
+  $('#textinput').animate({'bottom':'95%'},100,'linear');
  
   
 // See if keyboard is open or not
