@@ -102,5 +102,9 @@ function browser_setting()
                          });
 	}
 	
+	
+	
+function hideLoaderScreen(){	
 
-
+setTimeout( function (){ $('.loaderScreen').hide(); },500);		
+}

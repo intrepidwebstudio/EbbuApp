@@ -573,7 +573,7 @@ input{
 	top:0;
 	left:0;
 	background-color:#000 !important;
-	opacity:.15;
+	opacity:.50;
 	z-index:15000 !important;	
 	display:none;
 		}
@@ -677,9 +677,9 @@ input{
         		<center><img  src="img/eboo-logo.png" width="32%"  ></center>
          </div>
        
-        <center> <div style="color:#FFF !important; padding-bottom:5% !important;
-		 text-align:center  !important; width:70% !important ;  "   ><strong><span class="Conv_MuseoSans_700" style="font-size:20px;" >Feed</span></strong> <strong><span class="Conv_MuseoSans-700Italic" style="font-size:20px;">your curiosity.</span></strong></div></center>
-        
+<center> <div style="color:#FFF !important; padding-bottom:4% !important;
+		  width:70% !important ;  "    ><span class="Conv_MuseoSans_700" style="font-size:22px;" >Feed </span> <span  class="Conv_MuseoSans-900Italic" style="font-size:22px;" > your curiosity.</span></div></center>
+                
         <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
 
@@ -1084,7 +1084,7 @@ $('#searcharea').keypress(function(e) {
 										
 										
 					search_pageCount = search_pageCount + 1;					
-								$('.loaderScreen').hide();		
+								hideLoaderScreen();		
 												
 							//window.plugins.spinnerDialog.hide();					
 				}//user data match if
@@ -1094,8 +1094,8 @@ $('#searcharea').keypress(function(e) {
 					//window.plugins.spinnerDialog.hide();
 					
 					
-					$('.loaderScreen').hide();
-			navigator.notification.alert("We couldn't find any articles on your topic.", alertCallback, "Ebbu", "OK");
+					hideLoaderScreen();
+			navigator.notification.alert("No articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
 			
 
 										
@@ -1114,7 +1114,7 @@ $('#searcharea').keypress(function(e) {
 			//window.plugins.spinnerDialog.hide();
 			
 			
-			$('.loaderScreen').hide();
+			hideLoaderScreen();
 			
 			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
 			
@@ -1254,7 +1254,7 @@ $('.backgroundmask').show();
 							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
-							console.log(append_data);
+						//	console.log(append_data);
 											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 										//	$('#list_view').refresh();
@@ -1265,7 +1265,7 @@ $('.backgroundmask').show();
 						//window.plugins.spinnerDialog.hide();
 						pageCount = pageCount +1;
 						
-						$('.loaderScreen').hide();
+						hideLoaderScreen();
 						
 						
 				}//user data match if
@@ -1273,7 +1273,7 @@ $('.backgroundmask').show();
 					//window.plugins.spinnerDialog.hide();
 					// user data doent match
 					
-					$('.loaderScreen').hide();
+					hideLoaderScreen();
 					
 			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
 					
@@ -1282,7 +1282,7 @@ $('.backgroundmask').show();
 			
 				},
 		error: function(e) {
-			$('.loaderScreen').hide();
+			hideLoaderScreen();
 			
       //window.plugins.spinnerDialog.hide();
 	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
@@ -1361,7 +1361,7 @@ $(window).resize();
 	    setTimeout(function() {
 			
 //		startswiperfunction();
-//	$('.loaderScreen').hide();
+//	hideLoaderScreen();
         navigator.splashscreen.hide();
 		
 	//	//window.plugins.spinnerDialog.show();

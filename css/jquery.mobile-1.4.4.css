@@ -941,7 +941,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 	background-color: 			#f9f9f9 /*{a-page-background-color}*/;
 	border-color:	 		#bbb /*{a-page-border}*/;
 	color: 					#333 /*{a-page-color}*/;
-	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ 	#f3f3f3 /*{a-page-shadow-color}*/;
+
 }
 /* Body: Read-only lists, text inputs, collapsible content */
 .ui-body-a,
@@ -953,7 +953,7 @@ html .ui-panel-page-container-a {
 	
 	border-color:	 		#ddd /*{a-body-border}*/;
 	color: 					#333 /*{a-body-color}*/;
-	text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ 	#f3f3f3 /*{a-body-shadow-color}*/;
+
 }
 .ui-body-a {
 	border-width: 1px;
@@ -1707,19 +1707,19 @@ button.ui-btn-icon-notext,
 }
 .in {
 	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 200ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 200ms;
 	animation-timing-function: ease-out;
-	animation-duration: 350ms;
+	animation-duration: 200ms;
 }
 .out {
 	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 155ms;
 	-moz-animation-timing-function: ease-in;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 155ms;
 	animation-timing-function: ease-in;
-	animation-duration: 225ms;
+	animation-duration: 155ms;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
@@ -1756,11 +1756,11 @@ button.ui-btn-icon-notext,
 }
 .fade.in {
 	opacity: 1;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 125ms;
 	-webkit-animation-name: fadein;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 125ms;
 	-moz-animation-name: fadein;
-	animation-duration: 225ms;
+	animation-duration: 125ms;
 	animation-name: fadein;
 }
 .pop {
@@ -1955,13 +1955,13 @@ button.ui-btn-icon-notext,
 .slidefade.out {
 	-webkit-transform: translateX(-100%);
 	-webkit-animation-name: slideouttoleft;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 200ms;
 	-moz-transform: translateX(-100%);
 	-moz-animation-name: slideouttoleft;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 200ms;
 	transform: translateX(-100%);
 	animation-name: slideouttoleft;
-	animation-duration: 225ms;
+	animation-duration: 200ms;
 }
 .slidefade.in {
 	-webkit-transform: translateX(0);
