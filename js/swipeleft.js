@@ -41,7 +41,6 @@ function hex(x) {
 
 
 
-
    
     var x;
 	
@@ -51,24 +50,45 @@ function hex(x) {
 	
     $('.swipe-delete li > a')
         .on('touchstart', function(e) {
+			
+					
+					if($(this).hasClass('leftitem'))
+					{
+						
+						
+						
+						
+						}
+					else{	
+					
 			$( ".swipe-delete li > a" ).each(function( index ) {
-		var rect = this.getBoundingClientRect();
-// console.log(rect.top, rect.right, rect.bottom, rect.left);
-			if(rect.left !=0 )
-			{
-			$(this).animate({'left':'0px'},200,'linear',function(){  
-							 new_rect = this.getBoundingClientRect();
-					}) // close em all
-			}
+					var rect = this.getBoundingClientRect();
+								if(rect.left !=0 )
+								{
+								$(this).animate({'left':'0px'},200,'linear',function(){  
+												
+												 new_rect = this.getBoundingClientRect();
+												 
+												 $(this).removeClass('leftitem');
+												 
+										}) // close em all
+								}
 	
 });
-	        x = e.originalEvent.pageX // anchor point
+			}
+			
+		    x = e.originalEvent.pageX // anchor point
+			
+		//	console.log(x);
 		})
         .on('touchmove',  function(e) {
+											if( $(this).hasClass('leftitem') == false )	
+											{
+			
 												var change = e.originalEvent.pageX - x;
 												//console.log(change);
 												change = Math.min(Math.max(-300, change), 0 ) // restrict to -100px left, 0px right
-												//console.log("change = "+change);
+											//	console.log("change = "+change);
 												if(change < -50)
 												{
 											//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
@@ -78,32 +98,72 @@ function hex(x) {
 											//	e.currentTarget.style.left = 0 + 'px';
 											//	enable_scroll();	
 													}
+											}else{
+												
+										//	console.log( $(this).hasClass('leftitem') );
+												
+												var change1 = e.originalEvent.pageX - x;
+																																		
+												//console.log(change);
+												change1 = Math.min(Math.max(-300, change1), Math.max(300, change1) )
+											//	change = Math.min( Math.max(-100, change),Math.max(-100,change)) // restrict to -100px left, 0px right
+										//		console.log("change leftiem = "+change1);
+										//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
+												disable_scroll(); // disable scroll once we hit 10px horizontal slide
+												change1 = -231 + change1;
+										//		console.log("negative value = "+change1);
+												
+												e.currentTarget.style.left =  change1 + 'px';
+												
+												
+												}
 		})
         .on('touchend', function(e) {
+		 //	alert($(this).hasClass('listitem') );
+			
+		//	console.log($(this).hasClass('leftitem'));
+			
+		if( $(this).hasClass('leftitem') == true )
+		{	
+	//	alert('aaa');
+			var left = "0";
+	        left = parseInt(e.currentTarget.style.left)
+ 			//	console.log(" LEFTTTT  =" + left );
+			if(left < -150)
+			{
+	     	var new_left = -231 + 'px';
+			e.currentTarget.style.left = new_left;	
+	   	    }
+			else{
+				
+			$(this).removeClass('leftitem');
+		    var new_left = '0px';
+			e.currentTarget.style.left = new_left;		
+			}			
+            enable_scroll()
+	//	console.log( "Final value ="+ $(this).hasClass('leftitem') );
+		
+		}else{
+			
 			var left = "0";
 	         left = parseInt(e.currentTarget.style.left)
 		//	console.log(" LEFTTTT  =" + left );
 			if(left < -90)
 			{
-		 var new_left = -231 + 'px';
+	     	var new_left = -231 + 'px';
 			e.currentTarget.style.left = new_left;	
-			
+			$(this).addClass('leftitem');
 			var click_id = $(this).attr('data-value3');
-			
-		e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
-		
-		console.log(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
-		
-		$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
-		
-		
-				}
+			e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
+	   	    }
 			else{
-		 var new_left = '0px';
+		    var new_left = '0px';
 			e.currentTarget.style.left = new_left;		
-		
-				}			
+			}			
             enable_scroll()
+			
+		}
 		//	console.log('new keft  ='+ new_left);
 		//e.currentTarget.addClass('tocuhedd');
 	    });
@@ -163,10 +223,7 @@ function hex(x) {
         );
 					
 		
-		
-		
-					
-					}
+	}
 				
 				
 				
