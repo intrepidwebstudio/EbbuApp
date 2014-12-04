@@ -232,7 +232,7 @@ function hex(x) {
 			{
 window.plugins.socialsharing.shareViaEmail(
   'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p>'+title_aaa +'<br>'+title_linkkk+'</p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
-  'Check out this article',
+  'Check this out...',
 null, // TO: must be null or an array
   null, // CC: must be null or an array
   null, // BCC: must be null or an array
