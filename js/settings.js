@@ -8,7 +8,7 @@
    var imagepath = 'http://www.safelearners.com/eboo/';
    var ajax_path = 'http://www.safelearners.com/eboo/app/';
    
-   var security_token =543219588865478555;
+   var security_token=543219588865478555;
    
    
    var SearchQueryId;
@@ -80,7 +80,7 @@ var	eboo_facebook;
 		  iabRef = window.open(url, '_blank', 'toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
 		  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
-	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
+	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+security_token);
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
             iabRef.addEventListener('loadstart', iabLoadStart);

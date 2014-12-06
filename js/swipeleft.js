@@ -155,7 +155,7 @@ function hex(x) {
 			$(this).addClass('leftitem');
 			var click_id = $(this).attr('data-value3');
 			e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
-			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token = '+ security_token);
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+ security_token);
 	   	    }
 			else{
 		    var new_left = '0px';
