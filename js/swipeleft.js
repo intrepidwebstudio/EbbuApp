@@ -150,7 +150,13 @@ function hex(x) {
 			if(left < -90)
 			{
 	     	var new_left = -231 + 'px';
+			
+			if(new_left >= 0)
+			{
+				}
+			else{	
 			e.currentTarget.style.left = new_left;	
+			}
 			$(this).addClass('leftitem');
 			var click_id = $(this).attr('data-value3');
 			e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
@@ -404,11 +410,67 @@ $(this).children('.backimg').css("opacity","1");
 	  
 	  
 	  
-	  
+	  function selectSuccess(tx,result)
+	  {
+		  
+	
+		 console.log(result.rows.item);
+	   
+	   var length = result.rows.length;
+	  	console.log("DEMO table: " + length + " rows found.");	
+		
+		
+		
+		if(length >0)
+		{
+
+
+			
+		
+				for(var i=0; i< length ; i++)
+				{
+					EbooUSER_ID = result.rows.item(i).user_id;
+					eboo_twitter= result.rows.item(i).twitter;
+					
+					console.log(EbooUSER_ID);
+					eboo_facebook= result.rows.item(i).facebook;
+			//		
+					
+				
+					}
+					
+					
+					if( eboo_twitter == '0' )
+					{
+						$('#twitterlogout').css('display','block');
+						$('#twitterlogged').css('display','none');
+						}else{
+						$('#twitterlogout').css('display','none');
+						$('#twitterlogged').css('display','block');	
+							}
+					if( eboo_facebook == '0' )
+					{
+						$('#facebooklogout').css('display','block');
+						$('#facebooklogged').css('display','none');
+						}else{
+						$('#facebooklogout').css('display','none');
+						$('#facebooklogged').css('display','block');	
+							}
+						
+		      }
+		  
+		  }
 	  
 	  
 	function settings_page()
 	{		
+	
+		
+		 db.transaction(function(tx){ executeSql('SELECT * FROM ebooUser ',[],selectSuccess,errorCB); });
+		
+		
+	
+	
 			 $('#twitterautho').on('touchstart', function() {	
 				  }).on('touchmove',function(){
 					  })
