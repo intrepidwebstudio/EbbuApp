@@ -26,7 +26,7 @@ document.onreadystatechange = function(e)
     if (document.readyState === 'complete')
     {
 	      // navigator.splashscreen.show();
-	//	  //window.plugins.spinnerDialog.show();
+	//	  
 		  
 	        document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -636,7 +636,7 @@ input{
         </div>
                     
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular Articles</p>
+        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular</p>
     </div>
       
  
@@ -912,7 +912,7 @@ Therefore, we strongly advise you to read the entire terms and conditions and pr
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-<!-- <script type="text/javascript" src="js/touchevents.js"></script> --->
+
 
 
 
@@ -977,7 +977,7 @@ $('#searcharea').keypress(function(e) {
 	//	cordova.plugins.Keyboard.close;
 		
 	//	console.log(ajax_path + ' asdasd');
-		//window.plugins.spinnerDialog.show();
+		
 	   if( $('#searcharea').val()!='')
 	   {
 	   //start  my loader here !!!!
@@ -1006,11 +1006,11 @@ $('#searcharea').keypress(function(e) {
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                       
                     },
 			success: function(data)
 			{
@@ -1094,12 +1094,12 @@ $('#searcharea').keypress(function(e) {
 					search_pageCount = search_pageCount + 1;					
 								hideLoaderScreen();		
 												
-							//window.plugins.spinnerDialog.hide();					
+												
 				}//user data match if
 				else{
 					
 					// user data doent match
-					//window.plugins.spinnerDialog.hide();
+					
 					
 					
 					hideLoaderScreen();
@@ -1119,7 +1119,7 @@ $('#searcharea').keypress(function(e) {
 			
 				},
 		error: function(e) {
-			//window.plugins.spinnerDialog.hide();
+			
 			
 			
 			hideLoaderScreen();
@@ -1147,7 +1147,7 @@ $('#searcharea').keypress(function(e) {
 		
 		
 		}
-	//window.plugins.spinnerDialog.hide();	
+		
 		
     }
 });
@@ -1177,7 +1177,7 @@ $('.backgroundmask').show();
 	
 	//alert(EbooUSER_ID + 'pronnn');
 	
-//window.plugins.spinnerDialog.show();
+
 	$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbooUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token='+security_token,
 			type:'POST',
@@ -1187,11 +1187,11 @@ $('.backgroundmask').show();
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                       
                     },
 			success: function(data)
 			{
@@ -1204,7 +1204,7 @@ $('.backgroundmask').show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Most Popular Articles');
+				$('#searchvalue').html('Most Popular');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1270,7 +1270,7 @@ $('.backgroundmask').show();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-						//window.plugins.spinnerDialog.hide();
+						
 						pageCount = pageCount +1;
 						
 						hideLoaderScreen();
@@ -1278,7 +1278,7 @@ $('.backgroundmask').show();
 						
 				}//user data match if
 				else{
-					//window.plugins.spinnerDialog.hide();
+					
 					// user data doent match
 					
 					hideLoaderScreen();
@@ -1292,7 +1292,7 @@ $('.backgroundmask').show();
 		error: function(e) {
 			hideLoaderScreen();
 			
-      //window.plugins.spinnerDialog.hide();
+      
 	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
 		
 			
@@ -1308,24 +1308,7 @@ $('.backgroundmask').show();
 	});
 	
 	
-}
-
-
-	
-	/*
-$(document).on('pagebeforeshow', '#index', function(){ 
-  for(i = 0; i < 30; i++) {
-       $(".example-wrapper div .iscroll-content").append('<a data-role="button">Button ' + i + '</a>');
-  }
-    $('[data-role="content"]').trigger('create');
-    $(".example-wrapper").iscrollview("refresh");
-});
-
-*/
-
-
-
-function startswiperfunction(){
+}function startswiperfunction(){
 	var mySwiper = $('.swiper-container').swiper({
     //Your options here:
     mode:'horizontal',
@@ -1350,29 +1333,11 @@ $(window).resize(function(){
 })
 $(window).resize(); 
 	}
-
-
-//alert('screen heigssssssht = '+window.screen.height + 'screen wsssssidth  = '+ window.screen.width);
-//add listener when device ready
-
-  // device APIs are available
-    //
-  
-
-
-
-   //  document.addEventListener("onDeviceReady", onDeviceReady, false);
-	
-//alert('sasdasds');
-	    
-//	$('.loaderScreen').show();
-	    setTimeout(function() {
+	setTimeout(function() {
 			
-//		startswiperfunction();
-//	hideLoaderScreen();
-        navigator.splashscreen.hide();
+navigator.splashscreen.hide();
 		
-	//	//window.plugins.spinnerDialog.show();
+	//	
 		
    			 }, 3000);
 	
@@ -1386,23 +1351,8 @@ $(window).resize();
 		
 		
 		
-	//	$.mobile.page.prototype.options.domCache = false;
-		
-//	alert('called');
-		
-		 
-  //  var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
-
-
-	//alert(deviceType + navigator.userAgent);
 	
-	//	alert('screen height = '+window.screen.height + 'screen width  = '+ window.screen.width);
 		
-		
-//	alert(' width  = '+ window.screen.width +' height  = '+ window.screen.height );
-
-	
-
 db.transaction(populateDB, errorCB, successCB);
 
 
@@ -1456,13 +1406,13 @@ db.transaction(populateDB, errorCB, successCB);
  
     //create table and insert some record
     function populateDB(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, tumblr INTEGER , facebook INTEGER , linkedin INTEGER )');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ebooUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, facebook INTEGER )');
 		
     }
  
     //function will be called when an error occurred
     function errorCB(err) {
-//      alert("Error processing SQL: "+err.message+' anoyin ?');
+
 		
 		
     }
@@ -1490,9 +1440,9 @@ db.transaction(populateDB, errorCB, successCB);
 		
 		if(length >0)
 		{
-		//	$( "body" ).pagecontainer( "change", '#4spage1'  ,  { transition:'pop'  });
+		
 
-//		alert('ssss');
+
 
 			$.mobile.changePage('#4spage1' , { transition:'slidefade'  });
 		
@@ -1500,12 +1450,12 @@ db.transaction(populateDB, errorCB, successCB);
 				{
 					EbooUSER_ID = result.rows.item(i).user_id;
 					eboo_twitter= result.rows.item(i).twitter;
-					eboo_tumblr= result.rows.item(i).tumblr;
-					eboo_linkedin= result.rows.item(i).linkedin;
+					
+					
 					eboo_facebook= result.rows.item(i).facebook;
-			//		console.log(result.rows.item(i).id  + " ----  " + result.rows.item(i).email + "Twitter = "+ eboo_twitter + "Tumblr = "+eboo_tumblr +"linked_in =  "+ eboo_linkedin + "facebook = "+ eboo_facebook );
-					//	alert(EbooUSER_ID);
-				//	console.log(EbooUSER_ID);
+			
+					
+				
 					}
 					
 					
@@ -1517,16 +1467,7 @@ db.transaction(populateDB, errorCB, successCB);
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');	
 							}
-					if( eboo_tumblr == '0' )
-					{
-						$('#tumblrlogout').css('display','block');
-						$('#tumblrlogged').css('display','none');
-						
-						}else{
-							
-						$('#tumblrlogout').css('display','none');
-						$('#tumblrlogged').css('display','block');	
-						}
+					
 					if( eboo_facebook == '0' )
 					{
 						$('#facebooklogout').css('display','block');
@@ -1538,18 +1479,7 @@ db.transaction(populateDB, errorCB, successCB);
 					
 	
 	
-					if( eboo_linkedin == '0' )
-					{
-						$('#linkedinlogout').css('display','block');
-						$('#linkedinlogged').css('display','none');
-						
-						}else{
-							
-						$('#linkedinlogout').css('display','none');
-						$('#linkedinlogged').css('display','block');	
-							
-							}
-				
+					
 	
 					
 					
@@ -1566,7 +1496,7 @@ db.transaction(populateDB, errorCB, successCB);
 		//	alert('1');
 //swipe_list_items();
 		
-		//window.plugins.spinnerDialog.hide();
+		
 						
 		}else{
 	//		alert('1');
@@ -1579,7 +1509,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 	       startswiperfunction();
 				
-				//window.plugins.spinnerDialog.hide();
+				
 			
 		}
   
@@ -1589,7 +1519,7 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function ErrorCallBack(err){
 		
-	//	alert('Error'+err.code+'----'+err.message);
+	
 		
 		}
 	
@@ -1599,7 +1529,7 @@ db.transaction(populateDB, errorCB, successCB);
 	
 	function validate_email()
 	{ 
-	//window.plugins.spinnerDialog.show();
+	
 	
 	$("#loaderScreen1").show();
 	
@@ -1607,16 +1537,16 @@ db.transaction(populateDB, errorCB, successCB);
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
-		//window.plugins.spinnerDialog.hide();
+		
 		
 	$("#loaderScreen1").hide();	
 		
-	navigator.notification.alert("Enter a Valid E-mail Address", alertCallback, "Error !!", "OK");
+	navigator.notification.alert("Please enter a valid email address to proceed.", alertCallback, "Error !!", "OK");
 	//	alert('enter a vaild email');
 	
 		}
 	else{
-	//	db.transaction( function(tx){ insertvalues(tx, useremail)}, ErrorCallBack );
+	
 		$.ajax({
 			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token='+security_token,
 			type:'POST',
@@ -1628,29 +1558,29 @@ db.transaction(populateDB, errorCB, successCB);
 							{
 							var	login_Response = data.LoginResponse;
 					eboo_twitter= '0';
-					eboo_tumblr= '0';
-					eboo_linkedin= '0';
+					
+					
 					eboo_facebook= '0';
 							
 							
 							
 								if(login_Response.status=='100')
 								{
-								//	alert(login_Response.message);
-							//		alert(login_Response.user_id)
-									//window.plugins.spinnerDialog.hide();
+								
+							
+									
 									$("#loaderScreen1").hide();
 									
-							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
+							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter,eboo_facebook)}, ErrorCallBack );	
 								}else if(login_Response.status=='101'){
 									//	alert('User Already Exists' );
-									//window.plugins.spinnerDialog.hide();
+									
 									$("#loaderScreen1").hide();
 									
-									db.transaction( function(tx){ insertvalues(tx, useremail , login_Response.user_id, eboo_twitter, eboo_tumblr, eboo_facebook, eboo_linkedin)}, ErrorCallBack );	
+									db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, eboo_twitter,eboo_facebook)}, ErrorCallBack );	
 									}
 								else{
-									//window.plugins.spinnerDialog.hide();
+									
 									
 									$("#loaderScreen1").hide();
 											navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
@@ -1661,11 +1591,11 @@ db.transaction(populateDB, errorCB, successCB);
 								},
 			error: function(e)
 				{
-					//window.plugins.spinnerDialog.hide();
+					
 					
 				$("#loaderScreen1").hide();	
 					
-				navigator.notification.alert("Network Error !!", alertCallback, "Ebbu", "Done");
+				navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
 					
 					}
 			
@@ -1677,19 +1607,19 @@ db.transaction(populateDB, errorCB, successCB);
 		}	
     }
 		
-		function insertvalues(tx,parameter1,parameter2,p3,p4,p5,p6)
+		function insertvalues(tx,parameter1,parameter2,p3,p6)
 		{
 			
-		//	alert('ss');
+		
 		EbooUSER_ID = parameter2;
 		eboo_twitter= p3;
-			eboo_tumblr= p4;
-			eboo_linkedin= p5;
+			
+			
 			eboo_facebook= p6;
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , tumblr , facebook , linkedin) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p4,p5,p6],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
 			
-//			EbooUSER_ID = parameter2;
+
 			
 			
 			
@@ -1721,52 +1651,6 @@ function IsEmail(email) {
   return regex.test(email);
 }
 	
-	
-/*
-	 $('#twitterauthorize').on('click', function() {
-		 
-		 
-		 				
-		 						$('#twitterlogout').css('display','none');
-								$('#twitterlogged').css('display','block');
-
-		 
-		 });
-	
-	*/
-	
-	
-
-	
-
-				
-		/*		
-			    OAuth.popup('tumblr')
-                        .done(function (r) {
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                            r.get('/1.1/account/verify_credentials.json')
-                                .done(function(data) {
-									
-									console.log("twitter: Hello, " + data.name + " ! ");
-									
-									$('#tumblrlogout').css('display','none');
-									$('#tumblrlogged').css('display','block');
-									
-									
-                                //    $('#result').html("twitter: Hello, " + data.name + " !");
-                                })
-                                .fail(function( jqXHR, textStatus, errorThrown) {
-                                    $('#result').html("req error: " + textStatus);
-                                });
-                        })
-                        .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
-                        });
-                }
-
-
-*/
 	
 	
 	
@@ -1865,14 +1749,14 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                       
                     },
 			success: function(data)
-			{
+			{	
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
@@ -1882,7 +1766,7 @@ function get_more_data()
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Most Popular Articles');
+				$('#searchvalue').html('Most Popular');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1961,7 +1845,7 @@ function get_more_data()
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
-						//window.plugins.spinnerDialog.hide();
+						
 				}//user data match if
 				
 				
@@ -1971,7 +1855,7 @@ function get_more_data()
 			
 				},
 		error: function(e) {
-      //window.plugins.spinnerDialog.hide();
+      
 	  
 	 		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 	
@@ -1997,11 +1881,11 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       //window.plugins.spinnerDialog.show();
+                       
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                     //window.plugins.spinnerDialog.hide();  
+                       
                     },
 			success: function(data)
 			{
@@ -2096,7 +1980,7 @@ function get_more_data()
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 												
-							//window.plugins.spinnerDialog.hide();					
+												
 							
 							
 							search_pageCount = search_pageCount+1;
@@ -2112,7 +1996,7 @@ function get_more_data()
 			
 				},
 		error: function(e) {
-			//window.plugins.spinnerDialog.hide();
+			
      		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
 	
 			

@@ -1,20 +1,24 @@
 // JavaScript Document
   
+//*************************************** settings start here here ***************************************
+ var imagepath = 'http://www.safelearners.com/eboo/';  				 //change to this    http://www.domainname.com/ 
+ var ajax_path = 'http://www.safelearners.com/eboo/app/';			// change to this 	http://www.domainname.com/app
+ var pageCount = 0;
+ var contentCount = 10;
+
+var search_pageCount = 0;
+var search_contentCount = 10;
+//*************************************** settings complete here ***************************************
 
 
 
-	var feedData;
+  var security_token=543219588865478555;
 
-   var imagepath = 'http://www.safelearners.com/eboo/';
-   var ajax_path = 'http://www.safelearners.com/eboo/app/';
-   
-   var security_token=543219588865478555;
-   
-   
    var SearchQueryId;
    
    var EbooUSER_ID;
    
+	var feedData;
    var feed_conducted=0; 
 	
    var user_time = 0;
@@ -26,25 +30,18 @@
 	
 	var Global_share_titleee ='';
 	var Global_share_linkkk ='';
-			
+	var last_search;		
 	
-	var pageCount = 0;
-var contentCount = 10;
 
-var last_search;
-
-
-var search_pageCount = 0;
-var search_contentCount = 10;
 		
 		
 	
-	//*************************************** settings complete here ***************************************
+	
 	
 
 var	eboo_twitter;
-var	eboo_tumblr;
-var	eboo_linkedin;
+
+
 var	eboo_facebook;		
 	
 	        // Global InAppBrowser reference

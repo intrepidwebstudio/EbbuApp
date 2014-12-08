@@ -1,5 +1,4 @@
 
-var linkedin_data;
 
 
 
@@ -374,32 +373,17 @@ $(this).children('.backimg').css("opacity","1");
 				if(socialName == "twitter") 
 				{ 
 				 eboo_twitter = change_value;
-				 console.log("my values = "+eboo_twitter);
+				// console.log("my values = "+eboo_twitter);
 				 var myvalue = change_value;
 				 tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
 				}
-				else if(socialName == "tumblr")
-				{
-	
-				 eboo_tumblr = change_value;
-				 console.log("my values = "+eboo_tumblr);
-				 var myvalue = change_value;
-				 tx.executeSql('UPDATE ebooUser SET tumblr = ? ' ,[myvalue] , successSettings , errorSettings);
-									
-					}
-				else if(socialName == "linkedin")
-				{
-				 eboo_linkedin = change_value;
-				 console.log("my values = "+eboo_linkedin);
-				 var myvalue = change_value;
-				 tx.executeSql('UPDATE ebooUser SET linkedin = ? ' ,[myvalue] , successSettings , errorSettings);
+			
 				
-					}
 				else if(socialName == "facebook")
 				{
 					
 				 eboo_facebook = change_value;
-				 console.log("my values = "+eboo_facebook);
+				// console.log("my values = "+eboo_facebook);
 				 var myvalue = change_value;
 				 tx.executeSql('UPDATE ebooUser SET facebook = ? ' ,[myvalue] , successSettings , errorSettings);
 	
@@ -440,7 +424,7 @@ $(this).children('.backimg').css("opacity","1");
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');
 						 } 
-	//					 console.log("Change Twitter = "+ change_value);
+	
 			var socialName = 'twitter';
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 			 });
@@ -463,34 +447,7 @@ $(this).children('.backimg').css("opacity","1");
 			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 				 });
 
-			 $('#tumblrautho').on('touchstart', function() {	
-				  
-				  
-				  }).on('touchmove',function(){})
-				  .on('touchend',function(){
-							
-							
-	 			if( eboo_tumblr == '1' )
-				  {
-					change_value = '0';
-					$('#tumblrlogout').css('display','block');
-					$('#tumblrlogged').css('display','none');
-					var socialName = 'tumblr';
-					db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-				  }
-			  });	
-		 $('#linkedinautho').on('touchstart', function() {	
-				  }).on('touchmove',function(){})
-				  .on('touchend',function(){
-				if( eboo_linkedin == '1' )
-					  {
-						  change_value = '0';
-						$('#linkedinlogout').css('display','block');
-						$('#linkedinlogged').css('display','none');
-				var socialName = 'linkedin';
-			db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
-						  }
-				 });
+			 
 	}
 
 
@@ -514,7 +471,7 @@ var callback123 = function(buttonIndex) {
 	  
 	  if(buttonIndex == 1)
 	  {
-	//	  alert('ss');
+	
 		//  window.plugins.socialsharing.shareViaFacebook(  article_title, null, null, function(){alert("ok")}, function(e){alert("error: " + e)});
 		  window.plugins.socialsharing.shareViaEmail(global_article_title , null /* img */,global_article_link );
 		  
@@ -556,7 +513,7 @@ var callback123 = function(buttonIndex) {
 	  
     var options = {
        // 'title': 'What do you want with this image?',
-        'buttonLabels': ['Twitter' ,'Facebook', 'LinkedIn','Email','Send to Reading List','Open in Safari'],
+        'buttonLabels': ['Twitter' ,'Facebook', 'Email','Send to Reading List','Open in Safari'],
         'androidEnableCancelButton' : false, // default false
         'winphoneEnableCancelButton' : false, // default false
         'addCancelButtonWithLabel': 'Cancel',
