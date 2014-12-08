@@ -1455,7 +1455,7 @@ db.transaction(populateDB, errorCB, successCB);
 					EbooUSER_ID = result.rows.item(i).user_id;
 					eboo_twitter= result.rows.item(i).twitter;
 					
-					
+					console.log(EbooUSER_ID);
 					eboo_facebook= result.rows.item(i).facebook;
 			//		
 					
@@ -1620,7 +1620,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			eboo_facebook= p6;
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
 			
 
 			

@@ -1619,7 +1619,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			eboo_facebook= p6;
 			
-			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
+			tx.executeSql('INSERT INTO ebooUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
 			
 
 			
