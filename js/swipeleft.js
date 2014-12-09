@@ -104,14 +104,14 @@ function hex(x) {
 												var change1 = e.originalEvent.pageX - x;
 																																		
 												//console.log(change);
-												change1 = Math.min(Math.max(-300, change1), Math.max(300, change1) )
+												change1 = Math.min(Math.max(-231, change1), Math.max(231, change1) )
 											//	change = Math.min( Math.max(-100, change),Math.max(-100,change)) // restrict to -100px left, 0px right
 										//		console.log("change leftiem = "+change1);
 										//	e.currentTarget.style.setProperty( 'background-color', '#DFE3E7', 'important' );	
 												disable_scroll(); // disable scroll once we hit 10px horizontal slide
 												change1 = -231 + change1;
 										//		console.log("negative value = "+change1);
-												
+											
 												e.currentTarget.style.left =  change1 + 'px';
 												
 												
@@ -151,16 +151,14 @@ function hex(x) {
 			{
 	     	var new_left = -231 + 'px';
 			
-			if(new_left >= 0)
-			{
-				}
-			else{	
+			
+			
 			e.currentTarget.style.left = new_left;	
-			}
+			
 			$(this).addClass('leftitem');
 			var click_id = $(this).attr('data-value3');
 			e.currentTarget.style.setProperty('background-color', '#DFE3E7', 'important' );	
-			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+ security_token);
+			$.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbbuUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+ security_token);
 	   	    }
 			else{
 		    var new_left = '0px';
@@ -197,7 +195,7 @@ function hex(x) {
 			
 		if( media_link == "twitter" )
 			{
-				if( eboo_twitter == "1" ){
+				if( ebbu_twitter == "1" ){
 			window.plugins.socialsharing.shareViaTwitter("Found on @EbbuApp:  "+title_aaa, null /* img */,title_linkkk);	
 				}else{
 	
@@ -216,7 +214,7 @@ function hex(x) {
 			else if( media_link == "facebook"  )
 			{
 				
-				if( eboo_facebook == "1" ){
+				if( ebbu_facebook == "1" ){
 			window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
 				}else{
 					
@@ -378,20 +376,20 @@ $(this).children('.backimg').css("opacity","1");
 				 
 				if(socialName == "twitter") 
 				{ 
-				 eboo_twitter = change_value;
-				// console.log("my values = "+eboo_twitter);
+				 ebbu_twitter = change_value;
+				// console.log("my values = "+ebbu_twitter);
 				 var myvalue = change_value;
-				 tx.executeSql('UPDATE ebooUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
+				 tx.executeSql('UPDATE ebbuUser SET twitter = ? ' ,[myvalue] , successSettings , errorSettings);
 				}
 			
 				
 				else if(socialName == "facebook")
 				{
 					
-				 eboo_facebook = change_value;
-				// console.log("my values = "+eboo_facebook);
+				 ebbu_facebook = change_value;
+				// console.log("my values = "+ebbu_facebook);
 				 var myvalue = change_value;
-				 tx.executeSql('UPDATE ebooUser SET facebook = ? ' ,[myvalue] , successSettings , errorSettings);
+				 tx.executeSql('UPDATE ebbuUser SET facebook = ? ' ,[myvalue] , successSettings , errorSettings);
 	
 					
 					}		
@@ -429,18 +427,18 @@ $(this).children('.backimg').css("opacity","1");
 		
 				for(var i=0; i< length ; i++)
 				{
-					EbooUSER_ID = result.rows.item(i).user_id;
-					eboo_twitter= result.rows.item(i).twitter;
+					EbbuUSER_ID = result.rows.item(i).user_id;
+					ebbu_twitter= result.rows.item(i).twitter;
 					
-					console.log(EbooUSER_ID);
-					eboo_facebook= result.rows.item(i).facebook;
+					console.log(EbbuUSER_ID);
+					ebbu_facebook= result.rows.item(i).facebook;
 			//		
 					
 				
 					}
 					
 					
-					if( eboo_twitter == '0' )
+					if( ebbu_twitter == '0' )
 					{
 						$('#twitterlogout').css('display','block');
 						$('#twitterlogged').css('display','none');
@@ -448,7 +446,7 @@ $(this).children('.backimg').css("opacity","1");
 						$('#twitterlogout').css('display','none');
 						$('#twitterlogged').css('display','block');	
 							}
-					if( eboo_facebook == '0' )
+					if( ebbu_facebook == '0' )
 					{
 						$('#facebooklogout').css('display','block');
 						$('#facebooklogged').css('display','none');
@@ -466,7 +464,7 @@ $(this).children('.backimg').css("opacity","1");
 	{		
 	
 		
-		 db.transaction(function(tx){ executeSql('SELECT * FROM ebooUser ',[],selectSuccess,errorCB); });
+		 db.transaction(function(tx){ executeSql('SELECT * FROM ebbuUser ',[],selectSuccess,errorCB); });
 		
 		
 	
@@ -475,7 +473,7 @@ $(this).children('.backimg').css("opacity","1");
 				  }).on('touchmove',function(){
 					  })
 				  .on('touchend',function(){
-					  if( eboo_twitter == '1' )
+					  if( ebbu_twitter == '1' )
 					  {
 						  change_value = '0';
 						$('#twitterlogout').css('display','block');
@@ -493,7 +491,7 @@ $(this).children('.backimg').css("opacity","1");
 		 $('#facebookautho').on('touchstart', function() {	
 				  }).on('touchmove',function(){})
 				  .on('touchend',function(){
-					  if( eboo_facebook == '1' )
+					  if( ebbu_facebook == '1' )
 					  {
 						  change_value = '0';
 						$('#facebooklogout').css('display','block');

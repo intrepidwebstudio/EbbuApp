@@ -1,8 +1,8 @@
 // JavaScript Document
   
-//*************************************** settings start here here ***************************************
- var imagepath = 'http://www.safelearners.com/eboo/';  				 //change to this    http://www.domainname.com/ 
- var ajax_path = 'http://www.safelearners.com/eboo/app/';			// change to this 	http://www.domainname.com/app
+//*************************************** settings start here here *************************************** 
+ var imagepath = 'http://www.safelearners.com/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+ var ajax_path = 'http://www.safelearners.com/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  var pageCount = 0;
  var contentCount = 10;
 
@@ -16,7 +16,7 @@ var search_contentCount = 10;
 
    var SearchQueryId;
    
-   var EbooUSER_ID;
+   var EbbuUSER_ID;
    
 	var feedData;
    var feed_conducted=0; 
@@ -39,10 +39,10 @@ var search_contentCount = 10;
 	
 	
 
-var	eboo_twitter;
+var	ebbu_twitter;
 
 
-var	eboo_facebook;		
+var	ebbu_facebook;		
 	
 	        // Global InAppBrowser reference
         var iabRef = null;
@@ -77,7 +77,7 @@ var	eboo_facebook;
 		  iabRef = window.open(url, '_blank', 'toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
 		  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
-	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbooUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+security_token);
+	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbbuUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+security_token);
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
             iabRef.addEventListener('loadstart', iabLoadStart);
