@@ -77,7 +77,7 @@ var	ebbu_facebook;
 			
 			console.log(url);
 			
-		  iabRef = window.open(url, '_blank', 'toolbarposition=bottom,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
+		  iabRef = window.open(url, '_blank','toolbarposition=bottom,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
 		  var news_source=$(this_id).attr('data-value4');
 		  console.log('data-value4='+news_source);
