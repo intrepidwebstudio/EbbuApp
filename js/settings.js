@@ -1,8 +1,8 @@
 // JavaScript Document
   
 //*************************************** settings start here here *************************************** 
- var imagepath = 'http://www.safelearners.com/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
- var ajax_path = 'http://www.safelearners.com/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
+ var imagepath = 'http://192.168.1.16/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+ var ajax_path = 'http://192.168.1.16/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  var pageCount = 0;
  var contentCount = 10;
 

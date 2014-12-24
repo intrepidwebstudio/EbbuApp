@@ -431,7 +431,7 @@ $(this).children('.backimg').css("opacity","1");
 					EbbuUSER_ID = result.rows.item(i).user_id;
 					ebbu_twitter= result.rows.item(i).twitter;
 					
-					console.log(EbbuUSER_ID);
+					//console.log(EbbuUSER_ID);
 					ebbu_facebook= result.rows.item(i).facebook;
 			//		
 					

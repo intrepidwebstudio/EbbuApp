@@ -637,7 +637,7 @@ input{
         </div>
                     
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Most Popular</p>
+        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Frontpage: Most Popular</p>
     </div>
       
  
@@ -985,7 +985,9 @@ $('#searcharea').keypress(function(e) {
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		
-		search_pageCount = 0;
+					new_skip_rss_count = 0 ;
+					new_skip_tweet_count = 0 ;
+
 		
 		
 		
@@ -1000,7 +1002,7 @@ $('#searcharea').keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token='+security_token, 
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token, 
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1038,7 +1040,7 @@ $('#searcharea').keypress(function(e) {
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
@@ -1067,14 +1069,19 @@ $('#searcharea').keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
 		
 						}
 							);			
@@ -1093,7 +1100,12 @@ $('#searcharea').keypress(function(e) {
 										$.getScript("js/swipeleft.js");
 										
 										
-					search_pageCount = search_pageCount + 1;					
+						var	rss_skip_count = data.rss_skip_limit;
+						var	tweet_skip_count = data.twitter_skip_limit;
+						
+						new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+						new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+					
 								hideLoaderScreen();		
 												
 												
@@ -1171,7 +1183,9 @@ function load_trending()
 	last_search = '';
 	
 		
- pageCount = 0;
+ 					new_skip_rss_count = 0 ;
+					new_skip_tweet_count = 0 ;
+
 
 $('.backgroundmask').show();
 
@@ -1181,7 +1195,7 @@ $('.backgroundmask').show();
 	
 
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token='+security_token,
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1206,7 +1220,7 @@ $('.backgroundmask').show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Most Popular');
+				$('#searchvalue').html('Frontpage: Most Popular');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1216,7 +1230,7 @@ $('.backgroundmask').show();
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 					
 					//pubdate = pubdate.substr(5,11);
@@ -1249,15 +1263,20 @@ $('.backgroundmask').show();
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
 		
 						}
 							);			
@@ -1273,7 +1292,11 @@ $('.backgroundmask').show();
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 						
-						pageCount = pageCount +1;
+							var	rss_skip_count = data.rss_skip_limit;
+							var	tweet_skip_count = data.twitter_skip_limit;
+							
+							new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+							new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
 						
 						hideLoaderScreen();
 						
@@ -1433,10 +1456,10 @@ db.transaction(populateDB, errorCB, successCB);
  
     function querySuccess(tx,result){
        
-	  console.log(result.rows.item);
+	  //console.log(result.rows.item);
 	   
 	   var length = result.rows.length;
-	  	console.log("DEMO table: " + length + " rows found.");	
+	  //	console.log("DEMO table: " + length + " rows found.");	
 		
 		
 		
@@ -1628,7 +1651,7 @@ db.transaction(populateDB, errorCB, successCB);
 			
 			
 			
-		console.log(parameter2)
+		//console.log(parameter2)
 		}
 		
 		
@@ -1741,7 +1764,7 @@ function get_more_data()
 		last_search='';
 		
  		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token='+security_token,
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1766,7 +1789,7 @@ function get_more_data()
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Most Popular');
+				$('#searchvalue').html('Frontpage: Most Popular');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1776,7 +1799,7 @@ function get_more_data()
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 					
 					//pubdate = pubdate.substr(5,11);
@@ -1808,15 +1831,20 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
 		
 						}
 							);			
@@ -1846,11 +1874,18 @@ function get_more_data()
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 						
-				}//user data match if
 				
-				
+					var	rss_skip_count = data.rss_skip_limit;
+					var	tweet_skip_count = data.twitter_skip_limit;
+					
+					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+				}else{
+					hideLoaderScreen();
+			navigator.notification.alert("No more articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
+										
+					}
 
-			pageCount = pageCount+1;
 			
 			
 				},
@@ -1873,7 +1908,7 @@ function get_more_data()
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token='+security_token,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1914,7 +1949,7 @@ function get_more_data()
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
@@ -1943,14 +1978,19 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
 		
 						}
 							);			
@@ -1983,10 +2023,19 @@ function get_more_data()
 												
 							
 							
-							search_pageCount = search_pageCount+1;
+							var	rss_skip_count = data.rss_skip_limit;
+							var	tweet_skip_count = data.twitter_skip_limit;
+							
+							new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+							new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+
 							
 				}//user data match if
-				
+				else{
+					hideLoaderScreen();
+			navigator.notification.alert("No more articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
+										
+					}
 			
 		//	$('#searcharea').val('');
 			
