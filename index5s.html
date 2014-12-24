@@ -589,7 +589,13 @@ input{
 		
 		}
 	
-
+.createtweet
+{
+background-image: url('img/twitter.png');
+background-repeat: no-repeat;
+padding-left: 30px;  /* width of the image plus a little extra padding */
+display: block;  /* may not need this, but I've found I do */
+}
 	
 
 </style>
@@ -645,7 +651,7 @@ input{
 </div><!-- /header -->
     <div class="example-wrapper" data-iscroll >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
-        
+
         </ul>
           <div class="iscroll-pullup">
           <center><span class="iscroll-pull-icon"></span></center>
@@ -985,7 +991,10 @@ $('#searcharea').keypress(function(e) {
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		
-		search_pageCount = 0;
+									
+					new_skip_rss_count = 0 ;
+					new_skip_tweet_count = 0 ;
+
 		
 		
 	$('#searcharea').hide();
@@ -999,7 +1008,7 @@ $('#searcharea').keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token='+security_token, 
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token, 
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1037,7 +1046,7 @@ $('#searcharea').keypress(function(e) {
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
@@ -1051,7 +1060,7 @@ $('#searcharea').keypress(function(e) {
 					
 					source_name = source_name.replace(/'/g, "\\'");
 					
-					article_link = encodeURI(article_link);
+					
 					
 					
 					if(len>55)
@@ -1066,21 +1075,32 @@ $('#searcharea').keypress(function(e) {
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-		
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" >@'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
+					
+					
+					
+					
 						}
 							);			
 							
 							$('#list_view').html('');
 						//colose my loader here !!!!
 							$('#list_view').append(append_data);
+							
+							
+							console.log(append_data);
 									
 										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
@@ -1091,8 +1111,11 @@ $('#searcharea').keypress(function(e) {
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 										
+								var	rss_skip_count = data.rss_skip_limit;
+								var	tweet_skip_count = data.twitter_skip_limit;
 										
-					search_pageCount = search_pageCount + 1;					
+					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
 								
 							 
 							 
@@ -1173,7 +1196,8 @@ function load_trending()
 	last_search = '';
 	
 		
- pageCount = 0;
+					new_skip_rss_count = 0 ;
+					new_skip_tweet_count = 0 ;
 
 $('.backgroundmask').show();
 
@@ -1183,7 +1207,7 @@ $('.backgroundmask').show();
 	
 
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token='+security_token,
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1218,7 +1242,7 @@ $('.backgroundmask').show();
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 					
 					//pubdate = pubdate.substr(5,11);
@@ -1227,7 +1251,6 @@ $('.backgroundmask').show();
 					var len=article_title.length;
 					
 				 var article_title_unescaped = article_title;
-					
 				 var source_name_unescaped = source_name;	
 					
 					
@@ -1236,7 +1259,7 @@ $('.backgroundmask').show();
 					source_name = source_name.replace(/'/g, "\\'");
 					
 					
-						article_link = encodeURI(article_link);
+						
 					
 					if(len>55)
 					{ 
@@ -1251,15 +1274,21 @@ $('.backgroundmask').show();
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" >@'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
+
 		
 						}
 							);			
@@ -1275,7 +1304,12 @@ $('.backgroundmask').show();
 										SocialSharing();
 										$.getScript("js/swipeleft.js");
 						
-						pageCount = pageCount +1;
+					var	rss_skip_count = data.rss_skip_limit;
+					var	tweet_skip_count = data.twitter_skip_limit;
+					
+					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+
 						
 						hideLoaderScreen();
 						
@@ -1742,7 +1776,7 @@ function get_more_data()
 		last_search='';
 		
  		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&page_count='+pageCount+'&limit_count='+contentCount+'&security_token='+security_token,
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1777,7 +1811,7 @@ function get_more_data()
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 					
 					//pubdate = pubdate.substr(5,11);
@@ -1794,7 +1828,7 @@ function get_more_data()
 					source_name = source_name.replace(/'/g, "\\'");
 					
 					
-						article_link = encodeURI(article_link);
+						
 					
 					if(len>55)
 					{ 
@@ -1809,15 +1843,20 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" >@'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
 		
 						}
 							);			
@@ -1849,9 +1888,11 @@ function get_more_data()
 						
 				}//user data match if
 				
-				
+					var	rss_skip_count = data.rss_skip_limit;
+					var	tweet_skip_count = data.twitter_skip_limit;
 
-			pageCount = pageCount+1;
+					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
 			
 			
 				},
@@ -1874,7 +1915,7 @@ function get_more_data()
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&search_page_count='+search_pageCount+'&search_limit_count='+search_contentCount+'&security_token='+security_token,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1915,7 +1956,7 @@ function get_more_data()
 					var source_name = element.source ;
 					var source_image = element.sourceimage ;
 					var pubdate = element.pubdate ;
-					
+					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
 				//	pubdate = pubdate.substr(5,11);
 					// checking the variable length
@@ -1929,7 +1970,7 @@ function get_more_data()
 					
 					source_name = source_name.replace(/'/g, "\\'");
 					
-					article_link = encodeURI(article_link);
+					
 					
 					
 					if(len>55)
@@ -1944,14 +1985,21 @@ function get_more_data()
 					
 					if(viewstatus=='1')
 					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 					}
 					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					
+					if(newssource=='twitter')
+					{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" >@'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					}else{
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					}
+
 		
 						}
 							);			
@@ -1982,9 +2030,12 @@ function get_more_data()
 										$.getScript("js/swipeleft.js");
 												
 												
-							
-							
-							search_pageCount = search_pageCount+1;
+					var rss_skip_count = data.rss_skip_limit;
+					var tweet_skip_count = data.twitter_skip_limit;
+										
+					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+
 							
 				}//user data match if
 				

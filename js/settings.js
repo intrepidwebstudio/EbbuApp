@@ -10,7 +10,8 @@ var search_pageCount = 0;
 var search_contentCount = 10;
 //*************************************** settings complete here ***************************************
 
-
+var new_skip_rss_count=0;	
+var new_skip_tweet_count=0;
 
   var security_token=543219588865478555;
 
@@ -74,10 +75,14 @@ var	ebbu_facebook;
         }
         function navigateTo(url,click_id,this_id,article_share_title){
 			
-		  iabRef = window.open(url, '_blank', 'toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
+			console.log(url);
+			
+		  iabRef = window.open(url, '_blank', 'toolbarposition=bottom,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
+		  var news_source=$(this_id).attr('data-value4');
+		  console.log('data-value4='+news_source);
 		  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
-	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbbuUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&security_token='+security_token);
+	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbbuUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&news_source='+news_source+'&security_token='+security_token);
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
             iabRef.addEventListener('loadstart', iabLoadStart);
