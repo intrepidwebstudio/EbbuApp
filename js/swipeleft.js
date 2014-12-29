@@ -189,6 +189,7 @@ function hex(x) {
 			var title_aaa =	$(this).attr('data-value');
 			var title_linkkk = $(this).attr('data-value1');
 			var media_link = $(this).attr('data-value2');
+			var news_source= $(this).attr('data-value4');
 			
 			
 			Global_share_titleee = title_aaa;
@@ -234,6 +235,20 @@ function hex(x) {
 				}
 			else if( media_link == "email"  )
 			{
+				
+				if(news_source=='twitter')
+				{
+window.plugins.socialsharing.shareViaEmail(
+  'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p>'+title_aaa +'</p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  'Check this out...',
+null, // TO: must be null or an array
+  null, // CC: must be null or an array
+  null, // BCC: must be null or an array
+  null // FILES: can be null, a string, or an array
+  
+);
+				}else{
+					
 window.plugins.socialsharing.shareViaEmail(
   'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p>'+title_aaa +'<br>'+title_linkkk+'</p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
   'Check this out...',
@@ -242,10 +257,11 @@ null, // TO: must be null or an array
   null, // BCC: must be null or an array
   null // FILES: can be null, a string, or an array
   
-);
-				
+);					
+		
+		}
 		//	window.plugins.socialsharing.shareViaEmail(title_aaa , null /* img */,title_linkkk );
-				}
+	}
 				
 				
     });

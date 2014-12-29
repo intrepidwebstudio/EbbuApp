@@ -611,7 +611,7 @@ input{
         </div>
     
 	      <div class="ui-field-contain forceinline">
-	          <input type="text" title="go" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans-300Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
+	          <input type="text" title="go" maxlength="160" id="searcharea" style="color:#FFF !important;"   data-transition="fade" class="clear_button Conv_MuseoSans-300Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
     
         <img  src="img/640.png"  class="iphone4s"  style="margin-bottom:-5px !important; width:100%" >
@@ -636,7 +636,7 @@ input{
         </div>
                     
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Frontpage: Most Popular</p>
+        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Headlines</p>
     </div>
       
  
@@ -1059,7 +1059,7 @@ $('#searcharea').keypress(function(e) {
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
@@ -1220,7 +1220,7 @@ $('.backgroundmask').show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Frontpage: Most Popular');
+				$('#searchvalue').html('Headlines');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1257,7 +1257,7 @@ $('.backgroundmask').show();
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
@@ -1791,7 +1791,7 @@ function get_more_data()
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Frontpage: Most Popular');
+				$('#searchvalue').html('Headlines');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1827,7 +1827,7 @@ function get_more_data()
 						}
 						
 					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
@@ -1973,7 +1973,7 @@ function get_more_data()
 					article_title = article_title + '...';	
 						}
 					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'"   ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 					
