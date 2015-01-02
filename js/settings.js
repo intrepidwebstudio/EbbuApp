@@ -39,7 +39,8 @@ var new_skip_tweet_count=0;
 	var last_search;		
 	
 
-		
+	var	shownrssarticle=0;
+	var	showntwitterarticle=0;
 		
 	
 	

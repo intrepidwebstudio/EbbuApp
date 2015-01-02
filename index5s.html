@@ -988,7 +988,8 @@ $('#searcharea').keypress(function(e) {
 			new_skip_rss_count = 0 ;
 			new_skip_tweet_count = 0 ;
 
-		
+			shownrssarticle=0;
+			showntwitterarticle=0;
 		
 	$('#searcharea').hide();
 	$('.search_empty').hide();
@@ -1001,7 +1002,7 @@ $('#searcharea').keypress(function(e) {
 		
 		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token, 
+			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1023,7 +1024,8 @@ $('#searcharea').keypress(function(e) {
 				FeedStatus=data.FeedStatus;
 				
 				SearchQueryId=data.SearchQueryId;
-				
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
@@ -1077,9 +1079,9 @@ $('#searcharea').keypress(function(e) {
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 					if(newssource=='twitter')
 					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
 					}
 					
 					
@@ -1191,6 +1193,9 @@ function load_trending()
 		
 					new_skip_rss_count = 0 ;
 					new_skip_tweet_count = 0 ;
+					
+					shownrssarticle=0;
+				showntwitterarticle=0;
 
 $('.backgroundmask').show();
 
@@ -1200,7 +1205,7 @@ $('.backgroundmask').show();
 	
 
 	$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1219,6 +1224,9 @@ $('.backgroundmask').show();
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
+				
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 				
 				if(FeedStatus=='success')
 				{
@@ -1277,9 +1285,9 @@ $('.backgroundmask').show();
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 					if(newssource=='twitter')
 					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
 					}
 
 		
@@ -1370,7 +1378,7 @@ navigator.splashscreen.hide();
 		
 	//	
 		
-   			 }, 3000);
+   			 }, 2500);
 	
 	
 	
@@ -1768,8 +1776,9 @@ function get_more_data()
 	{
 		last_search='';
 		
- 		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token,
+ 		$.ajax({	
+				
+			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1817,6 +1826,9 @@ function get_more_data()
 				 var source_name_unescaped = source_name;	
 					
 					
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+					
 					article_title = article_title.replace(/'/g, "\\'");
 					source_name = source_name.replace(/'/g, "\\'");
 					
@@ -1846,9 +1858,9 @@ function get_more_data()
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 					if(newssource=='twitter')
 					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
 					}
 		
 						}
@@ -1918,7 +1930,7 @@ function get_more_data()
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token,
+			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1940,7 +1952,8 @@ function get_more_data()
 				FeedStatus=data.FeedStatus;
 				
 				SearchQueryId=data.SearchQueryId;
-				
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
@@ -1998,9 +2011,9 @@ function get_more_data()
 					
 					if(newssource=='twitter')
 					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:7px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:8px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
 					}
 
 		
