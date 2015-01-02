@@ -636,7 +636,7 @@ input{
         </div>
                     
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Headlines</p>
+        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">Daily Headlines</p>
     </div>
       
  
@@ -1117,7 +1117,7 @@ $('#searcharea').keypress(function(e) {
 					
 					
 					hideLoaderScreen();
-			navigator.notification.alert("No articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
+			navigator.notification.alert("We couldn't find any recent articles on your topic. Tip: use one word for a broader search.", alertCallback, "Ebbu", "OK");
 			
 
 										
@@ -1220,7 +1220,7 @@ $('.backgroundmask').show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Headlines');
+				$('#searchvalue').html('Daily Headlines');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1791,7 +1791,7 @@ function get_more_data()
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Headlines');
+				$('#searchvalue').html('Daily Headlines');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1884,7 +1884,7 @@ function get_more_data()
 				}//user data match if	
 				else{
 					hideLoaderScreen();
-			navigator.notification.alert("No more articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
+			navigator.notification.alert("You've reached the end of the Daily Headlines Content Stream.", alertCallback, "Ebbu", "OK");
 										
 					}
 			
@@ -2034,7 +2034,7 @@ function get_more_data()
 				}//user data match if
 				else{
 					hideLoaderScreen();
-			navigator.notification.alert("No more articles were found. Try exploring a new topic.", alertCallback, "Ebbu", "OK");
+			navigator.notification.alert("You've reached the end of the Content Stream. Explore a new topic.", alertCallback, "Ebbu", "OK");
 										
 					}
 			

@@ -318,7 +318,7 @@ var new_position;
 
 $("#search_show_bar").on('click', function() {
    
-	  show_search()
+	  show_search();
 	
 });
 
