@@ -1950,6 +1950,9 @@ function get_more_data()
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
@@ -1978,8 +1981,6 @@ function get_more_data()
 				 var source_name_unescaped = source_name;	
 					
 					
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 					
 					article_title = article_title.replace(/'/g, "\\'");
 					source_name = source_name.replace(/'/g, "\\'");
