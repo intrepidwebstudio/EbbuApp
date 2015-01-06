@@ -217,7 +217,7 @@ function hex(x) {
 			{
 				
 				if( ebbu_facebook == "1" ){
-			window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+title_aaa, null /* img */,title_linkkk);
+			window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  ", null /* img */,title_linkkk);
 				}else{
 					
   navigator.notification.confirm(
@@ -239,7 +239,7 @@ function hex(x) {
 				
 					
 window.plugins.socialsharing.shareViaEmail(
-  'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p>'+title_aaa +'<br>'+title_linkkk+'</p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  'I found this article on <a href="http://www.EbbuApp.com"> EbbuApp.com </a> and thought of you. Check it out. '+'<p><a href="'+title_linkkk+'" >'+title_aaa +'</a></p>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
   'Check this out...',
 null, // TO: must be null or an array
   null, // CC: must be null or an array
@@ -596,4 +596,6 @@ $("#search_show_bar").live("tap", function(event){
 	show_search();
   
 });
+
+
 
