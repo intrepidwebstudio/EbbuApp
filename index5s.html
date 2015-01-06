@@ -1287,8 +1287,6 @@ $('#searcharea').keypress(function(e) {
 			
 			
 			last_search = $('#searcharea').val();
-			
-			
 			$('#searcharea').val('');
 			
 			
@@ -2210,7 +2208,7 @@ function get_more_data()
 				else{
 					hideLoaderScreen();
 					
-	console.log(ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle);
+	
 			navigator.notification.alert("You've reached the end of the Content Stream. Explore a new topic.", alertCallback, "Ebbu", "OK");
 										
 					}
@@ -2224,9 +2222,7 @@ function get_more_data()
 				},
 		error: function(e) {
      		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
-console.log(ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle);			
-			console.log(e.status);
-		}
+	}
 			
 			
 			
