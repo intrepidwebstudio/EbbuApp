@@ -1172,14 +1172,17 @@ $('#searcharea').keypress(function(e) {
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				SearchQueryId=data.SearchQueryId;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 				
 			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
 				{
+					
+				SearchQueryId=data.SearchQueryId;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+					
+					
 					feed_conducted=1;
 				$('#searchvalue').html($('#searcharea').val());
 				
@@ -1371,11 +1374,13 @@ $('.backgroundmask').show();
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 				
 				if(FeedStatus=='success')
 				{
+
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+
 					feed_conducted=0;
 					
 					
@@ -1944,13 +1949,14 @@ function get_more_data()
 				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
-					
+	
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+				
 					
 				$('#searchvalue').html('Daily Headlines');
 				
@@ -2091,9 +2097,6 @@ function get_more_data()
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				SearchQueryId=data.SearchQueryId;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 				
 			//	alert(SearchQueryId);
 				
@@ -2104,6 +2107,12 @@ function get_more_data()
 					feed_conducted=1;
 				
 		//		$('#searchvalue').html($('#searcharea').val());
+		
+		
+				SearchQueryId=data.SearchQueryId;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+
 				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -2127,7 +2136,7 @@ function get_more_data()
 					
 					source_name = source_name.replace(/'/g, "\\'");
 					
-					
+
 					
 					
 					if(len>55)

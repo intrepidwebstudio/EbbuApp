@@ -1175,13 +1175,16 @@ $('#searcharea').keypress(function(e) {
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				SearchQueryId=data.SearchQueryId;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
 				{
+					
+				SearchQueryId=data.SearchQueryId;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
+
+					
 					feed_conducted=1;
 				$('#searchvalue').html($('#searcharea').val());
 				
@@ -1206,9 +1209,8 @@ $('#searcharea').keypress(function(e) {
 					article_title = article_title.replace(/'/g, "\\'");
 					
 					source_name = source_name.replace(/'/g, "\\'");
-					
-					
-					
+	
+				
 					
 					if(len>55)
 					{ 
@@ -1377,12 +1379,12 @@ $('.backgroundmask').show();
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 					
 					
 				$('#searchvalue').html('Daily Headlines');
@@ -1411,7 +1413,7 @@ $('.backgroundmask').show();
 					
 					source_name = source_name.replace(/'/g, "\\'");
 					
-					
+	
 						
 					
 					if(len>55)
@@ -1950,12 +1952,11 @@ function get_more_data()
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
-				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 					
 					
 				$('#searchvalue').html('Daily Headlines');
@@ -2104,14 +2105,14 @@ function get_more_data()
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
 				
-				SearchQueryId=data.SearchQueryId;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
 			//	alert(SearchQueryId);
 				
 				if(FeedStatus=='success')
 				{
 					
+				SearchQueryId=data.SearchQueryId;
+				shownrssarticle=data.RSSarticle;
+				showntwitterarticle=data.Twitterarticle;
 					
 					feed_conducted=1;
 				
@@ -2138,7 +2139,6 @@ function get_more_data()
 					article_title = article_title.replace(/'/g, "\\'");
 					
 					source_name = source_name.replace(/'/g, "\\'");
-					
 					
 					
 					
