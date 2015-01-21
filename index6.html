@@ -631,7 +631,7 @@ input{
 
     <div data-role="header" data-position="fixed" data-theme="c" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
     
-    	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999 !important;  right:16px;  vertical-align:middle !important" >	
+    	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999999 !important; right:16px;  vertical-align:middle !important" id="clearsearch1" onclick="clearsearchdata()"  >	
         	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important;"   >
         </div>
     
@@ -661,7 +661,7 @@ input{
         </div>
                     
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;  " id="searchvalue" class="Conv_MuseoSans-300Italic">Daily Headlines</p>
+        		<p style="vertical-align:middle !important; margin-top:13px;  " id="searchvalue" class="Conv_MuseoSans-300Italic">The Frontpage</p>
     </div>
       
  
@@ -1097,14 +1097,29 @@ input{
 	  } 
 
  
+var touchedclear=0;		
+	$('#clearsearch1').on('touchstart',function(){
+		touchedclear=1;
+		});	
+
 $('#searcharea').on('blur',function(){ 
-									$('.search_empty').hide();		
-								    	$('#searcharea').hide();	
-									    
-										$('#searcharea').blur();
-										
-										 
-										  });
+
+		if(touchedclear==1)
+		{
+$('#searcharea').focus();
+$('#searcharea').val('');
+touchedclear=0;
+			
+			}else{
+					
+				$('.search_empty').hide();		
+				$('#searcharea').hide();	
+				$('#searcharea').blur();
+				touchedclear=0;
+		}
+							
+ });
+
 
 
 
@@ -1383,7 +1398,7 @@ $('.backgroundmask').show();
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Daily Headlines');
+				$('#searchvalue').html('The Frontpage');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -1945,7 +1960,7 @@ function get_more_data()
 					feed_conducted=0;
 					
 					
-				$('#searchvalue').html('Daily Headlines');
+				$('#searchvalue').html('The Frontpage');
 				
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
@@ -2039,7 +2054,7 @@ function get_more_data()
 				}//user data match if
 				else{
 					hideLoaderScreen();
-			navigator.notification.alert("You've reached the end of the Daily Headlines Content Stream.", alertCallback, "Ebbu", "OK");
+			navigator.notification.alert("You've reached the end of the The Frontpage Content Stream.", alertCallback, "Ebbu", "OK");
 										
 					}
 				
