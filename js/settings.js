@@ -1,15 +1,15 @@
 // JavaScript Document
   
 //*************************************** settings start here here *************************************** 
-//var imagepath = 'http://ebbu.kurinchilion.com/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
-//var ajax_path = 'http://ebbu.kurinchilion.com/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
+var imagepath = 'http://ebbu.kurinchilion.com/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+var ajax_path = 'http://ebbu.kurinchilion.com/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  
-var imagepath = 'http://192.168.1.5/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
-var ajax_path = 'http://192.168.1.5/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
+//var imagepath = 'http://192.168.1.12/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+//var ajax_path = 'http://192.168.1.12/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  
  
- var pageCount = 0;
- var contentCount = 10;
+var pageCount = 0;
+var contentCount = 10;
 
 var search_pageCount = 0;
 var search_contentCount = 10;

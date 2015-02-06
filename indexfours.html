@@ -663,7 +663,7 @@ input{
       
  
 </div><!-- /header -->
-    <div class="example-wrapper" data-iscroll >
+    <div class="example-wrapper" data-iscroll  id="escroll"  >
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         </ul>
           <div class="iscroll-pullup">
@@ -1265,7 +1265,7 @@ $('#searcharea').keypress(function(e) {
 									
 										$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
-											
+										$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);		
 									//	$('#list_view').refresh();
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
@@ -1466,6 +1466,7 @@ $('.backgroundmask').show();
 											$('#list_view').trigger("create");
 										$('#list_view').listview().listview('refresh');
 										//	$('#list_view').refresh();
+										$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);	
 										browser_setting();
 										$.getScript("js/SocialSharing.js");
 										SocialSharing();
