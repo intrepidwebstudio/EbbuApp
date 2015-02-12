@@ -1,205 +1,94 @@
 <!DOCTYPE html> 
 <html><head> 
-	<title>Page Title</title> 
-	
-	        <meta name="format-detection" content="telephone=no" />
-        	<meta name="msapplication-tap-highlight" content="no" />
-        
-        <meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
-  <!--<script src="phonegap.js"></script>-->
-  
-  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
-  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
-  
-  <link rel="stylesheet" type="text/css" href="css/font.css">	  
-  
-  
-
-  <link rel="stylesheet" href="css/idangerous.swiper.css">
-  
-  <script>
-  
-document.onreadystatechange = function(e)
-{
-    if (document.readyState === 'complete')
-    {
-	      // navigator.splashscreen.show();
-	//	  
-		  
-	        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-};
-  </script>
-  
-  
-  <script defer src="js/idangerous.swiper.js"></script>
+	<title>Ebbu</title> 
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
+	<!--<script src="phonegap.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+	<link rel="stylesheet" type="text/css" href="css/font.css">	  
+	<link rel="stylesheet" href="css/idangerous.swiper.css">
+	<script> 
+	document.onreadystatechange = function(e)
+	{
+		if (document.readyState === 'complete')
+		{	  
+				document.addEventListener("deviceready", onDeviceReady, false);
+		}
+	};
+	</script>
+   <script defer src="js/idangerous.swiper.js"></script>
    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
    <script type="text/javascript" src="js/settings.js"></script>
-   
   <style>
- /* 
-  .inAppBrowserWrap {
-  background-color: rgba(0,0,0,0.75);
-  color: rgba(235,235,235,1.0);
-}
-.inAppBrowserWrap menu {
-  overflow: auto;
-  list-style-type: none;
-  padding-left: 0;
-}
-.inAppBrowserWrap menu li {
-  font-size: 25px;
-  height: 25px;
-  float: left;
-  margin: 0 10px;
-  padding: 3px 10px;
-  text-decoration: none;
-  color: #ccc;
-  display: block;
-  background: rgba(30,30,30,0.50);
-}
-.inAppBrowserWrap menu li.disabled {
-    color: #777;
-}
-  */
- div
-{
-backface-visibility:hidden !important;
--webkit-backface-visibility:hidden !important; /* Chrome and Safari */
--moz-backface-visibility:hidden !important; /* Firefox */
-}
-
-/* Styling for the popup */
-#confirm p {
-    text-align: center;
-    font-size: inherit;
-    margin-bottom: .75em;
-}
-
-
-
-
-.title_bac{
-/*	background-color:#F0525B;
-	opacity:.65;
-	
-*/	position:absolute; bottom:0px;
-color:#FFF;
-
- color:#52b7b6 !important;
-background: rgba(255, 255, 255, 0.95) !important;
-	}
-
-	.ui-listview>li p{
-		
-		white-space:normal;
-		max-height:30px;
-		text-overflow:ellipsis !important;
-		}
-	
-    .behind {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        right: 0;
-		
-	  }
-	
-	.behind  a{
-			display:table-cell;
-			height:100% !important;
-			vertical-align:middle !important;
-			background-color:#936;
-		}
-		
-	.behind a:first-child {
+		/* 
+		.inAppBrowserWrap {	background-color: rgba(0,0,0,0.75);	color: rgba(235,235,235,1.0);}
+		.inAppBrowserWrap menu {overflow: auto;	list-style-type: none;	padding-left: 0;	}
+		.inAppBrowserWrap menu li {	font-size: 25px;	height: 25px;	float: left;	margin: 0 10px;	padding: 3px 10px;	text-decoration: none;	color: #ccc;display: block;	background: rgba(30,30,30,0.50);}
+		.inAppBrowserWrap menu li.disabled {color: #777;}
+		*/
+		div{backface-visibility:hidden !important;-webkit-backface-visibility:hidden !important; /* Chrome and Safari */ -moz-backface-visibility:hidden !important; /* Firefox */		}
+		/* Styling for the popup */
+		#confirm p {text-align: center;	font-size: inherit;	margin-bottom: .75em;	}
+		.title_bac{	/*	background-color:#F0525B;	opacity:.65;	*/	position:absolute; bottom:0px;
+		color:#FFF;	color:#52b7b6 !important;	background: rgba(255, 255, 255, 0.95) !important;	}
+		.ui-listview>li p{	white-space:normal;	max-height:30px;	text-overflow:ellipsis !important;	}
+		.behind {	width: 100%;	height: 100%;	position: absolute;	right: 0;	}
+		.behind  a{	display:table-cell;	height:100% !important;	vertical-align:middle !important;	background-color:#936;	}
+		.behind a:first-child {
 		width:73px !important;	
-	vertical-align:middle !important;
-	text-align:center;
+		vertical-align:middle !important;
+		text-align:center;
 		}
-		
-	.behind a {
-			width:79px !important;	
-	vertical-align:middle !important;
-	text-align:center;
-	
+		.behind a {
+		width:79px !important;	
+		vertical-align:middle !important;
+		text-align:center;
 		}	
-		
 		.behind a:last-child {
-			width:79px !important;	
-	vertical-align:middle !important;
-	text-align:center;
-			
-			
+		width:79px !important;	
+		vertical-align:middle !important;
+		text-align:center;
 		}	
-	
-	.socialicon{
-	
+		.socialicon{
 		}
-			
-	.socialicon img {
-		
+		.socialicon img {
 		padding-top:38%;
 		padding-bottom:30%;	
-		 width:30px;
-		 vertical-align:middle !important;
-	}	
-	
-	
-    .behind a.ui-btn {
-        
-        float: right;
-        border: none;
-		
-		
-    }
-    .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
-      	  	
-        text-shadow: none;
-    }
-	
-	
-	
-
-	
-	.socialicon{
-		
+		width:30px;
+		vertical-align:middle !important;
+		}	
+		.behind a.ui-btn {
+		float: right;
+		border: none;
+		}
+		.behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
+		text-shadow: none;
+		}
+		.socialicon{
 		float:right;
 		vertical-align:middle !important;
-		
-				
 		}
-
-	
-	
-		
-	.sourceicon{
-				padding-left:7px;
-				padding-top:7px;	
-				width: 22% !important;
-				vertical-align:middle !important;
+		.sourceicon{
+		padding-left:7px;
+		padding-top:7px;	
+		width: 22% !important;
+		vertical-align:middle !important;
 		}	
-		
-		
-		
 		.ui-boday-a input {
-    border: none !important;
-    border-color: transparent !important;
-}
-	.adddddd{}
-		
-	.topplace{
-		
+		border: none !important;
+		border-color: transparent !important;
+		}
+		.adddddd{}
+		.topplace{
 		background-image:url("img/inputbackground.png") ;
 		background-size:cover;
 		background-repeat:no-repeat;
 		opacity:.7;
-	
-	/*	background:rgba(255,255,255,0.5) !important; */
-		
-		
+		/*	background:rgba(255,255,255,0.5) !important; */
 		position:relative !important;
 		top:0px;
 		width:100%;
@@ -207,569 +96,344 @@ background: rgba(255, 255, 255, 0.95) !important;
 		z-index:-999px !important;
 		vertical-align:middle;
 		cursor:vertical-text #FFF !important;
-		
-		
-		
-		
 		}
-
-topplace_empty{
-			position:relative !important;
+		topplace_empty{
+		position:relative !important;
 		top:0px;
 		width:100%;
-
-	
-	}	
-	
-	.lefticon img{
-			
-			
-			width:40%;
-			max-width:70px;
-			padding-top:9px;
-			
-			
 		}	
-	.lefticon{
+		.lefticon img{
+		width:40%;
+		max-width:70px;
+		padding-top:9px;
+		}	
+		.lefticon{
 		float:left;
-			min-height:40px !important;	
-			min-width:40px !important;
-			text-align:center;
-			
-		
+		min-height:40px !important;	
+		min-width:40px !important;
+		text-align:center;
 		}		
-		
-		
-	.righticon{
-			min-height:40px !important;	
-			min-width:40px !important;
-			float:right;
-			text-align:center;
-		
+		.righticon{
+		min-height:40px !important;	
+		min-width:40px !important;
+		float:right;
+		text-align:center;
 		}	
-		
-	.righticon img{
-			
-			
-			width:40%;
-			max-width:70px;	
-			padding-top:9px;
-			
+		.righticon img{
+		width:40%;
+		max-width:70px;	
+		padding-top:9px;
 		}	
-	
-	
-	
-	
-		
-	.midicon{
+		.midicon{
 		margin-left:auto;
 		margin-right:auto;
 		text-align:center !important;	
-
 		padding-top:9px;
 		width: 25% !important;
 		opacity: .9 ;
-		
 		}	
-		
-		
-		
-		
-	 .searchsettings{
-	 
-	 position:relative !important;
-	 top:10px !important;
-	 
-	 }		
-	
-	
-		
+		.searchsettings{
+		position:relative !important;
+		top:10px !important;
+		}		
 		.topmenucontainer{
-			
-			position:absolute;
-			top:0px;
-			left:0px;
-			width:100%;
-			}
-		
-	
-		
-		
-		
-		
-	.ebbuheader{
-		
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		}
+		.ebbuheader{
 		width:100%;   
 		margin-top:0px !important; 
 		max-height:400px;
-		
 		}	
-	
-
-  
-  	
-  .ui-icon-ebbutoggleoff {
-    background-image: url("icons/ebbutoggleoff.png");
-  }
-
-  .nav .ui-btn .ui-btn-inner {
-    padding-top: 40px !important;
-  }
-
-  .nav .ui-btn .ui-icon-ebbutoggleoff {
-    width: 45px!important;
-    height: 35px!important;
-    margin-left: -24px !important;
-    box-shadow: none!important;
-    -moz-box-shadow: none!important;
-    -webkit-box-shadow: none!important;
-    -webkit-border-radius: none !important;
-    border-radius: none !important;
-  }
-
-   .ui-icon-ebbutoggleoff {
-    background-image: url(icons/ebbutoggleoff.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-  }
-	
-	
-	.ebbuicons{
+		.ui-icon-ebbutoggleoff {
+		background-image: url("icons/ebbutoggleoff.png");
+		}
+		.nav .ui-btn .ui-btn-inner {
+		padding-top: 40px !important;
+		}
+		.nav .ui-btn .ui-icon-ebbutoggleoff {
+		width: 45px!important;
+		height: 35px!important;
+		margin-left: -24px !important;
+		box-shadow: none!important;
+		-moz-box-shadow: none!important;
+		-webkit-box-shadow: none!important;
+		-webkit-border-radius: none !important;
+		border-radius: none !important;
+		}
+		.ui-icon-ebbutoggleoff {
+		background-image: url(icons/ebbutoggleoff.png);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		}
+		.ebbuicons{
 		width:16px;
 		vertical-align:middle !important;
 		}
-	
-	/******************* ADDING CUSTOM UI ICONS ******************/
-	
-		
-		
+		/******************* ADDING CUSTOM UI ICONS ******************/
 		.forceinline{  /* Prevent fieldcontain from doing a BLOCK thing */
-    display:inline !important;
-}
-
-.min_height{
-	min-height:30px !important;
-
-	}
-
- 
- 
-.ui-content {
-    padding: 0 !important;
-}
-
-.ui-listview {
-    margin: 0 !important;
-}
-
-.example-wrapper, .example-wrapper div.iscroll-scroller {
-    width: 100% !important;
-}
-
-.padding_left{
-	
-	text-align:justify !important;
-	
-	
-	}
-.padding_left h3{
-	text-align:left !important;
-	}	
-.padding_left p{
-	 margin-left:5%;
-	margin-right:5%;
-	}
-	
-.padding_left ul li{
-	 margin-left:5%;
-	margin-right:5%;
-	}	
-.padding_left h3{
-	
-	 margin-left:5%;
-	 margin-right:5%;
-	}		
-	
-	
-.terms_of_service{
-	
-	padding-bottom:20px;
-	
-/*	background-color:#171514 !important  ; */
-	
-	}	
-	
-.terms_of_service p{
-	 
-	 color:#9F9F9F !important;
-	 font-size:12px !important;
-	}
-.terms_of_service ul li{
-	 
-	 color:#9F9F9F !important;
-	 font-size:12px !important;
-	}
-	
-	
-.privacy p{
-	 font-size:12px !important;
-	
-	}	
-	
-.terms_of_service  h3{
-	
-	color:#171514 !important;
-	
-	}		
-
-ul li a.outer_a{ background-color: #FFFFFF  !important; }
-ul li:nth-child(odd) a.outer_a{ background-color: #F7F7F7 !important; }
-
-
-ul li div{ background-color:#F7F7F7 !important;	} 
-ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
-
-
-
-ul li a.settingsmenu{ background-color: #FFFFFF  !important; }
-ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
-
-
-ul li a.settingsmenu{ padding: 1.3em 1.1em !important; }
-
-ul li a.settingsmenu p{ font-size:15px !important; font-weight:100 !important;   }
-
-
-
-
-
-.behind a.socialicon , .behind a.socialicon img , .behind{
-		
+		display:inline !important;
 		}
-
-
-
-input{
-	
+		.min_height{
+		min-height:30px !important;
+		}
+		.ui-content {
+		padding: 0 !important;
+		}
+		.ui-listview {
+		margin: 0 !important;
+		}
+		.example-wrapper, .example-wrapper div.iscroll-scroller {
+		width: 100% !important;
+		}
+		.padding_left{
+		text-align:justify !important;
+		}
+		.padding_left h3{
+		text-align:left !important;
+		}	
+		.padding_left p{
+		margin-left:5%;
+		margin-right:5%;
+		}
+		.padding_left ul li{
+		margin-left:5%;
+		margin-right:5%;
+		}	
+		.padding_left h3{
+		margin-left:5%;
+		margin-right:5%;
+		}		
+		.terms_of_service{
+		padding-bottom:20px;
+		/*	background-color:#171514 !important  ; */
+		}	
+		.terms_of_service p{
+		color:#9F9F9F !important;
+		font-size:12px !important;
+		}
+		.terms_of_service ul li{
+		color:#9F9F9F !important;
+		font-size:12px !important;
+		}
+		.privacy p{
+		font-size:12px !important;
+		}	
+		.terms_of_service  h3{
+		color:#171514 !important;
+		}		
+		ul li a.outer_a{ background-color: #FFFFFF  !important; }
+		ul li:nth-child(odd) a.outer_a{ background-color: #F7F7F7 !important; }
+		ul li div{ background-color:#F7F7F7 !important;	} 
+		ul li:nth-child(odd) div{ background-color:#FFFFFF !important;  }
+		ul li a.settingsmenu{ background-color: #FFFFFF  !important; }
+		ul li:nth-child(odd) a.settingsmenu{ background-color: #F7F7F7 !important; }
+		ul li a.settingsmenu{ padding: 1.3em 1.1em !important; }
+		ul li a.settingsmenu p{ font-size:15px !important; font-weight:100 !important;   }
+		.behind a.socialicon , .behind a.socialicon img , .behind{
+		}
+		input{
 		vertical-align:middle !important;
 		text-align:center !important;
 		cursor:vertical-text !important;
-	
-	
-	}
-
-::-webkit-input-placeholder {
-   color: #999 !important;
-  
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #999 !important;
-  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #999 !important;
-}
-
-:-ms-input-placeholder {  
-   color: #999 !important;
-}
-
-.loader_icon_intro{
-	
-  alignment-adjust:middle !important;
-  background: url(img/ajax-loader.gif) 0 0 no-repeat;
- 	position:absolute;
-	}
-	
-.facebookBackground{  background-color:#3B5998 !important; 	}	
-.twitterBackground{  background-color:#4099FF !important;  }
-.emailBackground{  background-color:#EA6D6C !important;  }	
-
-.lefticonAlign{
-	
-	width:34% !important;
-	margin-left:-7px;
-	margin-right:7px;
-	
-	}
-
-  </style>
-  
-  <style>
-
-  .loaderScreen2 {
-    -webkit-animation: rotationLoader 2s infinite linear;
-}
-
-
-@-webkit-keyframes rotationLoader {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
-}
-
-@-moz-keyframes rotationLoader {
-  from { -moz-transform: rotate(0deg); }
-  to { -moz-transform: rotate(360deg); }
-}
-
-@-o-keyframes rotationLoader {
-  from { -o-transform: rotate(0deg); }
-  to { -o-transform: rotate(360deg); }
-}
-
-@-keyframes rotationLoader {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} 
-
-
-
-  #loaderScreen1 {
-    -webkit-animation: rotationLoader1 2s infinite linear;
-}
-
-
-@-webkit-keyframes rotationLoader1 {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
-}
-
-@-moz-keyframes rotationLoader1 {
-  from { -moz-transform: rotate(0deg); }
-  to { -moz-transform: rotate(360deg); }
-}
-
-@-o-keyframes rotationLoader1 {
-  from { -o-transform: rotate(0deg); }
-  to { -o-transform: rotate(360deg); }
-}
-
-@-keyframes rotationLoader1 {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} 
-
-
-.inAppBrowserWrap {
-  background-color: #09F !important;
-  color: rgba(235,235,235,1.0);
-}
-.inAppBrowserWrap menu {
-  overflow: auto;
-  list-style-type: none;
-  padding-left: 0;
-  background-color:#9F3 !important;
-}
-.inAppBrowserWrap menu li {
-  font-size: 25px;
-  height: 25px;
-  float: left;
-  margin: 0 10px;
-  padding: 3px 10px;
-  text-decoration: none;
-  color: #ccc;
-  display: block;
-  background: #0C0 !important;
-}
-.inAppBrowserWrap menu li.disabled {
-    color: #777;
-}
-
-
-
-
-
-.backgroundmask{
-	position:absolute;
-	width:100%;
-	height:100%;
-	top:0;
-	left:0;
-	background-color:#000 !important;
-	opacity:.50;
-	z-index:15000 !important;	
-	display:none;
 		}
-	
+		::-webkit-input-placeholder {
+		color: #999 !important;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+		color: #999 !important;
+		}
+		::-moz-placeholder {  /* Firefox 19+ */
+		color: #999 !important;
+		}
+		:-ms-input-placeholder {  
+		color: #999 !important;
+		}
+		.loader_icon_intro{
+		alignment-adjust:middle !important;
+		background: url(img/ajax-loader.gif) 0 0 no-repeat;
+		position:absolute;
+		}
+		.facebookBackground{  background-color:#3B5998 !important; 	}	
+		.twitterBackground{  background-color:#4099FF !important;  }
+		.emailBackground{  background-color:#EA6D6C !important;  }	
+		.lefticonAlign{
+		width:34% !important;
+		margin-left:-7px;
+		margin-right:7px;
+		}
+		</style>
+		<style>
+		.loaderScreen2 {
+		-webkit-animation: rotationLoader 2s infinite linear;
+		}
+		@-webkit-keyframes rotationLoader {
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(360deg); }
+		}
+		@-moz-keyframes rotationLoader {
+		from { -moz-transform: rotate(0deg); }
+		to { -moz-transform: rotate(360deg); }
+		}
+		@-o-keyframes rotationLoader {
+		from { -o-transform: rotate(0deg); }
+		to { -o-transform: rotate(360deg); }
+		}
+		@-keyframes rotationLoader {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+		} 
+		#loaderScreen1 {
+		-webkit-animation: rotationLoader1 2s infinite linear;
+		}
+		@-webkit-keyframes rotationLoader1 {
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(360deg); }
+		}
+		@-moz-keyframes rotationLoader1 {
+		from { -moz-transform: rotate(0deg); }
+		to { -moz-transform: rotate(360deg); }
+		}
+		@-o-keyframes rotationLoader1 {
+		from { -o-transform: rotate(0deg); }
+		to { -o-transform: rotate(360deg); }
+		}
+		@-keyframes rotationLoader1 {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+		} 
+		.inAppBrowserWrap {
+		background-color: #09F !important;
+		color: rgba(235,235,235,1.0);
+		}
+		.inAppBrowserWrap menu {
+		overflow: auto;
+		list-style-type: none;
+		padding-left: 0;
+		background-color:#9F3 !important;
+		}
+		.inAppBrowserWrap menu li {
+		font-size: 25px;
+		height: 25px;
+		float: left;
+		margin: 0 10px;
+		padding: 3px 10px;
+		text-decoration: none;
+		color: #ccc;
+		display: block;
+		background: #0C0 !important;
+		}
+		.inAppBrowserWrap menu li.disabled {
+		color: #777;
+		}
+		.backgroundmask{
+		position:absolute;
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		background-color:#000 !important;
+		opacity:.50;
+		z-index:15000 !important;	
+		display:none;
+		}
 		.margintop{
-		
-	margin-top: 0.4em !important;
-		
+		margin-top: 0.4em !important;
 		}
-	.marginbottom{
+		.marginbottom{
 		margin-bottom: .6em !important;
-		
-		
 		}
-	
-	.sub_paragragh{
-		
+		.sub_paragragh{
 		alignment-adjust:central;
-		
 		margin-left:30px !important; 
 		margin-right:30px !important; 
-								
 		}
-
 </style>
-  
-
 </head>
-
-
 <body>
-
-
-
-
-
 <div data-role="page" id="5spage1" data-title="Ebbu" >
-
     <div data-role="header" data-position="fixed" data-theme="c" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
-    
     	<div class="clear_button" style="position:absolute; top:11.5px; z-index:99999999 !important; right:16px;  vertical-align:middle !important" id="clearsearch1" onclick="clearsearchdata()"  >	
         	<img src="icons/57x57/exit.png" class="search_empty" style="width:16px !important;" onclick="checkalert()"  >
         </div>
-    
 	      <div class="ui-field-contain forceinline">
 	          <input type="text" title="go"  maxlength="160" id="searcharea" style="color:#FFF !important;"  data-transition="fade" class="clear_button Conv_MuseoSans-300Italic topplace ui-input-btn ui-hide-label" height="0" data-corners="false" data-prevent-focus-zoom="false" >
          </div>  
-    
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-
         <div class="topmenucontainer"  >
-        
         <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
-        
-        
         <div class="searchsettings " id="top_menu" >
-       
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
-        
         	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slidefade"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
-        
-        
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
-        
       </div>  
-        
-        
         </div>
-                    
     <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">The Frontpage</p>
     </div>
-      
- 
 </div><!-- /header -->
-    <div class="example-wrapper" data-iscroll id="escroll" >
+    <div id="escroll" class="example-wrapper" data-iscroll>
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
-
         </ul>
           <div class="iscroll-pullup">
           <center><span class="iscroll-pull-icon"></span></center>
         </div>
-          
-           
-                                     
     </div><!-- /content -->
-    
  </div>
-
-
 <div data-role="page" data-position="fixed"  id="5spage" data-title="Ebbu" >
-
-
 <div class="swiper-container">
   <div class="swiper-wrapper">
       <!--First Slide-->
       <div class="swiper-slide "> 
              <img  src="img/introscreen/640x1136/01wcircles.jpg"  style="width:320px !important; height:568px !important; " >
       </div>
-      
       <!--Second Slide-->
       <div class="swiper-slide">
             <img src="img/introscreen/640x1136/02wcircles.jpg"  style="width:320px !important; height:568px !important; " >
      <!--  <img src="img/screen2.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the second slide goes here -->
       </div>
-      
       <!--Third Slide-->
       <div class="swiper-slide "> 
              <img src="img/introscreen/640x1136/03empty.jpg"  style="width:320px !important; height:568px !important; " >
        <!-- <img src="img/screen3.png" style="width:100% !important; height:100% !important;" >-->
         <!-- Any HTML content of the third slide goes here -->
-        
         <div style="position:relative; bottom:58%; box-shadow:none !important; border:none !important;  " id="textinput"  >
-        
-        
         <div style="color:#FFF !important;">
         		<center><img  src="img/ebbu-logo.png" width="32%"  ></center>
          </div>
-       
         <center> <div style="color:#FFF !important; padding-bottom:4% !important;
 		  width:70% !important ;  "    ><span class="Conv_MuseoSans_700" style="font-size:22px;" >Feed </span> <span  class="Conv_MuseoSans-900Italic" style="font-size:22px;" > your curiosity.</span></div></center>
-        
         <center> <input type="text" class="ui-input-btn ui-hide-label Conv_MuseoSans_500_Italic" id="useremail" onClick="bringup()" onBlur="bringdown()" style="width:70% !important ; min-height: 2.8em !important; background-color:#FFF;  background:rgba(255,255,255,0.8) !important;
 		cursor:vertical-text; " data-corners="false" placeholder="E-mail Address"   ></center>
-
 		<center>
         <button onClick="validate_email()" class="Conv_MuseoSans-300Italic ui-input-btn ui-hide-label" style=" margin-top:3px; color:#FFF !important ; background-color:#0a9bb8 !important;   min-height: 2.8em !important; 
            								border:none !important; text-shadow:none !important; box-shadow:none !important; width:70% !important ;	" data-corners="false" data-prevent-focus-zoom="true" >
         Start Using Ebbu</button>
         </center>
-        
         <center> <img id="loaderScreen1" src="loader.png" style="display:none; width:25px;  z-index:99999999;" ></center>
-             
-               
-         
-        
         </div>
-        
-        
-        
-        
       </div>
-      
-      
-      
-      
-      
       <!--Etc..-->
   </div>
 </div>
-
-
-
 </div>
-  
-
 <div data-role="page" id="5ssettings" data-transition="slidefade" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
     <div class="topmenucontainer" >
-     
      <div class="searchsettings">
-
        		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign"  src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
    		     <center><img  class="midicon loadhomepage"  src="img/header.png" ></center>
-
-               
      </div>  
-        
     </div>
-                    
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Settings</p>
     </div>
-      
- 
 </div><!-- /header -->
-    
-   
    	<div  role="main" class="ui-content" >
     <div class="example-wrapper" data-iscroll >
           <ul data-role="listview"  id="settingList" data-divider="false"  data-icon="false"  >
@@ -778,77 +442,46 @@ input{
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebbuicons" id="twitterlogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebbuicons" id="twitterlogout" ></p>
-                        
                 </a> </li>
                 <li id="facebookautho"  ><a class="settingsmenu" data-transition="slidefade"   >
                 		<p style="float:left;" class="Conv_MuseoSans_500" >Facebook  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/toggleon.png" class="ebbuicons" id="facebooklogged" style="display:none;" >
                         <img src="icons/57x57/toggleoff.png" class="ebbuicons" id="facebooklogout" ></p>
-                        
                 </a> </li>
-               
                 <li><a class="settingsmenu" data-transition="slidefade" href="#5stermsofservice" data-prefetch="true" >
                 		<p style="float:left ; " class="Conv_MuseoSans_500" >Terms of Service  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/terms.png" class="ebbuicons" ></p>
-                        
                 </a> </li>
                 <li><a class="settingsmenu" data-transition="slidefade" href="#5sprivacy" data-prefetch="true" >
                 		<p style="float:left ;font-weight:normal !important;" class="Conv_MuseoSans_500" >Privacy  </p>
                 		<p  style="vertical-align:middle !important; float:right">
                         <img src="icons/57x57/privacy.png" class="ebbuicons" ></p>
-                        
                 </a> </li>
-                
-                
          </ul>
-         
 <!-- <img id="loaderScreen" src="loader.png" >-->
-
-         
         </div> 
     </div><!-- /content -->
-    
-   
-    	
-    	
 </div>
-
-
 <div data-role="page" id="5stermsofservice">
-         
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-	  
       <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-        
         <div class="topmenucontainer" >
-     
      <div class="searchsettings">
        		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
         <center><img  class="midicon loadhomepage"  src="img/header.png" ></center>
-        
-                
       </div>  
-        
-        
         </div>
-                    
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Terms of Service</p>
     </div>
- 
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content"  >
-        
         <div class="example-wrapper padding_left terms_of_service " data-iscroll  >
-        
           <h3 class="Conv_MuseoSans_700">1. Introduction</h3>
           <p class="Conv_MuseoSans_500  "  >Thank you for visiting Ebbu and, if applicable, choosing to download and install our App.  Please read these Terms of Service and our Privacy Policy carefully, as you must agree to both documents in order to have permission to use our Service.</p>
-		  
-         
-          	
 <h3 class="Conv_MuseoSans_700" >2. Definitions</h3>
 <p class="Conv_MuseoSans_500 "  >Throughout this Agreement, we may use certain words or phrases, and it is important that you understand the meaning of them.  The list is not all-encompassing and no definition should be considered binding to the point that it renders this Agreement nonsensical:</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"Agreement" refers to these Terms of Service;</p>
@@ -857,20 +490,15 @@ input{
 <p class="Conv_MuseoSans_500 sub_paragragh">"Site" refers to our website, <a href="http://www.ebbuapp.com" title="Ebbuapp Webpage link" target="_blank">www.ebbuapp.com</a>;</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"User" refers to anyone who uses our Service, including users of our App and general visitors to our Site;</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"You" refers to you, the person who is entering into this Agreement with Ebbu.</p>
-
-
 <h3 class="Conv_MuseoSans_700" >3. What Ebbu Offers</h3>
 <p class="Conv_MuseoSans_500" >Ebbu is a platform that allows Users to find, view and share articles online.  It is intended for online users who read articles on sports, politics, entertainment, music and food.</p>
 <h3 class="Conv_MuseoSans_700" >4. Eligibility</h3>
 <p class="Conv_MuseoSans_500">In order to use our Service, you must meet a number of conditions, including but not limited to:</p>
 <ul style="list-style:">
-
 <li class="Conv_MuseoSans_500 ">Over this Agreement, Ebbu, and yourself. You must not be in violation of any embargoes, export controls, or other laws of Canada or other countries having jurisdiction</li>
 <li class="Conv_MuseoSans_500 ">You must be the minimum age required to enter into a contract in the area in which you reside, and, in any event, must not be less than 18 years of age.</li>
 <li class="Conv_MuseoSans_500 ">You must provide us with personal information and other information that we deem necessary to provide you with our Service</li>
 </ul>
-
-
 <h3 class="Conv_MuseoSans_700" >6. Rules of Use</h3>
 <p class="Conv_MuseoSans_500">You must not:</p>
 <ul>
@@ -880,11 +508,6 @@ input{
 <li class="Conv_MuseoSans_500 ">Hack, crack, phish, SQL inject, or otherwise compromise the security or integrity of the Ebbu Site, App, Service, or its Users' computers.</li>
 <li class="Conv_MuseoSans_500 ">Do anything else which could bring Ebbu into disrepute or violate the rights of any person.</li>
 </ul>
-
-
-
-
-
 <h3 class="Conv_MuseoSans_700" >7. Third Party Charges</h3>
 <p class="Conv_MuseoSans_500">Please be advised that the use of our App may result in fees—such as for data use—being assessed to you by third parties.  You agree that Ebbu is not liable for the payment of such fees, and you are hereby advised to review your contract with your mobile service provider to ensure that you do not incur any unexpected fees when using our App.</p>          
 <h3 class="Conv_MuseoSans_700" >8. Limited License</h3>
@@ -902,10 +525,8 @@ input{
 <p class="Conv_MuseoSans_500">THE PROVISION OF OUR SERVICE TO YOU IS CONTINGENT ON YOUR AGREEMENT WITH THIS AND ALL OTHER SECTIONS OF THIS AGREEMENT.  NOTHING IN THE PROVISIONS OF THIS "REPRESENTATIONS & WARRANTIES" SECTION SHALL BE CONSTRUED TO LIMIT THE GENERALITY OF THE FIRST PARAGRAPH OF THIS SECTION.</p>
 <p class="Conv_MuseoSans_500 sub_paragragh"><strong>For Jurisdictions that do not allow us to limit our liability: </strong>Notwithstanding any provision of these Terms, if your jurisdiction has provisions specific to waiver or liability that conflict with the above then our liability is limited to the smallest extent possible by law.  Specifically, in those jurisdictions not allowed, we do not disclaim liability for: (a) death or personal injury caused by its negligence or that of any of its officers, employees or agents; or (b) fraudulent misrepresentation; or (c) any liability which it is not lawful to exclude either now or in the future.</p>
 <p class="Conv_MuseoSans_500">IF YOU ARE A RESIDENT OF A JURISDICTION THAT REQUIRES A SPECIFIC STATEMENT REGARDING RELEASE THEN THE FOLLOWING APPLIES.  FOR EXAMPLE, CALIFORNIA RESIDENTS MUST, AS A CONDITION OF THIS AGREEMENT, WAIVE THE APPLICABILITY OF CALIFORNIA CIVIL CODE SECTION 1542, WHICH STATES, "A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS WHICH THE CREDITOR DOES NOT KNOW OR SUSPECT TO EXIST IN HIS OR HER FAVOR AT THE TIME OF EXECUTING THE RELEASE, WHICH IF KNOWN BY HIM OR HER MUST HAVE MATERIALLY AFFECTED HIS OR HER SETTLEMENT WITH THE DEBTOR."  YOU HEREBY WAIVE THIS SECTION OF THE CALIFORNIA CIVIL CODE.  YOU HEREBY WAIVE ANY SIMILAR PROVISION IN LAW, REGULATION, OR CODE THAT HAS THE SAME INTENT OR EFFECT AS THE AFOREMENTIONED RELEASE.</p>
-
 <h3 class="Conv_MuseoSans_700" >13. Indemnity</h3>
 <p class="Conv_MuseoSans_500">You agree to indemnify and hold us harmless for any claims by you or any third party which may arise from or relate to this Agreement or the provision of our Service to you, including any damages caused by your use of our Site or acceptance of the offers contained on it.  You also agree that you have a duty to defend us against such claims and we may require you to pay for an attorney(s) of our choice in such cases.  You agree that this indemnity extends to requiring you to pay for our reasonable attorneys' fees, court costs, and disbursements.  In the event of a claim such as one described in this paragraph, we may elect to settle with the party/parties making the claim, and you shall be liable for the damages as though we had proceeded with a trial.</p>
-
 <h3 class="Conv_MuseoSans_700" >14. Choice of Law</h3>
 <p class="Conv_MuseoSans_500">This Agreement shall be governed by the laws in force in the Province of Ontario.  The offer and acceptance of this contract are deemed to have occurred in the Province of Ontario.</p>
 <h3 class="Conv_MuseoSans_700" >15. Forum of Dispute</h3>
@@ -914,14 +535,11 @@ input{
 <p class="Conv_MuseoSans_500">If you would be entitled in a dispute to an amount exceeding the monetary jurisdiction of the Small Claims Court, you agree to waive your right to collect any damages in excess of the monetary jurisdiction and instead still bring your claim within the Small Claims Court.  At the time of drafting this Agreement, the monetary jurisdiction of the Small Claims Court is $25,000.</p>
 <p class="Conv_MuseoSans_500">You agree that if a dispute is eligible to be heard in Small Claims Court but you would be entitled to an additional or alternative remedy in a higher court, such as injunctive relief, you will waive your right to that remedy and still bring the dispute within the Small Claims Court.</p>
 <p class="Conv_MuseoSans_500">If you bring a dispute in a manner other than in accordance with this section, you agree that we may move to have it dismissed, and that you will be responsible for our reasonable attorneys' fees, court costs, and disbursements in doing so.</p>
-
-
 <h3 class="Conv_MuseoSans_700" >16. Force Majeure</h3>
 <p class="Conv_MuseoSans_500">You agree that we are not responsible to you for anything that we may otherwise be responsible for, if it is the result of events beyond our control, including, but not limited to, acts of God, war, insurrection, riots, terrorism, crime, labor shortages (including lawful and unlawful strikes), embargoes, postal disruption, communication disruption, unavailability of payment processors, failure or shortage of infrastructure, shortage of materials, or any other event beyond our control.</p>
 <h3 class="Conv_MuseoSans_700" >17. Severability</h3>
 <p class="Conv_MuseoSans_500">In the event that a provision of this Agreement is found to be unlawful, conflicting with another provision of the Agreement, or otherwise unenforceable, the Agreement will remain in force as though it had been entered into without that unenforceable provision being included in it.</p>
 <p class="Conv_MuseoSans_500">If two or more provisions of this Agreement are deemed to conflict with each other's operation, Ebbu shall have the sole right to elect which provision remains in force</p>
-
 <h3 class="Conv_MuseoSans_700" >18. Non-Waiver</h3>
 <p class="Conv_MuseoSans_500">Ebbu reserves all rights afforded to us under this Agreement as well as under the provisions of any applicable law.  Our non-enforcement of any particular provision or provisions of this Agreement or any applicable law should not be construed as our waiver of the right to enforce that same provision under the same or different circumstances at any time in the future.</p>
 <h3 class="Conv_MuseoSans_700" >19. Termination &amp; Cancellation</h3>
@@ -929,48 +547,32 @@ input{
 <p class="Conv_MuseoSans_500">Under no circumstances, including termination or cancellation of our Service to you, will we be liable for any losses related to actions of other Users.</p>
 <h3 class="Conv_MuseoSans_700" >20. Assignment of Rights</h3>
 <p class="Conv_MuseoSans_500">You may not assign your rights and/or obligations under this Agreement to any other party without our prior written consent.  We may assign our rights and/or obligations under this Agreement to any other party at our discretion.</p>
-
-
 <h3 class="Conv_MuseoSans_700" >21. Amendments</h3>
 <p class="Conv_MuseoSans_500">We may amend this Agreement from time to time.  When we amend this Agreement, we will update this page accordingly and e-mail you to inform you that there has been an amendment.  Your continued use of our Service shall constitute your acceptance of any such amendments.</p>
 <h3 class="Conv_MuseoSans_700" >22. California Users and Residents</h3>
 <p class="Conv_MuseoSans_500">Pursuant to California Civil Code Section 1789.3, any questions about pricing, complaints, or inquiries about Ebbu must be addressed to our agent for notice and sent via certified mail to that agent.  For our agent's most current contact information, please send a request to <a href="mailto:TheGoodPeople@EbbuApp.com" >TheGoodPeople@EbbuApp.com</a>.</p>
 <p class="Conv_MuseoSans_500">Lastly, California users are also entitled to the following specific consumer rights notice: The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1625 North Market Blvd., Sacramento, CA 95834, or by telephone at (916) 445-1254 or (800) 952-5210.</p>
-
-
           </div>
     </div><!-- /content -->
 </div>
-
-
 <div data-role="page" id="5sprivacy">
-         
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
-    
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
-
         <div class="topmenucontainer" >
-    
-     
      <div class="searchsettings">
        		 <a  data-rel="back" class="backbutton lefticon" data-prefetch="true"  ><img class="backimg lefticonAlign" src="icons/57x57/back.png" ></a>
              <a  class="righticon" data-prefetch="true"   >&emsp;&emsp;&emsp; &nbsp;</a>
         <center><img  class="midicon loadhomepage"  src="img/header.png" ></center>
       </div>  
     </div>
-                    
     <div class="title_bac" style="alignment-baseline:baseline;  height:45px; width:100% ; padding:-1px !important; text-align:center;"  >
         		<p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Privacy</p>
     </div>
-      
- 
 </div><!-- /header -->
 	   	<div  role="main" class="ui-content" >
         <div class="example-wrapper padding_left terms_of_service  " style="padding-bottom:20px;" data-iscroll >
-        
           <h3 class="Conv_MuseoSans_700" >1. Introduction</h3>
           <p class="Conv_MuseoSans_500 ">Thank you for visiting Ebbu and, if applicable, choosing to download and install our App.  Please read our Terms of Service and this Privacy Policy carefully, as you must agree to both documents in order to have permission to use our Service.</p>
-
 <h3 class="Conv_MuseoSans_700" >2. Definitions</h3>
 <p class="Conv_MuseoSans_500 ">Throughout this document, we may use certain words or phrases, and it is important that you understand the meaning of them.  The following is a non-exhaustive list of definitions of words and phrases found in this document:</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"Ebbu" refers to our company, known as "Eboo Inc."; our Site; our Service; our App; or a combination of all or some of the preceding definitions, depending on the context in which the word is used;</p>
@@ -978,20 +580,13 @@ input{
 <p class="Conv_MuseoSans_500 sub_paragragh">"Site" refers to our website, www.ebbuapp.com;</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"User" refers to anyone who uses our Service, including users of our App and general visitors to our Site;</p>
 <p class="Conv_MuseoSans_500 sub_paragragh">"You" refers to you, the person who is governed by this Privacy Policy.</p>
-
-
-
 <h3 class="Conv_MuseoSans_700" >3. Information Collected</h3>
-
 <h3 class="Conv_MuseoSans_700" >Identifying Information</h3>
 <p class="Conv_MuseoSans_500 ">We collect certain personal information from you when you sign up to our Service that can be used to identify you, such as your e-mail address, unique device ID, Facebook profile, usage frequency, search terms, usage duration, articles viewed, articles shared, Twitter profile, and any other information that we deem relevant for the purpose of providing you with our Service or which you provide to us voluntarily.  The information we collect from you, to the extent that it is private, is disclosed only in accordance with our Terms of Service and/or this Privacy Policy.</p>
 <h3 class="Conv_MuseoSans_700" >Non-Identifying Information</h3>
 <p class="Conv_MuseoSans_500 ">Whenever you visit our Site, we may collect non-identifying information from you, such as your IP address, referring URL, browser, operating system, cookie information, and Internet Service Provider.  Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, this information alone cannot usually be used to identify you.</p>
-
-
 <h3 class="Conv_MuseoSans_700" >4. Use of Your Information</h3>
 <p class="Conv_MuseoSans_500 ">We may use your information to:</p>
-
 <ul>
 <li class="Conv_MuseoSans_500" >Enhance or improve User experience, our Site, or our Service.</li>
 <li class="Conv_MuseoSans_500" >Send e-mails about our Site or respond to inquiries.</li>
@@ -1000,172 +595,98 @@ input{
 <li class="Conv_MuseoSans_500" >Provide your profile to marketers to support their native advertising efforts with Ebbu.</li>
 <li class="Conv_MuseoSans_500" >Perform any other function that we believe in good faith is necessary to protect the security or proper functioning of our Site or Service.</li>
 </ul>
-
-
-
 <h3 class="Conv_MuseoSans_700" >5. Accessing, Editing, and Removing Your Information</h3>
 <p class="Conv_MuseoSans_500 ">Users may in some cases be able to review and edit the personal information they have provided to us by logging into your account on the Site and editing their account.  Although most changes may occur immediately, information may still be stored in a web browser's cache.  We take no responsibility for stored information in your cache, or in other devices that may store information, and disclaim all liability of such.  In addition, we may, from time to time, retain residual information about you in our backup and/or database.</p>
-
 <h3 class="Conv_MuseoSans_700" >6. Cookies</h3>
 <p class="Conv_MuseoSans_500 ">We use cookies to remember your preferences and track advertisements.  For these reasons, it is necessary that you enable cookies in your browser, and you hereby acknowledge that we have informed you of our use of cookies and that you consent to our use of cookies in relation to your computer system.</p>
-
 <h3 class="Conv_MuseoSans_700" >7. Third Party Websites</h3>
 <p class="Conv_MuseoSans_500 ">Ebbu may post links to third party websites on its Site.  These third party websites are not screened for privacy or security issues by Ebbu, and you release us from any liability for the conduct of these third party websites.</p>
 <p class="Conv_MuseoSans_500 ">Please be aware that this Privacy Policy, and any other policies in place, in addition to any amendments, does not create rights enforceable by third parties or require disclosure of any personal information relating to members of the Service or Site.  Ebbu bears no responsibility for the information collected or used by any advertiser or third party website.  Please review the privacy policy and terms of service for each site you visit through third party links.</p>
-
-
-
-
-
 <h3 class="Conv_MuseoSans_700" >8. Third Party Access to Your Information</h3>
 <p class="Conv_MuseoSans_500 " >Although you are entering into an Agreement with Ebbu to disclose your information to us, we do use third party individuals and organizations to assist us, including contractors, web hosts, and others.</p>
 <p class="Conv_MuseoSans_500" >Throughout the course of our provision of our Service to you, we may delegate our authority to collect, access, use, and disseminate your information.  For example, our web host stores the information that you provide us, and we may hire outside contractors to perform maintenance or assist us in securing our website.</p>
 <p class="Conv_MuseoSans_500" >It is therefore necessary that you grant the third parties we may use in the course of our business the same rights that you afford us under this Privacy Policy.  For this reason, you hereby agree that for every authorization which you grant to us in this Privacy Policy, you also grant to any third party that we may hire, contract, or otherwise retain the services of for the purpose of operating, maintaining, repairing, or otherwise improving or preserving our website or its underlying files or systems.  You agree not to hold us liable for the actions of any of these third parties, even if we would normally be held vicariously liable for their actions, and that you must take legal action against them directly should they commit any tort or other actionable wrong against you.</p>
-
-
 <h3 class="Conv_MuseoSans_700" >9. Release of Your Information for Legal Purposes</h3>
 <p class="Conv_MuseoSans_500 ">At times it may become necessary or desirable to Ebbu, for legal purposes, to release your information in response to a request from a government agency or a private litigant.  You agree that we may disclose your information to a third party where we believe, in good faith, that it is desirable to do so for the purposes of a civil action, criminal investigation, or other legal matter.  In the event that we receive a subpoena affecting your privacy, we may elect to notify you to give you an opportunity to file a motion to quash the subpoena, or we may attempt to quash it ourselves, but we are not obligated to do either.  We may also proactively report you, and release your information to, third parties where we believe that it is prudent to do so for legal reasons, such as our belief that you have engaged in fraudulent activities.  You release us from any damages that may arise from or relate to the release of your information to a request from law enforcement agencies or private litigants.</p>
-
 <h3 class="Conv_MuseoSans_700" >10. Security Measures</h3>
 <p class="Conv_MuseoSans_500 ">We take certain measures to enhance the security of our Site and Service, as it is in our interest to do so.  However, we make no representations as to the security or privacy of your information.  It is in our interest to keep our website secure, but we recommend that you use anti-virus software, firewalls, and other precautions to protect yourself from security threats.</p>
-
 <h3 class="Conv_MuseoSans_700" >11. Your California Privacy Rights</h3>
 <p class="Conv_MuseoSans_500 ">Ebbu permits residents of California to use its Service.  Therefore, it is the intent of Ebbu to comply with the California Business and Professions Code §§ 22575-22579.  If you are a California resident you may request certain information regarding our disclosure of personal information to any third parties for their direct marketing purposes.  Various provisions throughout this Privacy Policy address requirements of the Californian privacy statutes.  In summary, you must presume that we collect electronic information from all visitors.  You may contact us at <a href="mailto:thegoodpeople@ebbuapp.com" >TheGoodPeople@EbbuApp.com</a> with any questions.</p>
-
 <h3 class="Conv_MuseoSans_700" >12.  International Transfer</h3>
 <p class="Conv_MuseoSans_500 ">Your information may be transferred to—and maintained on—computers located outside of your state, province, country or other governmental jurisdiction where the privacy laws may not be as protective as those in your jurisdiction.  If you are located outside of Canada and choose to provide information to us, Ebbu transfers Personal Information to Canada and processes it there.  Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
-
 <h3 class="Conv_MuseoSans_700" >13. Amendments</h3>
 <p class="Conv_MuseoSans_500 ">We may amend this Privacy Policy from time to time.  When we amend this Privacy Policy, we will update this page accordingly and e-mail you to inform you that there has been an amendment.  Your continued use of our Service shall constitute your acceptance of any such amendments.</p>
-
           </div>
     </div><!-- /content -->
 </div>
-
-
-
-
-
 <div class="backgroundmask loaderScreen" ></div>
 <img  class="loaderScreen loaderScreen2" style="position:absolute;bottom:44%; left:48%;  width:25px; alignment-adjust:middle !important; display:none;   z-index:99999999; " src="loader.png" >
-
-
-
   <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="js/jquery.mobile-1.4.4.js"></script>
-  
  <!-- <script type="text/javascript" src="js/hammer.js"></script>-->
-  
    <script type="text/javascript" src="js/SocialSharing.js"></script>
    <script type="text/javascript" src="js/nonbounce.js"></script>
 <script type="text/javascript" src="js/swipeleft.js"></script>
-
-
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-
-
-
-
  <script>
-    
-
-
  $('#searcharea').hide();
  $('.search_empty').hide();
- 
-
 	function show_focus(){
 		$('#searcharea').focus();
 	}
-	
-
-  
   function show_search()
   {
-	  
 	  $('#searcharea').show();
 	   $('.search_empty').show();
 	  $('input').focus();
 	  $('#searcharea').focus();
-	
-	
 	  } 
-
-	
 var touchedclear=0;		
 	$('#clearsearch1').on('touchstart',function(){
 		touchedclear=1;
 		});	
-
 $('#searcharea').on('blur',function(){ 
-
 		if(touchedclear==1)
 		{
 $('#searcharea').focus();
 $('#searcharea').val('');
 touchedclear=0;
-			
 			}else{
-					
 				$('.search_empty').hide();		
 				$('#searcharea').hide();	
 				$('#searcharea').blur();
 				touchedclear=0;
 		}
-							
  });
-
-
-
-
-   
 //global declarations
-
 		function showModal(){
   $("body").append('<div class="modalWindow"/>');
-
   setTimeout('hideModal()', 2000);
 }
-
 function hideModal(){
  $(".modalWindow").remove();
    	$('.loaderScreen').show();
-
 }
-	
-
-
 $('#searcharea').keypress(function(e) {
     if(e.which == 13) {
-		
 	//	cordova.plugins.Keyboard.close;
 	//	console.log(ajax_path + ' asdasd');
-		
 	   if( $('#searcharea').val()!='')
 	   {
-	   //start  my loader here !!!!
-		$.support.cors = true;
-		
-									
+			//start  my loader here !!!!
+			$.support.cors = true;
 			new_skip_rss_count = 0 ;
 			new_skip_tweet_count = 0 ;
-
 			shownrssarticle=0;
 			showntwitterarticle=0;
-		
-	$('#searcharea').hide();
-	$('.search_empty').hide();
-	$('#searcharea').blur();
-	$('.search_empty').blur();
-
-		
-		$('.loaderScreen').show();
-
-		
-		
+			$('#searcharea').hide();
+			$('.search_empty').hide();
+			$('#searcharea').blur();
+			$('.search_empty').blur();
+			$('.loaderScreen').show();
 		$.ajax({
 			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
@@ -1174,202 +695,115 @@ $('#searcharea').keypress(function(e) {
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                       
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                       
-                    },
+			// This callback function will trigger before data is sent
+			},
+			complete: function() {
+			// This callback function will trigger on data sent/received complete
+			},
 			success: function(data)
 			{
-				
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-			//	alert(SearchQueryId);
-				
 				if(FeedStatus=='success')
-				{
-					
+				{			
 				SearchQueryId=data.SearchQueryId;
 				shownrssarticle=data.RSSarticle;
 				showntwitterarticle=data.Twitterarticle;
-
-					
-					feed_conducted=1;
+				feed_conducted=1;
 				$('#searchvalue').html($('#searcharea').val());
-				
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
-					var article_id = element.id;			
-					var article_title =  element.title ;
-					var article_link = element.article_link ;
-					var source_name = element.source ;
-					var source_image = element.sourceimage ;
-					var pubdate = element.pubdate ;
-					var newssource = element.newssource;
-					var viewstatus=element.viewstatus; 
-				//	pubdate = pubdate.substr(5,11);
-					// checking the variable length
-					var len = 0;
-					var len=article_title.length;
+						var article_id = element.id;			
+						var article_title =  element.title ;
+						var article_link = element.article_link ;
+						var source_name = element.source ;
+						var source_image = element.sourceimage ;
+						var pubdate = element.pubdate ;
+						var newssource = element.newssource;
+						var viewstatus=element.viewstatus; 
+						//	pubdate = pubdate.substr(5,11);
+						// checking the variable length
+						var len = 0;
+						var len=article_title.length;	
+						var article_title_unescaped = article_title;
+						var source_name_unescaped = source_name;					 
+						article_title = article_title.replace(/'/g, "\\'");					
+						source_name = source_name.replace(/'/g, "\\'");
 					
-					var article_title_unescaped = article_title;
-					var source_name_unescaped = source_name;
-					 
-					article_title = article_title.replace(/'/g, "\\'");
-					
-					source_name = source_name.replace(/'/g, "\\'");
-	
-				
-					
-					if(len>55)
-					{ 
-					article_title = article_title.substr(0,55);
-					article_title = article_title + '...';	
+						append_data+='<li><div class="behind" >';
+						append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+						append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+						if(viewstatus=='1')
+						{
+						append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 						}
-					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-					
-					if(viewstatus=='1')
-					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						else{
+						append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+						append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
+						if(newssource=='twitter')
+						{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+						}else{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+						}
 					}
-					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
-						}
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					if(newssource=='twitter')
-					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
-					}
-					
-					
-					
-					
-						}
-							);			
-							
-							$('#list_view').html('');
-						    //colose my loader here !!!!
-							$('#list_view').append(append_data);
-							
-							
-							//console.log(append_data);
-									
-										$('#list_view').trigger("create");
-										$('#list_view').listview().listview('refresh');
-										$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);	
-									//	$('#list_view').refresh();
-										browser_setting();
-										$.getScript("js/SocialSharing.js");
-										SocialSharing();
-										$.getScript("js/swipeleft.js");
-										
-								var	rss_skip_count = data.rss_skip_limit;
-								var	tweet_skip_count = data.twitter_skip_limit;
-										
-					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
-					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
-								
-							 
-							 
-							 	hideLoaderScreen();		
-												
-												
-				}//user data match if
-				else{
-					
-					// user data doent match
-					
-					
-					
-					hideLoaderScreen();
-			navigator.notification.alert("We couldn't find any recent articles on your topic. Tip: use one word for a broader search.", alertCallback, "Ebbu", "OK");
-			
+				);			
 
-										
-					}
-			
-			
+				//colose my loader here !!!!
+				$('#list_view').empty().append(append_data);
+				$('#list_view').trigger("create");
+				$('#list_view').listview().listview('refresh');
+				$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);				
+				//	$('#list_view').refresh();
+				browser_setting();
+				$.getScript("js/SocialSharing.js");
+				SocialSharing();
+				$.getScript("js/swipeleft.js");
+				var	rss_skip_count = data.rss_skip_limit;
+				var	tweet_skip_count = data.twitter_skip_limit;
+				new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+				new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+				hideLoaderScreen();																		
+				}//user data match if
+				else{					
+				// user data doent match
+				hideLoaderScreen();
+				navigator.notification.alert("We couldn't find any recent articles on your topic. Tip: use one word for a broader search.", alertCallback, "Ebbu", "OK");
+				}
 			last_search = $('#searcharea').val();
 			$('#searcharea').val('');
-			
-			
-			
-				},
+		},
 		error: function(e) {
-			
-			
-			
 			hideLoaderScreen();
-			
 			navigator.notification.alert("Network Error", alertCallback, "Ebbu", "OK");
-			
-     //  alert(' please try after sometime');		
-	//	console.log(e.status);
-
-			
-			
+			//  alert(' please try after sometime');		
+			//	console.log(e.status);		
 		}
-			
-			
-			
-			
-			});
-		
-		
+		});
 	}//ifclose
 	else{
-		
-		
 		load_trending();
-		
-		
-		}
-		
-		
+	}
     }
 });
-
-
-
-
-
 //Let's say the /profile endpoint on the provider waits for
 //a PATCH request to update the authenticated user's profile 
 //containing the field "name" and returns the field "name" 
 //containing the new name
-
-
-
-
 function load_trending()
 {
-	last_search = '';
-	
-		
-					new_skip_rss_count = 0 ;
-					new_skip_tweet_count = 0 ;
-					
-					shownrssarticle=0;
-				showntwitterarticle=0;
-
-$('.backgroundmask').show();
-
-	$('.loaderScreen').show();
-	
-	//alert(EbbuUSER_ID + 'pronnn');
-	
-
-	$.ajax({
+		last_search = '';
+		new_skip_rss_count = 0 ;
+		new_skip_tweet_count = 0 ;
+		shownrssarticle=0;
+		showntwitterarticle=0;
+		$('.backgroundmask').show();
+		$('.loaderScreen').show();
+		//alert(EbbuUSER_ID + 'pronnn');
+		$.ajax({
 			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
@@ -1377,154 +811,92 @@ $('.backgroundmask').show();
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                       
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                       
-                    },
+				// This callback function will trigger before data is sent
+			},
+			complete: function() {
+				// This callback function will trigger on data sent/received complete
+			},
 			success: function(data)
 			{
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
-					
-					
-				$('#searchvalue').html('The Frontpage');
-				
-				   	var append_data =  '';
+					shownrssarticle=data.RSSarticle;
+					showntwitterarticle=data.Twitterarticle;					
+				$('#searchvalue').html('The Frontpage');		
+					var append_data =  '';
 					$.each(feedData, function(index, element) {
-					var article_id = element.id;			
-					var article_title =  element.title ;
-					var article_link = element.article_link ;
-					var source_name = element.source ;
-					var source_image = element.sourceimage ;
-					var pubdate = element.pubdate ;
-					var newssource = element.newssource;
-					var viewstatus=element.viewstatus; 
-					
-					//pubdate = pubdate.substr(5,11);
-					// checking the variable length
-					var len = 0;
-					var len=article_title.length;
-					
-				 var article_title_unescaped = article_title;
-				 var source_name_unescaped = source_name;	
-					
-					
-					article_title = article_title.replace(/'/g, "\\'");
-					
-					source_name = source_name.replace(/'/g, "\\'");
-					
+						var article_id = element.id;			
+						var article_title =  element.title ;
+						var article_link = element.article_link ;
+						var source_name = element.source ;
+						var source_image = element.sourceimage ;
+						var pubdate = element.pubdate ;
+						var newssource = element.newssource;
+						var viewstatus=element.viewstatus; 
+						//pubdate = pubdate.substr(5,11);
+						// checking the variable length
+						var len = 0;
+						var len=article_title.length;
+						var article_title_unescaped = article_title;						
+						var source_name_unescaped = source_name;	
+						article_title = article_title.replace(/'/g, "\\'");
+						source_name = source_name.replace(/'/g, "\\'");
 	
-						
-					
-					if(len>55)
-					{ 
-					article_title = article_title.substr(0,55);
-					article_title = article_title + '...';	
+						append_data+='<li><div class="behind"  >';
+						append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+						append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+						if(viewstatus=='1')
+						{
+						append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 						}
-						
-					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-					
-					if(viewstatus=='1')
-					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						else{
+						append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						}
+						append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
+						if(newssource=='twitter')
+						{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+						}else{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+						}
 					}
-					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
-						}
-					
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					if(newssource=='twitter')
-					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
-					}
-
-		
-						}
-							);			
-							$('#list_view').html('');
-						//colose my loader here !!!!
-							$('#list_view').append(append_data);
-						//	console.log(append_data);
-											$('#list_view').trigger("create");
-										$('#list_view').listview().listview('refresh');
-										
-										
-										
-										
-										$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);
-												/*
-												data.is iscrollview.refresh(null, null,
-												$.proxy(function afterRefreshCallback(iscrollview) { 
-												this.scrollToElement("div.5spage1 ul.ui-listview", 400); 
-												}, iscrollview) ); */
-												
-										
-										//	$('#list_view').refresh();
-										browser_setting();
-										$.getScript("js/SocialSharing.js");
-										SocialSharing();
-										$.getScript("js/swipeleft.js");
-						
-					var	rss_skip_count = data.rss_skip_limit;
-					var	tweet_skip_count = data.twitter_skip_limit;
-					
-					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
-					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
-
-						
-						hideLoaderScreen();
-						
-						
+				);			
+				$('#list_view').html('');
+				//colose my loader here !!!!
+				$('#list_view').empty().append(append_data);
+				//	console.log(append_data);
+				$('#list_view').trigger("create");
+				$('#list_view').listview().listview('refresh');
+				$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);				
+				//	$('#list_view').refresh();
+				browser_setting();
+				$.getScript("js/SocialSharing.js");
+				SocialSharing();
+				$.getScript("js/swipeleft.js");
+				var	rss_skip_count = data.rss_skip_limit;
+				var	tweet_skip_count = data.twitter_skip_limit;
+				new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+				new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
+				hideLoaderScreen();
 				}//user data match if
 				else{
-					
 					// user data doent match
-					
 					hideLoaderScreen();
-					
-			navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
-					
-					}
-			
-			
-				},
-		error: function(e) {
-			hideLoaderScreen();
-			
-      
-	  navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
-		
-			
-		//	console.log(e);
-		
-			
+					navigator.notification.alert("We couldn't find any articles now, please try later.", alertCallback, "Ebbu", "OK");
+				}
+			},
+			error: function(e) {
+				hideLoaderScreen();
+				navigator.notification.alert("Network problem", alertCallback, "Ebbu", "OK");
 		}
-		
-		
-		
-		
-			
 	});
-	
-	
-}function startswiperfunction(){
+}
+function startswiperfunction(){
 	var mySwiper = $('.swiper-container').swiper({
     //Your options here:
     mode:'horizontal',
@@ -1545,416 +917,210 @@ $(window).resize(function(){
     //Add reInit, because jQuery's resize event handler may occur earlier than Swiper's one
 	mySwiper.reInit();
 	swiper.reInit();
-	
 })
 $(window).resize(); 
 	}
 	setTimeout(function() {
-			
 navigator.splashscreen.hide();
-		
 	//	
-		
    			 }, 3000);
-	
-	
-	
     var db = window.openDatabase("Ebbu_user", "1.0", "Ebbu user local Database", 200000); //will create database Dummy_DB or open it
- 
     //function will be called when device ready
     function onDeviceReady(){
-		
-		
-		
-		
-	
-		
 db.transaction(populateDB, errorCB, successCB);
-
-
-
-										
     }
-	
 	function start_timer(){
-		
-		//alert('aa');
-			 setInterval(
-							function(){
-								
-				//			console.log(user_active+'---time --'+user_time)	
-								//alert('ss');
-							if(user_active==1)
-							{
-							user_time = user_time+30000;
-							user_active=0;	
-								}
-							else{
-							user_active=0;
-							update_timer();	
-							} 
-						}
-							,30000); 
-							
-							
+		 setInterval(
+			function(){
+				if(user_active==1){
+					user_time = user_time+30000;
+					user_active=0;	
+					}else{
+					user_active=0;
+					update_timer();	
+					} 
+				},30000); 			
 	}
-	
 	function update_timer(){
-		//					console.log('started update');
-							setInterval( function update_user_time(){
-							
-							if(user_time!=0)
-							{
-								
-							//	console.log('user_id='+EbbuUSER_ID+'&seconds='+user_time);
-								
-								$.post(ajax_path+'updatetime.php?user_id='+EbbuUSER_ID+'&seconds='+user_time+'&security_token='+security_token);
-			//					console.log('user_time = '+user_time);
-								
-								user_time= 0;
-								user_active=0;
-								}
-							}	 ,120000 );
-	 
+		setInterval( function update_user_time(){
+		if(user_time!=0)
+		{
+		//	console.log('user_id='+EbbuUSER_ID+'&seconds='+user_time);
+			$.post(ajax_path+'updatetime.php?user_id='+EbbuUSER_ID+'&seconds='+user_time+'&security_token='+security_token);
+		//	console.log('user_time = '+user_time);
+			user_time= 0;
+			user_active=0;
+			}
+		}	 ,120000 );
 	}
-	
-
- 
     //create table and insert some record
     function populateDB(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS ebbuUser (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL , user_id INTEGER , twitter INTEGER, facebook INTEGER )');
-		
     }
- 
     //function will be called when an error occurred
     function errorCB(err) {
-
-		
-		
     }
- 
     //function will be called when process succeed
     function successCB() {
-      
         db.transaction(queryDB,errorCB);
 //		alert("successaa!");
     }
- 
     //select all from table
     function queryDB(tx){
         tx.executeSql('SELECT * FROM ebbuUser ',[],querySuccess,errorCB);
     }
- 
     function querySuccess(tx,result){
-       
 	//  console.log(result.rows.item);
-	   
 	   var length = result.rows.length;
 	  //	console.log("DEMO table: " + length + " rows found.");	
-		
-		
-		
 		if(length >0)
 		{
-	
-
-
-
 			$.mobile.changePage('#5spage1' , { transition:'slidefade'  });
-		
 				for(var i=0; i< length ; i++)
 				{
 					EbbuUSER_ID = result.rows.item(i).user_id;
-					ebbu_twitter= result.rows.item(i).twitter;
-					
-					//console.log(EbbuUSER_ID);
+					ebbu_twitter= result.rows.item(i).twitter;				
 					ebbu_facebook= result.rows.item(i).facebook;
-			//		
-					
-				
-					}
-					
-					
-					if( ebbu_twitter == '0' )
-					{
-						$('#twitterlogout').css('display','block');
-						$('#twitterlogged').css('display','none');
-						}else{
-						$('#twitterlogout').css('display','none');
-						$('#twitterlogged').css('display','block');	
-							}
-					if( ebbu_facebook == '0' )
-					{
-						$('#facebooklogout').css('display','block');
-						$('#facebooklogged').css('display','none');
-						}else{
-						$('#facebooklogout').css('display','none');
-						$('#facebooklogged').css('display','block');	
-							}
-					
-	
-	
-				
-	
-					
-					
-					
+				}
+				if( ebbu_twitter == '0' )
+				{
+					$('#twitterlogout').css('display','block');
+					$('#twitterlogged').css('display','none');
+				}else{
+					$('#twitterlogout').css('display','none');
+					$('#twitterlogged').css('display','block');	
+				}
+				if( ebbu_facebook == '0' ){
+					$('#facebooklogout').css('display','block');
+					$('#facebooklogged').css('display','none');
+				}else{
+					$('#facebooklogout').css('display','none');
+					$('#facebooklogged').css('display','block');	
+				}	
 				//tx.executeSql('DELETE FROM ebbuUser');	
-			
 				load_trending();
 				browser_setting();
-				
 				start_timer();
-				
 				update_timer();
-				
-		//	alert('1');
-//swipe_list_items();
-		
-		
-						
+				//	alert('1');
+				//swipe_list_items();				
 		}else{
-	//		alert('1');
-	//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });
-			
-	 	$.mobile.changePage('#5spage' , { transition:'slidefade' });
-		
-		   start_timer();
-		   update_timer();
-			
-	       startswiperfunction();
-				
-				
-			
+			//	alert('1');
+			//$( "body" ).pagecontainer( "change", '#5spage'  ,  { transition:'pop'  });	
+			$.mobile.changePage('#5spage' , { transition:'slidefade' });
+				start_timer();
+				update_timer();
+			    startswiperfunction();
 		}
-  
     }
-	
-	
-	
 	function ErrorCallBack(err){
-		
-	
-		
-		}
-	
+	}
 	function alertCallback(){
-		
-		}
-	
+	}
 	function validate_email()
 	{ 
-	
-	
 	$("#loaderScreen1").show();
-	
 	var	useremail = $('#useremail').val();
 	var checkk = 	IsEmail(useremail);
 	if(checkk== false)
 	{
-		
-		
 	$("#loaderScreen1").hide();	
-		
 	navigator.notification.alert("Please enter a valid email address to proceed.", alertCallback, "Error !!", "OK");
 	//	alert('enter a vaild email');
-	
 		}
 	else{
-	
 		$.ajax({
-			url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token='+security_token,
-			type:'POST',
-			contentType: "application/json",
-        	async: true,
-       		dataType: 'json',
-        	crossDomain: true,
-			success: function(data)
-							{
-							var	login_Response = data.LoginResponse;
-					ebbu_twitter= '0';
-					
-					
-					ebbu_facebook= '0';
-							
-							
-							
+				url:ajax_path+'userinsert.php?useremail='+useremail+'&security_token='+security_token,
+				type:'POST',
+				contentType: "application/json",
+				async: true,
+				dataType: 'json',
+				crossDomain: true,
+				success: function(data)
+						{
+								var	login_Response = data.LoginResponse;
+								ebbu_twitter= '0';
+								ebbu_facebook= '0';
 								if(login_Response.status=='100')
 								{
-								
-							
-									
 									$("#loaderScreen1").hide();
-									
-							 		db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, ebbu_twitter,ebbu_facebook)}, ErrorCallBack );	
+									db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, ebbu_twitter,ebbu_facebook)}, ErrorCallBack );	
 								}else if(login_Response.status=='101'){
 									//	alert('User Already Exists' );
-									
 									$("#loaderScreen1").hide();
-									
 									db.transaction( function(tx){ insertvalues(tx, useremail, login_Response.user_id, ebbu_twitter,ebbu_facebook)}, ErrorCallBack );	
-									}
+								}
 								else{
-									
-									
 									$("#loaderScreen1").hide();
-											navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
-								
+										navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
 									}	
-								
-								
-								},
-			error: function(e)
+						},
+				error: function(e)
 				{
-					
-					
-				$("#loaderScreen1").hide();	
-					
-				navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
-					
-					}
-			
-			
+					$("#loaderScreen1").hide();	
+					navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
+				}
 			});
-		
-		
-		
 		}	
     }
-		
 		function insertvalues(tx,parameter1,parameter2,p3,p6)
 		{
-			
-		
-		EbbuUSER_ID = parameter2;
-		ebbu_twitter= p3;
-			
-			
+			EbbuUSER_ID = parameter2;
+			ebbu_twitter= p3;
 			ebbu_facebook= p6;
-			
 			tx.executeSql('INSERT INTO ebbuUser(email,user_id , twitter , facebook ) VALUES (?,?,?,?)',[parameter1,parameter2,p3,p6],userinsert);
-			
-
-			
-			
-			
-			
-			
-			
-	//	console.log(parameter2)
 		}
-		
-		
 		function userinsert()
 		{
-			
-			
 			load_trending();
 			browser_setting();
-			
-	//	window.plugins.spinnerDialog.show();
-			
+			//	window.plugins.spinnerDialog.show();
 			$.mobile.changePage('#5spage1' , { transition:'slidefade' }  );
-			
-	//	window.plugins.spinnerDialog.hide();
-			
+			//	window.plugins.spinnerDialog.hide();	
 		}
-		
-
-function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
-}
-	
-
-	
-
-
-
-
-$(document).on("tap",function(){
- 
-user_active = 1;
- 
-});
-
-$(document).on("taphold",function(){
- 
- user_active = 1;
- 
-});
-
-$(document).on("swipe",function(){
-
- user_active = 1;
- 
-});
-
-$(document).on("swiperight",function(){
- 
- user_active = 1;
- 
-});
-
-$(document).on("swipeleft",function(){
- 
- user_active = 1;
- 
-});
-
-$(document).on("scrollstart",function(){
- 
- user_active = 1;
- 
-});
-
-
-function bringdown()
-{
-	
-	
-
-	
-	
-$('#textinput').css('position','relative');
-$('#textinput').animate({'bottom':'58%'},100,'linear');
-
-	
+	function IsEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
 	}
-
-
+	$(document).on("tap",function(){
+		user_active = 1;
+	});
+	$(document).on("taphold",function(){
+	 user_active = 1;
+	});
+	$(document).on("swipe",function(){
+	 user_active = 1;
+	});
+	$(document).on("swiperight",function(){
+	 user_active = 1;
+	});
+	$(document).on("swipeleft",function(){
+	 user_active = 1;
+	});
+	$(document).on("scrollstart",function(){
+	 user_active = 1;
+	});
+	function bringdown()
+	{
+		$('#textinput').css('position','relative');
+		$('#textinput').animate({'bottom':'58%'},100,'linear');
+	}
 function bringup()
 {
-	
-
-
   $('#textinput').css('position','relative');
   $('#textinput').animate({'bottom':'90%'},100,'linear');
- 
-  
 // See if keyboard is open or not
-
-
 // Get height of open keyboard (including inputAccessoryView toolbar)
 //var height = Keyboard.getHeight();
-
 // The following jQuery events are available:
 // keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
-
-
 }
-
-
 function get_more_data()
 {
-	
-	
 	if( $('#searcharea').val() =='' && last_search =='' )
 	{
 		last_search='';
-		
  		$.ajax({	
-				
 			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
 			type:'POST',
 			contentType: "application/json",
@@ -1963,27 +1129,20 @@ function get_more_data()
         	crossDomain: true,
 			beforeSend: function() {
                         // This callback function will trigger before data is sent
-                       
                     },
                     complete: function() {
                         // This callback function will trigger on data sent/received complete
-                       
                     },
 			success: function(data)
 			{
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
 				if(FeedStatus=='success')
 				{
 					feed_conducted=0;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
-					
-					
-				$('#searchvalue').html('The Frontpage');
-				
+					shownrssarticle=data.RSSarticle;
+					showntwitterarticle=data.Twitterarticle;	
+					$('#searchvalue').html('The Frontpage');
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
 					var article_id = element.id;			
@@ -1994,35 +1153,19 @@ function get_more_data()
 					var pubdate = element.pubdate ;
 					var newssource = element.newssource;
 					var viewstatus=element.viewstatus; 
-					
-					//pubdate = pubdate.substr(5,11);
+					// pubdate = pubdate.substr(5,11);
 					// checking the variable length
 					var len = 0;
 					var len=article_title.length;
-					
-				 var article_title_unescaped = article_title;
-					
-				 var source_name_unescaped = source_name;	
-					
-					
-					
+					var article_title_unescaped = article_title;					
+					var source_name_unescaped = source_name;
 					article_title = article_title.replace(/'/g, "\\'");
 					source_name = source_name.replace(/'/g, "\\'");
-					
-					
-						
-					
-					if(len>55)
-					{ 
-					article_title = article_title.substr(0,55);
-					article_title = article_title + '...';	
-						}
-						
+
 					append_data+='<li><div class="behind"  >';
 					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-					
 					if(viewstatus=='1')
 					{
 					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
@@ -2030,7 +1173,6 @@ function get_more_data()
 					else{
 					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
 						}
-					
 					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
 					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 					if(newssource=='twitter')
@@ -2039,71 +1181,41 @@ function get_more_data()
 					}else{
 					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
 					}
-		
 						}
 							);			
-							
-						//colose my loader here !!!!
+							//close loader here !!!!
 							$('#list_view').append(append_data);
-							//alert(append_data);
-							
-									$('#list_view *').unbind('touchstart');
-									$('#list_view *').unbind('touchmove');
-									$('#list_view *').unbind('touchend');
-	
-							//$('#settingList *').unbind();
-							
-							
-											$('#list_view').trigger("create");
-										$('#list_view').listview().listview('refresh');
-										
-										
-			
-										
-										
-										
-										//	$('#list_view').refresh();
-										browser_setting();
-										$.getScript("js/SocialSharing.js");
-										SocialSharing();
-										$.getScript("js/swipeleft.js");
-										
-
-					var	rss_skip_count = data.rss_skip_limit;
-					var	tweet_skip_count = data.twitter_skip_limit;
-
-
-					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
-					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
-
-										
-						
+							//alert(append_data);			
+							$('#list_view *').unbind('touchstart');
+							$('#list_view *').unbind('touchmove');
+							$('#list_view *').unbind('touchend');
+							//$('#settingList *').unbind();	
+							$('#list_view').trigger("create");
+							$('#list_view').listview().listview('refresh');
+							//$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);
+							//	$('#list_view').refresh();
+							browser_setting();
+							$.getScript("js/SocialSharing.js");
+							SocialSharing();
+							$.getScript("js/swipeleft.js");
+							var	rss_skip_count = data.rss_skip_limit;
+							var	tweet_skip_count = data.twitter_skip_limit;
+							new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
+							new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
 				}else{
 					hideLoaderScreen();
-			navigator.notification.alert("You've reached the end of the The Frontpage Content Stream.", alertCallback, "Ebbu", "OK");
-										
-					}
-//user data match if
-				
-			
-		
-				},
+					navigator.notification.alert("You've reached the end of the The Frontpage Content Stream.", alertCallback, "Ebbu", "OK");					
+				}
+				//user data match if
+		},
 		error: function(e) {
-      
-	  
 	 		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
-	
-			
-			console.log(e);
-			
+			console.log(e);	
 		}
-			
 	});
-	
 	}else if(last_search!=''){
-		
 	//	alert('last_search = '+ last_search);
-	console.log(ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle);
+	// console.log(ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle);
 	   //start  my loader here !!!!
 		$.support.cors = true;
 		$.ajax({
@@ -2114,170 +1226,100 @@ function get_more_data()
        		dataType: 'json',
         	crossDomain: true,
 			beforeSend: function() {
-                        // This callback function will trigger before data is sent
-                       
-                    },
-                    complete: function() {
-                        // This callback function will trigger on data sent/received complete
-                       
-                    },
+			// This callback function will trigger before data is sent
+			},
+			complete: function() {
+			// This callback function will trigger on data sent/received complete
+			},
 			success: function(data)
 			{
-				
-				
 				feedData=data.Feeds;
 				FeedStatus=data.FeedStatus;
-				
-			//	alert(SearchQueryId);
-				
+				//	alert(SearchQueryId);
 				if(FeedStatus=='success')
 				{
-					
-				SearchQueryId=data.SearchQueryId;
-				shownrssarticle=data.RSSarticle;
-				showntwitterarticle=data.Twitterarticle;
-					
+					SearchQueryId=data.SearchQueryId;
+					shownrssarticle=data.RSSarticle;
+					showntwitterarticle=data.Twitterarticle;
 					feed_conducted=1;
-				
-		//		$('#searchvalue').html($('#searcharea').val());
-				
+					//$('#searchvalue').html($('#searcharea').val());
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
-					var article_id = element.id;			
-					var article_title =  element.title ;
-					var article_link = element.article_link ;
-					var source_name = element.source ;
-					var source_image = element.sourceimage ;
-					var pubdate = element.pubdate ;
-					var newssource = element.newssource;
-					var viewstatus=element.viewstatus; 
-				//	pubdate = pubdate.substr(5,11);
-					// checking the variable length
-					var len = 0;
-					var len=article_title.length;
-					
-					 var article_title_unescaped = article_title;
-					 var source_name_unescaped = source_name;
-					 
-					article_title = article_title.replace(/'/g, "\\'");
-					
-					source_name = source_name.replace(/'/g, "\\'");
-					
-					
-					
-					if(len>55)
-					{ 
-					article_title = article_title.substr(0,55);
-					article_title = article_title + '...';	
-						}
-					append_data+='<li><div class="behind" >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-					
-					if(viewstatus=='1')
-					{
-					append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
-					}
-					else{
-					append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
-						}
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					
-					if(newssource=='twitter')
-					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
-					}
+							var article_id = element.id;			
+							var article_title =  element.title ;
+							var article_link = element.article_link ;
+							var source_name = element.source ;
+							var source_image = element.sourceimage ;
+							var pubdate = element.pubdate ;
+							var newssource = element.newssource;
+							var viewstatus=element.viewstatus; 
+							//	pubdate = pubdate.substr(5,11);
+							// checking the variable length
+							var len = 0;
+							var len=article_title.length;
+							var article_title_unescaped = article_title;							
+							var source_name_unescaped = source_name;
+							article_title = article_title.replace(/'/g, "\\'");
+							source_name = source_name.replace(/'/g, "\\'");
 
-		
+							append_data+='<li><div class="behind" >';
+							append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+							append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+							append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+							if(viewstatus=='1')
+							{
+								append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+							}
+							else{
+								append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+							}
+								append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+								append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
+							if(newssource=='twitter')
+							{
+								append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+							}else{
+								append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+							}		
 						}
-							);			
-							//console.log('appended data = ');
-						
-						//colose my loader here !!!!
-							$('#list_view').append(append_data);
-							
-									$('#list_view *').unbind('touchstart');
-									$('#list_view *').unbind('touchmove');
-									$('#list_view *').unbind('touchend');
-									
-									//$('#settingList *').unbind();
-									
-	
-							
-									
-										$('#list_view').trigger("create");
-										$('#list_view').listview().listview('refresh');
-											
-									//	$('#list_view').refresh();
-									
-									
-									
-										browser_setting();
-										$.getScript("js/SocialSharing.js");
-										SocialSharing();
-										$.getScript("js/swipeleft.js");
-												
-												
+					);			
+					//console.log('appended data = ');
+					//close loader here !!!!
+					$('#list_view').append(append_data);
+					$('#list_view *').unbind('touchstart');
+					$('#list_view *').unbind('touchmove');
+					$('#list_view *').unbind('touchend');
+					//$('#settingList *').unbind();
+					$('#list_view').trigger("create");
+					$('#list_view').listview().listview('refresh');
+					//$("#escroll").iscrollview("scrollTo", 0, 0, 0, false);
+					//$('#list_view').refresh();
+					browser_setting();
+					$.getScript("js/SocialSharing.js");
+					SocialSharing();
+					$.getScript("js/swipeleft.js");
 					var rss_skip_count = data.rss_skip_limit;
 					var tweet_skip_count = data.twitter_skip_limit;
-										
 					new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
-					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
-
-							
+					new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;	
 				}//user data match if
 				else{
 					hideLoaderScreen();
-					
-	
-			navigator.notification.alert("You've reached the end of the Content Stream. Explore a new topic.", alertCallback, "Ebbu", "OK");
-										
-					}
-			
-		//	$('#searcharea').val('');
-			
-			
-			
-			
-			
-				},
-		error: function(e) {
-     		navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
-	}
-			
-			
-			
-			
+					navigator.notification.alert("You've reached the end of the Content Stream. Explore a new topic.", alertCallback, "Ebbu", "OK");
+				}
+				//	$('#searcharea').val('');
+			},
+			error: function(e) {
+				navigator.notification.alert("Network Error", alertCallback, "Ebbu", "Done");
+			}
 			});
-		
-		
-	
-		
-		
-		}
-	
-	
+		}	
 }
-
-
-
-
-
-
-
-
-
 /*jslint browser: true, sloppy: true, white: true, nomen: true, plusplus:true, maxerr: 50, indent: 2 */
 /*global jQuery:false, iScroll:false */
-
 /*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true,
          undef:true, curly:true, browser:true, jquery:true, indent:2, maxerr:50,
          white:false, nomen:false */
-
 //-------------------------------------------------------
 // Pull-Up and Pull-Down callbacks for "Pull" page
 //-------------------------------------------------------
@@ -2287,7 +1329,6 @@ function get_more_data()
       pullUpGeneratedCount = 0,
       listSelector = "div.5spage1 ul.ui-listview",
       lastItemSelector = listSelector + " > li:last-child";
-    
   /* For this example, I prepend three rows to the list with the pull-down, and append
    * 3 rows to the list with the pull-up. This is only to make a clear illustration that the
    * action has been performed. A pull-down or pull-up might prepend, append, replace or modify
@@ -2301,20 +1342,15 @@ function get_more_data()
     for (i=0; i<3; i+=1) {  // Generate some fake new content
       newContent = "<li>Pulldown-generated row " + (++pullDownGeneratedCount) + "</li>" + newContent;
       }
-	  
     $(listSelector).prepend(newContent).listview("refresh");  // Prepend new content and refresh listview
     data.iscrollview.refresh();    // Refresh the iscrollview
     }
-  
   function gotPullUpData(event, data) {
     var i,
         iscrollview = data.iscrollview,
         newContent = "";
 		get_more_data();
-		
-	  
     $(listSelector).append(newContent).listview("refresh");
-  
     // The refresh is a bit different for the pull-up, because I want to demonstrate the use
     // of refresh() callbacks. The refresh() function has optional pre and post-refresh callbacks.
     // Here, I use a post-refresh callback to do a timed scroll to the bottom of the list
@@ -2326,12 +1362,10 @@ function get_more_data()
         this.scrollToElement(lastItemSelector, 400); 
         }, iscrollview) ); 
     }
-  
   // This is the callback that is called when the user has completed the pull-down gesture.
   // Your code should initiate retrieving data from a server, local database, etc.
   // Typically, you will call some function like jQuery.ajax() that will make a callback
   // once data has been retrieved.
-  //
   // For demo, we just use timeout to simulate the time required to complete the operation.
   function onPullDown (event, data) { 
     setTimeout(function fakeRetrieveDataTimeout() {
@@ -2339,7 +1373,6 @@ function get_more_data()
       }, 
       1500); 
     }    
-
   // Called when the user completes the pull-up gesture.
   function onPullUp (event, data) { 
     setTimeout(function fakeRetrieveDataTimeout() {
@@ -2347,7 +1380,6 @@ function get_more_data()
       }, 
       1500); 
     }    
-  
   // Set-up jQuery event callbacks
   $(document).delegate("#5spage1", "pageinit", 
     function bindPullPagePullCallbacks(event) {
@@ -2356,28 +1388,17 @@ function get_more_data()
       iscroll_onpullup   : onPullUp
       } );
     } );  
-
   }(jQuery));
-
-
-
 $('#mostpopular').on("touchstart",function(e){	})
 .on("touchmove",function(e){  })	
 .on("touchend",function(e){
 	 load_trending();
 	  });	
-
-
 $('.loadhomepage').on("touchstart",function(e){	})
 .on("touchmove",function(e){  })	
 .on("touchend",function(e){
 	$.mobile.changePage('#5spage1' , { transition:'slidefade'  });
 	  });	
-	
-
 </script>
- 
-
-
 </body>
 </html>
