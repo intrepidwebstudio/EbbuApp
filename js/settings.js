@@ -1,11 +1,11 @@
 // JavaScript Document
   
 //*************************************** settings start here here *************************************** 
-var imagepath = 'http://ebbu.kurinchilion.com/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
-var ajax_path = 'http://ebbu.kurinchilion.com/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
+//var imagepath = 'http://ebbu.kurinchilion.com/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+//var ajax_path = 'http://ebbu.kurinchilion.com/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  
-//var imagepath = 'http://192.168.1.12/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
-//var ajax_path = 'http://192.168.1.12/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
+var imagepath = 'http://192.168.1.4/ebbu/';  				 //change to this    http://www.domainname.com/      (no need of /ebbu if using direct domain)
+var ajax_path = 'http://192.168.1.4/ebbu/app/';			// change to this 	http://www.domainname.com/app    (no need of /ebbu if using direct domain)
  
  
 var pageCount = 0;
@@ -23,6 +23,22 @@ var new_skip_tweet_count=0;
    var SearchQueryId;
    
    var EbbuUSER_ID;
+   
+   
+   
+   
+   var selected_article=0;
+   var selected_article_id=0;
+   var slected_source_name;
+   
+   
+   
+var	selected_category_id=0;
+var	selected_publication_id=0;
+   
+   
+   
+   
    
 	var feedData;
    var feed_conducted=0; 
@@ -85,9 +101,14 @@ var	ebbu_facebook;
 			
 		  iabRef = window.open(url, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 	      $.support.cors = true;
-		  var news_source=$(this_id).attr('data-value4');
+		  var news_source=$('#id'+click_id).attr('data-value4');
 		  console.log('data-value4='+news_source);
-		  this_id.style.setProperty( 'background-color', '#DFE3E7', 'important' );
+		  
+		  
+		 // $('#'+click_id).style.setProperty( 'background-color', '#DFE3E7', 'important' );
+		  
+			 $('#id'+click_id).attr('style', 'background-color:#DFE3E7 !important');
+		  
 	  	  $.post(ajax_path+'clickcount.php?id='+click_id + '&user_id='+EbbuUSER_ID+'&search_query_id='+SearchQueryId+'&feed_conducted='+feed_conducted+'&news_source='+news_source+'&security_token='+security_token);
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);

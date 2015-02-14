@@ -264,8 +264,7 @@ function onfacebookconfirm(button1){
 		var socialName = 'facebook';
 		db.transaction( function(tx){ updatevalues(tx, change_value,socialName)}, ErrorCallBack );	
 		
-		
-		window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+Global_share_titleee, null /* img */,Global_share_linkkk);
+	window.plugins.socialsharing.shareViaFacebook("Found via EbbuApp.com:  "+Global_share_titleee, null /* img */,Global_share_linkkk);
 		
 	}
 	

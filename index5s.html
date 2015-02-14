@@ -113,6 +113,34 @@
 		min-width:40px !important;
 		text-align:center;
 		}		
+		.black_back_icon{
+			position:absolute;
+			left:1px;
+			top:3px;
+			display:none;
+			
+			}
+		.black_back_icon img{
+			width:40%;
+			max-width:70px;
+			padding-top:9px;
+			}
+			
+		.close_back_icon{
+			position:absolute;
+			right:1px;
+			top:3px;
+			display:none;
+			
+			}
+		.close_back_icon img{
+			width:40%;
+			max-width:70px;
+			padding-top:9px;
+			}
+		
+		
+		
 		.righticon{
 		min-height:40px !important;	
 		min-width:40px !important;
@@ -264,6 +292,11 @@
 		margin-left:-7px;
 		margin-right:7px;
 		}
+		.righticonAlign{
+		width:34% !important;
+		margin-left:-7px;
+		margin-right:7px;
+		}
 		</style>
 		<style>
 		.loaderScreen2 {
@@ -363,20 +396,29 @@
          </div>  
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
         <div class="topmenucontainer"  >
-        <div class="search_empty topplace_empty" style=" min-height:37px !important;  ;display:none !important;" >&emsp;</div>
+        <div class="search_empty topplace_empty" style=" min-height:37px !important;  display:none !important;" >&emsp;</div>
         <div class="searchsettings " id="top_menu" >
        		<a   class="lefticon"  id="showsearch" data-role='ui-btn'  ><img  class="searchimg " src="icons/57x57/search.png"  ></a>
         	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slidefade"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
 		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
       </div>  
         </div>
-    <div id="search_show_bar" class="title_bac" style="alignment-baseline:baseline;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
-        		<p style="vertical-align:middle !important; margin-top:13px;" id="searchvalue" class="Conv_MuseoSans-300Italic">The Frontpage</p>
+    <div class="title_bac" style="alignment-baseline:baseline; background-color:#0F6;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
+           		 
+                 <a onClick="remove_filter()" id="icon_black" class="backbutton black_back_icon"  ><img class="backimg lefticonAlign"    src="icons/57x57/back_black.png" ></a>
+<div style="float:none"></div>
+        	<p id="search_show_bar"  style="vertical-align:middle !important; margin-top:13px;"  class="Conv_MuseoSans-300Italic searchvalue">The Frontpage</p>
+            
     </div>
 </div><!-- /header -->
     <div id="escroll" class="example-wrapper" data-iscroll>
         <ul id="list_view" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
         </ul>
+        
+        
+        
+        
+        
           <div class="iscroll-pullup">
           <center><span class="iscroll-pull-icon"></span></center>
         </div>
@@ -420,6 +462,51 @@
   </div>
 </div>
 </div>
+
+<!----======================================================================================================================================================================================
+												PREVIEW OF ARTICLES PAGE
+=======================================================================================================================================================================================---->
+<div data-role="page" id="show_preview_page" data-title="Ebbu" >
+    <div data-role="header" data-position="fixed" data-theme="c" data-fullscreen="false" style=" border:none !important;   "  class="headonstart" >
+    	<img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
+        <div class="topmenucontainer"  >
+        <div class="searchsettings " id="top_menu" >
+        	<a   class="lefticon"  id="showsearch" data-role='ui-btn'  >&emsp;&emsp;&emsp;&nbsp;&nbsp;</a>
+        	<a href="#5ssettings" class="righticon" ontap="settings()" id="settingspage" data-transition="slidefade"  data-prefetch="true"   ><img src="icons/57x57/settings.png" class="settingsimg " ></a>
+		<center><img  class="midicon" id="mostpopular" src="img/header.png" ></center>
+      </div>  
+        </div>
+    <div class="title_bac" style="alignment-baseline:baseline; background-color:#0F6;  height:44px; width:100% ; padding:0px !important; text-align:center;"  >
+           		 
+                 <a id="source_icon_preview" class="backbutton black_back_icon" style="display:block !important"  ><img class="backimg lefticonAlign" src="" ></a>
+                 <a data-rel="back" id="source_icon_preview" class="backbutton close_back_icon" style="display:block !important"  ><img class="backimg righticonAlign" src="icons/57x57/black_exit.png" ></a>                 
+	`			<div style="float:none"></div>
+				<p  style="vertical-align:middle !important; margin-top:13px;"  class="Conv_MuseoSans-300Italic"></p>
+            
+    </div>
+</div><!-- /header -->
+
+  <div  role="main" class="ui-content" >
+  
+  	<div id="preview_text">
+    	
+    </div>
+    <div id="escroll_preview" class="example-wrapper" data-iscroll>
+        <ul id="list_preview" data-role="listview" class="swipe-delete" data-divider="false" data-icon="false" >
+        </ul>
+        
+        
+          <div class="iscroll-pullup">
+          <center><span class="iscroll-pull-icon"></span></center>
+        </div>
+    </div>
+  </div><!-- /content -->
+ </div>
+<!----======================================================================================================================================================================================
+												PREVIEW OF ARTICLES ENDS HERE
+=======================================================================================================================================================================================---->
+
+
 <div data-role="page" id="5ssettings" data-transition="slidefade" >
     <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
         <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
@@ -687,8 +774,22 @@ $('#searcharea').keypress(function(e) {
 			$('#searcharea').blur();
 			$('.search_empty').blur();
 			$('.loaderScreen').show();
+			
+			
+	if(selected_article!=0)
+	{
+		$('#icon_black').show();
+	   var ajax_url_set=ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;
+	   }
+	else{
+		$('#icon_black').hide();
+		var ajax_url_set=ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+		}	
+			
+			
+			
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ $('#searcharea').val() +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
+			url:ajax_url_set,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -710,7 +811,7 @@ $('#searcharea').keypress(function(e) {
 				shownrssarticle=data.RSSarticle;
 				showntwitterarticle=data.Twitterarticle;
 				feed_conducted=1;
-				$('#searchvalue').html($('#searcharea').val());
+				$('.searchvalue').html($('#searcharea').val());
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
 						var article_id = element.id;			
@@ -726,28 +827,34 @@ $('#searcharea').keypress(function(e) {
 						var len = 0;
 						var len=article_title.length;	
 						var article_title_unescaped = article_title;
-						var source_name_unescaped = source_name;					 
+						var source_name_unescaped = source_name;	
+						
+						var publication_id=element.publication_id;
+						var category_id=element.category_id;
+						slected_source_name= source_name;
+										 
 						article_title = article_title.replace(/'/g, "\\'");					
 						source_name = source_name.replace(/'/g, "\\'");
-					
-						append_data+='<li><div class="behind" >';
+				
+						append_data+='<li><div class="behind"  >';
 						append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
 						append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
 						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 						if(viewstatus=='1')
 						{
-						append_data+='<a style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						append_data+='<a id="id'+article_id+'"  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';
 						}
 						else{
-						append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						append_data+='<a id="id'+article_id+'"  class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';	
 						}
-						append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+						append_data+='<img src="'+imagepath+source_image+'" id="source_image'+article_id+'"  alt="'+source_name+'" class="sourceicon boxop" onclick="load_selected(\''+article_id+'\',this)" data-value="'+publication_id+'"  data-value1="'+category_id+'" >';
+						append_data+='<span onClick="show_preview(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 						if(newssource=='twitter')
 						{
 						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 						}else{
-						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></span></a></li>';	
 						}
 					}
 				);			
@@ -803,8 +910,22 @@ function load_trending()
 		$('.backgroundmask').show();
 		$('.loaderScreen').show();
 		//alert(EbbuUSER_ID + 'pronnn');
+		
+	if(selected_article!=0)
+	{
+		$('#icon_black').show();
+	   var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;		
+	   }
+	else{
+		$('#icon_black').hide();
+		var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+		}	
+	
+	console.log(ajax_url_set);
+		
+			
 		$.ajax({
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
+			url:ajax_url_set,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -825,7 +946,7 @@ function load_trending()
 					feed_conducted=0;
 					shownrssarticle=data.RSSarticle;
 					showntwitterarticle=data.Twitterarticle;					
-				$('#searchvalue').html('The Frontpage');		
+				$('.searchvalue').html('The Frontpage');		
 					var append_data =  '';
 					$.each(feedData, function(index, element) {
 						var article_id = element.id;			
@@ -836,12 +957,20 @@ function load_trending()
 						var pubdate = element.pubdate ;
 						var newssource = element.newssource;
 						var viewstatus=element.viewstatus; 
+						
+						
+						
 						//pubdate = pubdate.substr(5,11);
 						// checking the variable length
 						var len = 0;
 						var len=article_title.length;
 						var article_title_unescaped = article_title;						
-						var source_name_unescaped = source_name;	
+						var source_name_unescaped = source_name;
+						
+						var publication_id=element.publication_id;
+						var category_id=element.category_id;
+						slected_source_name= source_name;
+							
 						article_title = article_title.replace(/'/g, "\\'");
 						source_name = source_name.replace(/'/g, "\\'");
 	
@@ -851,18 +980,19 @@ function load_trending()
 						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
 						if(viewstatus=='1')
 						{
-						append_data+='<a  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						append_data+='<a id="id'+article_id+'"  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';
 						}
 						else{
-						append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						append_data+='<a id="id'+article_id+'"  class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';	
 						}
-						append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
+						append_data+='<img src="'+imagepath+source_image+'" id="source_image'+article_id+'"  alt="'+source_name+'" class="sourceicon boxop" onclick="load_selected(\''+article_id+'\',this)" data-value="'+publication_id+'"  data-value1="'+category_id+'" >';
+						append_data+='<span onClick="show_preview(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
 						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
 						if(newssource=='twitter')
 						{
 						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
 						}else{
-						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></span></a></li>';	
 						}
 					}
 				);			
@@ -878,6 +1008,13 @@ function load_trending()
 				$.getScript("js/SocialSharing.js");
 				SocialSharing();
 				$.getScript("js/swipeleft.js");
+				
+				
+				if(selected_article!=0)
+				{
+					$('.searchvalue').html(slected_source_name);
+				}
+				
 				var	rss_skip_count = data.rss_skip_limit;
 				var	tweet_skip_count = data.twitter_skip_limit;
 				new_skip_rss_count = new_skip_rss_count + rss_skip_count;	
@@ -896,6 +1033,44 @@ function load_trending()
 		}
 	});
 }
+
+
+function load_selected(selected_id,this_id)
+{
+	
+	selected_article=1;
+	selected_article_id=selected_id;
+	
+	
+	selected_category_id=$('#source_image'+selected_id).attr('data-value1');
+	selected_publication_id=$('#source_image'+selected_id).attr('data-value');
+	
+	console.log($('#source_image'+selected_id).attr('data-value1')+'  '+$('#source_image'+selected_id).attr('data-value'));
+	load_trending();
+	
+	}
+function remove_filter()
+{
+	selected_article=0;
+	selected_article_id=0;
+
+	selected_category_id=0;
+	selected_publication_id=0;
+
+	load_trending();	
+	}
+	
+	//show_preview(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')"
+function show_preview(articleLink,articleId,this_value,articleTitle)
+{
+	
+//	$.mobile.changePage('#show_preview_page' , { transition:'slidefade'  });
+	
+	navigateTo(articleLink,articleId,this_value,articleTitle);
+	
+	
+	}	
+
 function startswiperfunction(){
 	var mySwiper = $('.swiper-container').swiper({
     //Your options here:
@@ -1120,8 +1295,21 @@ function get_more_data()
 	if( $('#searcharea').val() =='' && last_search =='' )
 	{
 		last_search='';
+		
+			if(selected_article!=0)
+			{
+			var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;		
+			}
+			else{
+			var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+			}	
+			
+			console.log(ajax_url_set);
+
+		
+		
  		$.ajax({	
-			url:ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
+			url:ajax_url_set,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1142,7 +1330,7 @@ function get_more_data()
 					feed_conducted=0;
 					shownrssarticle=data.RSSarticle;
 					showntwitterarticle=data.Twitterarticle;	
-					$('#searchvalue').html('The Frontpage');
+					//$('.searchvalue').html('The Frontpage');
 				   	var append_data =  '';
 					$.each(feedData, function(index, element) {
 					var article_id = element.id;			
@@ -1159,30 +1347,36 @@ function get_more_data()
 					var len=article_title.length;
 					var article_title_unescaped = article_title;					
 					var source_name_unescaped = source_name;
+					
+					var publication_id=element.publication_id;
+					var category_id=element.category_id;
+					slected_source_name= source_name;
+					
 					article_title = article_title.replace(/'/g, "\\'");
 					source_name = source_name.replace(/'/g, "\\'");
 
-					append_data+='<li><div class="behind"  >';
-					append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-					append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-					append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-					if(viewstatus=='1')
-					{
-					append_data+='<a  style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
-					}
-					else{
-					append_data+='<a class="outer_a" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
+						append_data+='<li><div class="behind"  >';
+						append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+						append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+						if(viewstatus=='1')
+						{
+						append_data+='<a id="id'+article_id+'"  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';
 						}
-					append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-					append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-					if(newssource=='twitter')
-					{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-					}else{
-					append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
-					}
+						else{
+						append_data+='<a id="id'+article_id+'"  class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';	
 						}
-							);			
+						append_data+='<img src="'+imagepath+source_image+'" id="source_image'+article_id+'"  alt="'+source_name+'" class="sourceicon boxop" onclick="load_selected(\''+article_id+'\',this)" data-value="'+publication_id+'"  data-value1="'+category_id+'" >';
+						append_data+='<span onClick="show_preview(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
+						if(newssource=='twitter')
+						{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+						}else{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></span></a></li>';	
+						}
+					}
+				);			
 							//close loader here !!!!
 							$('#list_view').append(append_data);
 							//alert(append_data);			
@@ -1204,7 +1398,15 @@ function get_more_data()
 							new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;					
 				}else{
 					hideLoaderScreen();
-					navigator.notification.alert("You've reached the end of the The Frontpage Content Stream.", alertCallback, "Ebbu", "OK");					
+							if(selected_article!=0)
+							{
+							navigator.notification.alert("You've reached the end of the "+slected_source_name+" Content Stream.", alertCallback, "Ebbu", "OK");	
+							}
+							else{
+							navigator.notification.alert("You've reached the end of the The Frontpage Content Stream.", alertCallback, "Ebbu", "OK");					
+							}
+					
+					
 				}
 				//user data match if
 		},
@@ -1218,8 +1420,24 @@ function get_more_data()
 	// console.log(ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle);
 	   //start  my loader here !!!!
 		$.support.cors = true;
+		
+		
+			if(selected_article!=0)
+			{
+			$('#icon_black').show();
+	//		var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;		
+			var ajax_url_set=ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;
+			}
+			else{
+			$('#icon_black').hide();
+		//	var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+			var ajax_url_set=ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+			}	
+			
+			console.log(ajax_url_set);
+		
 		$.ajax({
-			url:ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle,
+			url:ajax_url_set,
 			type:'POST',
 			contentType: "application/json",
         	async: true,
@@ -1242,7 +1460,7 @@ function get_more_data()
 					shownrssarticle=data.RSSarticle;
 					showntwitterarticle=data.Twitterarticle;
 					feed_conducted=1;
-					//$('#searchvalue').html($('#searcharea').val());
+					//$('.searchvalue').html($('#searcharea').val());
 			  	   	var append_data =  '';
 					$.each(feedData, function(index, element) {
 							var article_id = element.id;			
@@ -1259,30 +1477,36 @@ function get_more_data()
 							var len=article_title.length;
 							var article_title_unescaped = article_title;							
 							var source_name_unescaped = source_name;
+							
+							var publication_id=element.publication_id;
+							var category_id=element.category_id;
+							slected_source_name= source_name;
+							
 							article_title = article_title.replace(/'/g, "\\'");
 							source_name = source_name.replace(/'/g, "\\'");
 
-							append_data+='<li><div class="behind" >';
-							append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
-							append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
-							append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
-							if(viewstatus=='1')
-							{
-								append_data+='<a style="background-color:#DFE3E7 !important;" href="#"  data-value3="'+article_id+'" data-value4="'+newssource+'" onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
-							}
-							else{
-								append_data+='<a class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"  onClick="navigateTo(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';	
-							}
-								append_data+='<img src="'+imagepath+source_image+'"  alt="'+source_name+'" class="sourceicon boxop"  >';
-								append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
-							if(newssource=='twitter')
-							{
-								append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
-							}else{
-								append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';	
-							}		
+						append_data+='<li><div class="behind"  >';
+						append_data+='<a href="#" class="socialicon emailBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="email"  data-value3="'+article_id+'" data-value4="'+newssource+'"    ><img src="socialicons/email.png" class="image_icon" alt="email"  ></a>';
+						append_data+='<a href="#" class="socialicon facebookBackground"  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="facebook"   data-value3="'+article_id+'"   ><img src="socialicons/facebook.png" alt="facebook" class="image_icon" ></a>';
+						append_data+='<a href="#" class="socialicon twitterBackground "  data-value="'+article_title_unescaped+'" data-value1="'+article_link+'" data-value2="twitter"    data-value3="'+article_id+'"  ><img src="socialicons/twitter.png" alt="twitter" class="image_icon" ></a></div>';
+						if(viewstatus=='1')
+						{
+						append_data+='<a id="id'+article_id+'"  style="background-color:#DFE3E7 !important;" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';
 						}
-					);			
+						else{
+						append_data+='<a id="id'+article_id+'"  class="outer_a" href="#" data-value3="'+article_id+'" data-value4="'+newssource+'"   >';	
+						}
+						append_data+='<img src="'+imagepath+source_image+'" id="source_image'+article_id+'"  alt="'+source_name+'" class="sourceicon boxop" onclick="load_selected(\''+article_id+'\',this)" data-value="'+publication_id+'"  data-value1="'+category_id+'" >';
+						append_data+='<span onClick="show_preview(\''+article_link+'\',\''+article_id+'\',this,\''+article_title+'\')" >';
+						append_data+='<p class="min_height Conv_MuseoSans_700 margintop">'+article_title_unescaped+'</p>';
+						if(newssource=='twitter')
+						{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  ><img src="img/twitter.png" style="width:9px !important;" > @'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></a></li>';
+						}else{
+						append_data+='<p class="ui-li-divider marginbottom"><span style="float:left; font-size:10px !important; color:#9F9F9F !important; " class="Conv_MuseoSans_900"  >'+source_name_unescaped+'</span> <span style="float:right; font-size:10px !important; color:#9F9F9F !important;" class="Conv_MuseoSans-700Italic" >'+pubdate+'</span></p></span></a></li>';	
+						}
+					}
+				);			
 					//console.log('appended data = ');
 					//close loader here !!!!
 					$('#list_view').append(append_data);
