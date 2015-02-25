@@ -627,8 +627,8 @@ opacity:0.2;
                     <p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Feedback</p>
           </div>
 	</div><!-- /header -->
-	<div  role="main" class="ui-content"  >
-         <div class="example-wrapper"  data-iscroll  >
+<div id="feedback_scroll" class="example-wrapper" data-iscroll>
+
                   <p><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -661,7 +661,7 @@ opacity:0.2;
                     </center>
                   </p>
                   <p>&emsp; <br><br></p>
-             </div>
+            
   	     </div><!-- /content -->
     </div>
 
@@ -1840,7 +1840,7 @@ load_trending();
 	}
 $('#feedback_message').on('focus',function(){
 	
-	$("#feed_message").iscrollview("scrollTo", 0, 0, 0, false);
+	$("#feedback_scroll").iscrollview("scrollTo", 0, 60, 0, false);
 	
 	});
 	
