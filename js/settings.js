@@ -1,5 +1,5 @@
-var imagepath = 'http://192.168.1.10/';  			
-var ajax_path = 'http://192.168.1.10/app/';	
+var imagepath = 'http://192.168.1.10/ebbu/';  			
+var ajax_path = 'http://192.168.1.10/ebbu/app/';	
 var pageCount = 0;
 var contentCount = 10;
 var search_pageCount = 0;
