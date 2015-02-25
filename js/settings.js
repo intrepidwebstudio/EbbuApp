@@ -1,4 +1,4 @@
-var imagepath = 'http://ebbu.kurinchilion.com';  			
+var imagepath = 'http://ebbu.kurinchilion.com/';  			
 var ajax_path = 'http://ebbu.kurinchilion.com/app/';		//tt
 var pageCount = 0;
 var contentCount = 10;
