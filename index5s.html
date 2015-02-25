@@ -3,7 +3,7 @@
 	<title>Ebbu</title> 
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
-	<meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+	<meta name="viewport" content="width=device-width , height = device-height, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
 	<!--<script src="phonegap.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
@@ -660,6 +660,8 @@ opacity:0.2;
                         box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" >SUBMIT</button>
                     </center>
                   </p>
+                 
+    <div id="spaceF" style="min-height:100px !important; display:none;" ><br><br><br><br><br><br><br><br><br>a &emsp;</div></span>
                   <p>&emsp; <br><br></p>
             
   	     </div><!-- /content -->
@@ -1839,10 +1841,12 @@ load_trending();
 	
 	}
 $('#feedback_message').on('focus',function(){
-	
-	$("#feedback_scroll").iscrollview("scrollTo", 0, 200, 0, false);
-	
+	$('#spaceF').show;
 	});
+	
+$('#feedback_message').on('blur',function(){
+	$('#spaceF').hide();
+});	
 	
 </script>
 </body>
