@@ -612,7 +612,7 @@ opacity:0.2;
 <!----=================================================================================================================================-------->
 
 <div data-role="page" id="5spagefeedback">
-    <div data-role="header"   data-fullscreen="true" style=" border:none !important;   "  >
+    <div data-role="header" data-position="fixed"  data-fullscreen="false" style=" border:none !important;   "  >
           <img  src="img/640.png"  class="iphone5s"  style="margin-bottom:-5px !important; width:100%" >
 		  <div class="topmenucontainer" >
              <div class="searchsettings">
@@ -628,7 +628,7 @@ opacity:0.2;
           </div>
 	</div><!-- /header -->
 	<div  role="main" class="ui-content"  >
-         <div class=""  >
+         <div class="example-wrapper"  data-iscroll  >
                   <p><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -648,19 +648,17 @@ opacity:0.2;
                       </span>
 	                 <br><br>
     	             <center>
-                     <form>
-        	            <input id="nameF" type="text" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" placeholder="Name" >
+                        <input id="nameF" type="text" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Name" >
                         <br>
                         <input type="text" id="emailaddressF" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
-                        box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true" placeholder="Email Address" >
+                        box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Email Address" >
                         <br>
                         <textarea  id="feedback_message" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
-                        box-shadow:none !important;	" placeholder="Feedback" data-prevent-focus-zoom="true" ></textarea>
+                        box-shadow:none !important;	" placeholder="Feedback" ></textarea>
                         <br>
                         <button id="submit_feedback" class="ui-input-btn ui-hide-label" type="button" style="width:90% !important; text-align:center !important ; font-size:10px !important; height:60px !important; background-color:#0a9bb8 !important ;color:#FFF !important; text-shadow:none !important;
-                        box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="true"  >SUBMIT</button>
-                     </form>   
-            		 </center>
+                        box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" >SUBMIT</button>
+                    </center>
                   </p>
                   <p>&emsp; <br><br></p>
              </div>
@@ -1840,7 +1838,12 @@ load_trending();
 
 	
 	}
-
+$('#feedback_message').on('focus',function(){
+	
+	$("#feed_message").iscrollview("scrollTo", 0, 0, 0, false);
+	
+	});
+	
 </script>
 </body>
 </html>
