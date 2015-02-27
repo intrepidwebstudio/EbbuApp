@@ -660,6 +660,8 @@ opacity:0.2;
                         box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" >SUBMIT</button>
                     </center>
                   </p>
+                  
+                  <p id="show_feedback" style="display:none;">&emsp; <br><br> <br><br><br><br><br><br> &emsp; </p>
                   <p>&emsp; <br><br></p>
              </div>
   	     </div><!-- /content -->
@@ -1844,13 +1846,13 @@ load_trending();
 
 function movesection()
 {
+	$('#show_feedback').show();
+	alert('aaaa');	
 
-
-
-$("#feedback_message").offset().top
 }
 function removesection()
 {
+	$('#show_feedback').hide();
 
 	}	
 
