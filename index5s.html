@@ -627,7 +627,8 @@ opacity:0.2;
                     <p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Feedback</p>
           </div>
 	</div><!-- /header -->
-	<div  role="main" class="ui-content" style="overflow:scroll !important; overflow-style:auto !important;" >
+	<div  role="main" class="ui-content"  >
+         <div id="feedback_scroll" class="example-wrapper"  data-iscroll  >
                   <p id="feedback_show" ><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -664,6 +665,7 @@ opacity:0.2;
                   <br>a<br>&emsp;<br>
                   a
                    <br>a<br></p>
+             </div>
   	     </div><!-- /content -->
     </div>
 
@@ -1846,12 +1848,14 @@ load_trending();
 
 function moveupFeedback()
 {
-$('#dummytext').css('display','block');	
-	}
+	$('#dummytext').css('display','block');	
+	$('#feedback_scroll').iscrollview('refresh');
+}
 
 function movedownFeedback()
 {
-$('#dummytext').css('display','none');		
+	$('#dummytext').css('display','none');
+	$('#feedback_scroll').iscrollview('refresh');
 }
 </script>
 </body>
