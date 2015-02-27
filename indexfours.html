@@ -645,7 +645,7 @@ opacity:0.2;
           </div>
 	</div><!-- /header -->
 	<div  role="main" class="ui-content"  >
-         <div class="example-wrapper"  data-iscroll  >
+         <div  id="feedback_scroll" class="example-wrapper"  data-iscroll  >
                   <p><center>
                      <span class="Conv_MuseoSans-300Italic"  style="font-size:13.5px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -665,19 +665,23 @@ opacity:0.2;
                       </span>
 	                 <br><br>
     	             <center>
-        	            <input id="nameF" type="text" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Name" >
+                        <input id="nameF" type="text" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Name" >
                         <br>
-                        <input type="text" id="emailaddressF" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
+                        <input type="text" id="emailaddressF" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Email Address" >
                         <br>
-                        <textarea  id="feedback_message" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
+                        <textarea  id="feedback_message" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" placeholder="Feedback" ></textarea>
                         <br>
-                        <button id="submit_feedback" class="ui-input-btn ui-hide-label" type="button" style="width:90% !important; text-align:center !important ; font-size:10px !important; height:30px !important; background-color:#0a9bb8 !important ;color:#FFF !important; text-shadow:none !important;
+                        <button id="submit_feedback" class="ui-input-btn ui-hide-label" type="button" style="width:90% !important; text-align:center !important ; font-size:10px !important; height:60px !important; background-color:#0a9bb8 !important ;color:#FFF !important; text-shadow:none !important;
                         box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" >SUBMIT</button>
-            		 </center>
+                    </center>
                   </p>
-                  <p>&emsp; <br><br></p>
+                  
+                  <p id="dummytext" style="display:none; color:#FFF;">&emsp; 
+               		   <br>a<br>&emsp;<br>
+                		  a <br>a<br>a<br>a<br>a<br>a<br><br>a<br>a</p>
+                   <p>&emsp; <br><br></p>
              </div>
   	     </div><!-- /content -->
 </div>
@@ -1947,6 +1951,17 @@ load_trending();
 
 	
 	}
+function moveupFeedback()
+{
+	$('#dummytext').css('display','block');	
+	$('#feedback_scroll').iscrollview('refresh');
+}
+
+function movedownFeedback()
+{
+	$('#dummytext').css('display','none');
+	$('#feedback_scroll').iscrollview('refresh');
+}
 
 </script>
 </body>
