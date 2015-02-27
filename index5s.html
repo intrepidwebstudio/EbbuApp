@@ -3,7 +3,7 @@
 	<title>Ebbu</title> 
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
-	<meta name="viewport" content="width=device-width , height = device-height, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi" />
+	<meta name="viewport" content="user-scalable=no, width=device-width , height = device-height, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.4.css">
 	<!--<script src="phonegap.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
@@ -627,8 +627,8 @@ opacity:0.2;
                     <p style="vertical-align:middle !important;" class="Conv_MuseoSans-300Italic" >Feedback</p>
           </div>
 	</div><!-- /header -->
-<div id="feedback_scroll" class="example-wrapper" data-iscroll>
-
+	<div  role="main" class="ui-content"  >
+         <div class="example-wrapper"  data-iscroll  >
                   <p><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -653,17 +653,15 @@ opacity:0.2;
                         <input type="text" id="emailaddressF" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Email Address" >
                         <br>
-                        <textarea  id="feedback_message" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
+                        <textarea  id="feedback_message" onFocus="movesection()" onBlur="removesection()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" placeholder="Feedback" ></textarea>
                         <br>
                         <button id="submit_feedback" class="ui-input-btn ui-hide-label" type="button" style="width:90% !important; text-align:center !important ; font-size:10px !important; height:60px !important; background-color:#0a9bb8 !important ;color:#FFF !important; text-shadow:none !important;
                         box-shadow:none !important; text-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" >SUBMIT</button>
                     </center>
                   </p>
-                 
-    <div id="spaceF" style="min-height:100px !important; display:none;" ><br><br><br><br><br><br><br><br><br>a &emsp;</div></span>
                   <p>&emsp; <br><br></p>
-            
+             </div>
   	     </div><!-- /content -->
     </div>
 
@@ -1084,7 +1082,7 @@ function remove_filter()
 {
 	
 
-$.mobile.changePage('#5spage1' , { transition:'slidefade' });	
+$.mobile.changePage('#5spage1' , { transition:'slidefade', reverse:'true' });	
 
 
 selected_article=0;
@@ -1840,14 +1838,22 @@ load_trending();
 
 	
 	}
-$('#feedback_message').on('focus',function(){
-	$('#spaceF').show;
-	});
-	
-$('#feedback_message').on('blur',function(){
-	$('#spaceF').hide();
-});	
-	
+
+
+
+
+function movesection()
+{
+
+
+
+$("#feedback_message").offset().top
+}
+function removesection()
+{
+
+	}	
+
 </script>
 </body>
 </html>
