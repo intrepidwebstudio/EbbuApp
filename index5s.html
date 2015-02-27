@@ -628,7 +628,7 @@ opacity:0.2;
           </div>
 	</div><!-- /header -->
 	<div  role="main" class="ui-content"  >
-         <div class="example-wrapper"  data-iscroll  >
+         <div class="example-wrapper"    >
                   <p id="feedback_show" ><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
@@ -661,7 +661,10 @@ opacity:0.2;
                     </center>
                   </p>
                   
-                  <p>&emsp; <br><br></p>
+                  <p id="dummytext" style="display:none; color:#FFF;">&emsp; 
+                  <br>a<br>&emsp;<br>
+                  a
+                   <br>a<br></p>
              </div>
   	     </div><!-- /content -->
     </div>
@@ -1841,25 +1844,16 @@ load_trending();
 	}
 	
 	
-input.on('focus', function(){
-    header.css({position:'absolute'});
-    $(window).scrollTop(0);
-});
-input.on('blur', function(){
-    header.css({position:'fixed'});
-});
 
 
 function moveupFeedback()
 {
-	
-$('#feeedback_show').css('position','absolute');
-$('#feeedback_show').animate({'bottom':'100%'},100,'linear');
+$('#dummytext').css('display','block');	
 	}
 
 function movedownFeedback()
 {
-$('#feeedback_show').css('position','none'); 
+$('#dummytext').css('display','none');		
 }
 </script>
 </body>
