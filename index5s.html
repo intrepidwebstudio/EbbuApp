@@ -661,7 +661,7 @@ opacity:0.2;
                     </center>
                   </p>
                   
-                  <p id="show_feedback" style="display:none;">&emsp; <br><br> <br><br><br><br><br><br> &emsp; </p>
+                  <p id="show_feedback" style="display:none;">&emsp; 1<br><br> <br><br><br><br><br><br> &emsp; </p>
                   <p>&emsp; <br><br></p>
              </div>
   	     </div><!-- /content -->
@@ -1846,13 +1846,11 @@ load_trending();
 
 function movesection()
 {
-	$('#show_feedback').show();
-	alert('aaaa');	
-
+	$('#show_feedback').css('display','block');
 }
 function removesection()
 {
-	$('#show_feedback').hide();
+	$('#show_feedback').css('display','block');
 
 	}	
 
