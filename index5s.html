@@ -1839,12 +1839,23 @@ load_trending();
 
 	
 	}
+	
+	
+input.on('focus', function(){
+    header.css({position:'absolute'});
+    $(window).scrollTop(0);
+});
+input.on('blur', function(){
+    header.css({position:'fixed'});
+});
+
+
 
 function moveupFeedback()
 {
 	
 $('#feeedback_show').css('position','absolute');
-$('#feeedback_show').animate({'bottom':'58%'},100,'linear');
+$('#feeedback_show').animate({'bottom':'100%'},100,'linear');
 	}
 
 function movedownFeedback()
