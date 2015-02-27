@@ -629,7 +629,7 @@ opacity:0.2;
 	</div><!-- /header -->
 	<div  role="main" class="ui-content"  >
          <div class="example-wrapper"  data-iscroll  >
-                  <p><center>
+                  <p id="feedback_show" ><center>
                      <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
                      </center>
@@ -653,7 +653,7 @@ opacity:0.2;
                         <input type="text" id="emailaddressF" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Email Address" >
                         <br>
-                        <textarea  id="feedback_message" onFocus="movesection()" onBlur="removesection()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
+                        <textarea  id="feedback_message" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" placeholder="Feedback" ></textarea>
                         <br>
                         <button id="submit_feedback" class="ui-input-btn ui-hide-label" type="button" style="width:90% !important; text-align:center !important ; font-size:10px !important; height:60px !important; background-color:#0a9bb8 !important ;color:#FFF !important; text-shadow:none !important;
@@ -661,7 +661,6 @@ opacity:0.2;
                     </center>
                   </p>
                   
-                  <p id="show_feedback" style="display:none;">&emsp; 1<br><br> <br><br><br><br><br><br> &emsp; </p>
                   <p>&emsp; <br><br></p>
              </div>
   	     </div><!-- /content -->
@@ -1841,19 +1840,17 @@ load_trending();
 	
 	}
 
-
-
-
-function movesection()
+function moveupFeedback()
 {
-	$('#show_feedback').css('display','block');
+	
+$('#feeedback_show').css('position','absolute');
+$('#feeedback_show').animate({'bottom':'58%'},100,'linear');
+	}
+
+function movedownFeedback()
+{
+$('#feeedback_show').css('position','none');
 }
-function removesection()
-{
-	$('#show_feedback').css('display','block');
-
-	}	
-
 </script>
 </body>
 </html>
