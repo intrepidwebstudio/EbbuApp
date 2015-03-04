@@ -648,11 +648,6 @@ opacity:0.2;
                       </span>
 	                 <br><br>
     	             <center>
-                        <input id="nameF" type="text" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Name" >
-                        <br>
-                        <input type="text" id="emailaddressF" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left ; font-size:11px !important; height:30px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
-                        box-shadow:none !important;	" data-corners="false" data-prevent-focus-zoom="false" placeholder="Email Address" >
-                        <br>
                         <textarea  id="feedback_message" onFocus="moveupFeedback()" onBlur="movedownFeedback()" class="Conv_MuseoSans-300Italic" style="vertical-align:middle !important; text-align:left !important; cursor:vertical-text !important; width:90% !important; text-align:left; height:150px !important;border-radius:0px; font-size:11px !important; border:1px solid #C2C2C2 !important; color:#000 !important; text-shadow:none !important;
                         box-shadow:none !important;	" placeholder="Feedback" ></textarea>
                         <br>
@@ -798,6 +793,7 @@ if($('.searcharea').val()!='')
 	}else{
 	last_search=$('#searchareaF').val();	
 		}
+
 $('.searcharea').hide();
 $('.search_empty').hide();
 $(this).blur();
@@ -857,9 +853,10 @@ $.each(feedData, function(index, element) {
 	var article_id = element.id;			
 	var article_title =  element.title ;
 	var article_link = element.article_link ;
-	var source_image = element.sourceimage ;
 	var source_name_original = element.sourcename ;
-	var source_name= element.source ;
+var source_name= element.source ;
+var source_image = element.sourceimage ;
+
 	var source_image = element.sourceimage ;
 	var pubdate = element.pubdate ;
 	var newssource = element.newssource;
@@ -946,6 +943,7 @@ load_trending();
 function load_trending()
 {
 last_search = '';
+front_page_search='';
 new_skip_rss_count = 0 ;
 new_skip_tweet_count = 0 ;
 shownrssarticle=0;
@@ -961,6 +959,9 @@ else{
 $('.icon_black').hide();
 var ajax_url_set=ajax_path+'trending.php?user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&limit_count='+contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
 }	
+
+console.log("ajax_url_set 112222 = "+ajax_url_set);
+
 $.ajax({
 url:ajax_url_set,
 type:'POST',
@@ -1066,11 +1067,15 @@ function load_selected(selected_id,this_id)
 {
 $.mobile.changePage('#5spagefilter' , { transition:'slidefade' });
 selected_article=1;
+
 selected_article_id=selected_id;
+
+console.log('article selected ='+selected_article_id+'='+selected_id);
+
 selected_category_id=$('#source_image'+selected_id).attr('data-value1');
 selected_publication_id=$('#source_image'+selected_id).attr('data-value');
 
-
+console.log("selected_category_id="+selected_category_id+"---"+"selected_publication_id="+selected_publication_id);
 if(last_search.trim()!='')
 {
   filtered_search();
@@ -1086,7 +1091,7 @@ function remove_filter()
 {
 	
 
-$.mobile.changePage('#5spage1' , { transition:'slidefade', reverse:'true' });	
+$.mobile.changePage('#5spage1' , { transition:'slidefade' ,  reverse:'true'  });	
 
 
 selected_article=0;
@@ -1107,7 +1112,7 @@ if( last_search.trim()!='' && selected_article!=0 )
 else{
 		if(front_page_search!='')
 		{	
-		 last_search=='';
+		 last_search='';
 		 $('.searchvalue').html(front_page_search);			
 		}else{
 		 $('.searchvalue').html('The Frontpage');			
@@ -1627,13 +1632,6 @@ iscroll_onpullup   : onPullUp
 
 
 
-
-
-
-
-
-
-
 $('#mostpopular').on("touchstart",function(e){	})
 .on("touchmove",function(e){  })	
 .on("touchend",function(e){
@@ -1673,58 +1671,39 @@ $('#star'+i).css('opacity','0.2');
 
 
 $('#submit_feedback').on('click',function(e){
-if( $('#nameF').val()=='' || $('#nameF').val()==null )
-{
-navigator.notification.alert("Name cannot be empty !!", alertCallback, "Ebbu", "OK");
-} 
-else{
 
-var	useremailF = $('#emailaddressF').val();
-var checkemailF = 	IsEmail(useremailF);
-if(checkemailF==false)
-{
-navigator.notification.alert("Please enter a vaild email address !!", alertCallback, "Ebbu", "OK");	
-}else{
-var ajax_url_set1=ajax_path+'feedback.php?user_id='+EbbuUSER_ID+'&security_token='+security_token+'&name='+$('#nameF').val()+'&email_address='+$('#emailaddressF').val()+'&feedback='+$('#feedback_message').val()+'&rating='+global_rating;	
+var ajax_url_set1=ajax_path+'feedback.php?user_id='+EbbuUSER_ID+'&security_token='+security_token+'&feedback='+$('#feedback_message').val()+'&rating='+global_rating;	
 $.post(ajax_url_set1);
 navigator.notification.alert("Feedback back submitted successfully", alertCallback, "Ebbu", "OK");	
-$('#emailaddressF').val('');
-$('#nameF').val('');
+
 $('#feedback_message').val('');
 remove_filter();
 
-}
-}
 });
 
 function filtered_search()
 {
 $('.loaderScreen').show();	
 	
-	
-if(last_search!='')
+if(front_page_search!='')
 {
-
-	
 $.support.cors = true;
 new_skip_rss_count = 0 ;
 new_skip_tweet_count = 0 ;
 shownrssarticle=0;
 showntwitterarticle=0;
 
-
-
-
 if(selected_article!=0)
 {
 $('.icon_black').show();
-var ajax_url_set=ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;
+var ajax_url_set=ajax_path+'feedsearch.php?q='+ front_page_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle+'&publication_id='+selected_publication_id+'&category_id='+selected_category_id;
 }
 else{
 $('.icon_black').hide();
-var ajax_url_set=ajax_path+'feedsearch.php?q='+ last_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
+var ajax_url_set=ajax_path+'feedsearch.php?q='+ front_page_search +'&user_id='+EbbuUSER_ID+'&new_tweet_skip_limit='+new_skip_tweet_count+'&new_rss_skip_limit='+new_skip_rss_count+'&search_limit_count='+search_contentCount+'&security_token='+security_token+'&shownrssarticle='+shownrssarticle+'&showntwitterarticle='+showntwitterarticle;	
 }	
 
+console.log("ajax_url_set 1 = "+ajax_url_set);
 
 $.ajax({
 url:ajax_url_set,
@@ -1741,7 +1720,7 @@ complete: function() {
 },
 success: function(data)
 {
-	
+		
 feedData=data.Feeds;
 FeedStatus=data.FeedStatus;
 if(FeedStatus=='success')
@@ -1750,7 +1729,7 @@ SearchQueryId=data.SearchQueryId;
 shownrssarticle=data.RSSarticle;
 showntwitterarticle=data.Twitterarticle;
 feed_conducted=1;
-$('.searchvalue').html(last_search);
+$('.searchvalue').html(front_page_search);
 var append_data =  '';
 $.each(feedData, function(index, element) {
 	var article_id = element.id;			
@@ -1825,6 +1804,11 @@ new_skip_tweet_count = new_skip_tweet_count + tweet_skip_count;
 hideLoaderScreen();																		
 }
 else{					
+		$('#list_view_filter').empty().append('');
+		$('#list_view_filter').trigger("create");
+		$('#list_view_filter').listview().listview('refresh');
+		$("#escroll_filter").iscrollview("scrollTo", 0, 0, 0, false);				
+
 hideLoaderScreen();
 navigator.notification.alert("We couldn't find any recent articles on your topic. Tip: use one word for a broader search.", alertCallback, "Ebbu", "OK");
 }
@@ -1841,11 +1825,7 @@ load_trending();
 }
 
 	
-	}
-	
-	
-
-
+}
 function moveupFeedback()
 {
 	$('#dummytext').css('display','block');	
@@ -1857,6 +1837,7 @@ function movedownFeedback()
 	$('#dummytext').css('display','none');
 	$('#feedback_scroll').iscrollview('refresh');
 }
+
 </script>
 </body>
 </html>
