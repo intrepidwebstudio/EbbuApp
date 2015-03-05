@@ -2,8 +2,8 @@
 //var imagepath = 'http://ebbu.kurinchilion.com/';  			
 //var ajax_path = 'http://ebbu.kurinchilion.com/app/';	
 
-var imagepath = 'http://192.168.1.10/ebbu/';  			
-var ajax_path = 'http://192.168.1.10/ebbu/app/';	
+var imagepath = 'http://192.168.1.10/ebbu1/';  			
+var ajax_path = 'http://192.168.1.10/ebbu1/app/';	
 var pageCount = 0;
 var contentCount = 10;
 var search_pageCount = 0;
