@@ -745,8 +745,8 @@ opacity:0.2;
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
 <script type="text/javascript" src="js/GAPlugin.js"></script>
-<!--<script type="text/javascript" src="js/analytics.js"  ></script>-->
- <script>
+<!--<script type="text/javascript" src="js/analytics.js"  ></script>
+--> <script>
 $('.searcharea').hide();
 $('.search_empty').hide();
 function show_focus(){
@@ -1163,6 +1163,8 @@ function errorHandlerPLUGIN(error){
 	console.log('nativePluginResultHandler: '+error);
 	alert('failure');
 	} 	
+	
+var gaPlugin;	
 
 function onDeviceReady(){
 	
