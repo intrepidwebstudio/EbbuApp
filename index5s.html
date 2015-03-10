@@ -744,7 +744,7 @@ opacity:0.2;
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-<script type="text/javascript" src="js/GAPlugin.js"></script>
+<!--<script type="text/javascript" src="js/GAPlugin.js"></script>-->
  <script>
 $('.searcharea').hide();
 $('.search_empty').hide();
@@ -1166,8 +1166,9 @@ function errorHandlerPLUGIN(error){
 function onDeviceReady(){
 	
 	//GOOGLE ANALYTICS
-	gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60583575-1", 10);
+//	gaPlugin = window.plugins.gaPlugin;
+  //  gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60583575-1", 10);
+  window.analytics.startTrackerWithId('UA-60583575-1');
 	//GOOGLE ANALYTICS
 	
 	
