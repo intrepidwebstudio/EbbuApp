@@ -744,6 +744,7 @@ opacity:0.2;
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+<script type="text/javascript" src="js/GAPlugin.js"></script>
  <script>
 $('.searcharea').hide();
 $('.search_empty').hide();
@@ -1150,13 +1151,15 @@ navigator.splashscreen.hide();
 var db = window.openDatabase("Ebbu_user", "1.0", "Ebbu user local Database", 200000); //will create database Dummy_DB or open it
 
 
-function successHandler(){
+function successHandlerPLUGIN(result){
+	console.log('nativePluginResultHandler: '+result);
 	alert('success');
 	}
 	
 	
 	
-function errorHandler(){
+function errorHandlerPLUGIN(error){
+	console.log('nativePluginResultHandler: '+error);
 	alert('failure');
 	} 	
 
@@ -1164,7 +1167,7 @@ function onDeviceReady(){
 	
 	//GOOGLE ANALYTICS
 	gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(successHandler, errorHandler, "UA-60586580-1", 10);
+    gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60586580-1", 10);
 	//GOOGLE ANALYTICS
 	
 	
