@@ -66,9 +66,7 @@
 	<preference name="IOS7PreventWebViewScrolling" value="true"/>
 	
 	
-	<feature name="GAPlugin" >
-	<param name="android-package" value="com.adobe.plugins.GAPlugin"/>
-	</feature>
+	<gap:plugin name="com.adobe.plugins.gaplugin" version="2.4.0" />
 	
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
