@@ -1166,34 +1166,34 @@ var gaPlugin;
 
 function onDeviceReady(){
 	
-	//GOOGLE ANALYTICS
-//	gaPlugin = window.plugins.gaPlugin;
- //   gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60583575-1", 10);
-//  window.analytics.startTrackerWithId('UA-60583575-1');
-	//GOOGLE ANALYTICS
-	
-	var dataform = {};
-            dataform.v = 1.5;
-            dataform.tid = "UA-60583575-1";
-            dataform.cid = "device id";
-            dataform.t = "appview";
-            dataform.an = "name";
-            dataform.av = "0.0.1";
-            dataform.cd = "Ebbu App";
-var url = "http://www.google-analytics.com/collect";
-            $.ajax(url, {
-                type: "post",
-                contentType: "text/plain",
-                data: dataform
-            })
-                    .done(function(result) {
-                            alert("success");
-
-                    })
-                    .fail(function(error) {
-                            alert("fail");
-
-                    });
+		//=======================================================================================GOOGLE ANALYTICS=======================================================================================
+					
+					var dataform = {};
+							dataform.v = 1.5;
+							dataform.tid = "UA-60583575-1";
+							dataform.cid = "device id";
+							dataform.t = "appview";
+							dataform.an = "name";
+							dataform.av = "0.0.1";
+							dataform.cd = "Ebbu App";
+					var url = "http://www.google-analytics.com/collect";
+							$.ajax(url, {
+								type: "post",
+								contentType: "text/plain",
+								data: dataform
+							})
+									.done(function(result) {
+											alert("success");
+					
+									})
+									.fail(function(error) {
+											alert("fail");
+					
+									});
+									
+		//=======================================================================================GOOGLE ANALYTICS=======================================================================================
+					
+					
 	
 db.transaction(populateDB, errorCB, successCB);
 }
