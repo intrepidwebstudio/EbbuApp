@@ -744,9 +744,7 @@ opacity:0.2;
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
 <script type="text/javascript" src="js/fastbutton.js"></script>
 <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-<script type="text/javascript" src="js/GAPlugin.js"></script>
-<!--<script type="text/javascript" src="js/analytics.js"  ></script>
---> <script>
+ <script>
 $('.searcharea').hide();
 $('.search_empty').hide();
 function show_focus(){
@@ -1169,12 +1167,12 @@ var gaPlugin;
 function onDeviceReady(){
 	
 	//GOOGLE ANALYTICS
-	gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60583575-1", 10);
+//	gaPlugin = window.plugins.gaPlugin;
+ //   gaPlugin.init(successHandlerPLUGIN, errorHandlerPLUGIN, "UA-60583575-1", 10);
 //  window.analytics.startTrackerWithId('UA-60583575-1');
 	//GOOGLE ANALYTICS
 	
-/*	var dataform = {};
+	var dataform = {};
             dataform.v = 1.5;
             dataform.tid = "UA-60583575-1";
             dataform.cid = "device id";
@@ -1196,7 +1194,7 @@ var url = "http://www.google-analytics.com/collect";
                             alert("fail");
 
                     });
-	*/
+	
 db.transaction(populateDB, errorCB, successCB);
 }
 function start_timer(){
