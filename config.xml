@@ -46,6 +46,8 @@
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
+
+
     <!-- Plugins -->
 
     <!-- Core plugins -->
@@ -64,9 +66,9 @@
 	<preference name="IOS7PreventWebViewScrolling" value="true"/>
 	
 	
-	
-	
-	
+	<feature name="GAPlugin" >
+	<param name="android-package" value="com.adobe.plugins.GAPlugin"/>
+	</feature>
 	
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />

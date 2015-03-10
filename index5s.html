@@ -630,7 +630,7 @@ opacity:0.2;
 	<div  role="main" class="ui-content"  >
          <div id="feedback_scroll" class="example-wrapper"  data-iscroll  >
                   <p ><center>
-                     <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
+                     <span class="Conv_MuseoSans-300Italic" style="font-size:13px !important; width:90%; padding-left:2px; padding-right:2px;" >Your insights are invaluable to us. Please consider providing us with feedback.</span>
                      <hr size="0.5px" style="width:90%;color:#DFE3E7 !important; ">
                      </center>
                      <br>
@@ -1112,7 +1112,6 @@ if( last_search.trim()!='' && selected_article!=0 )
 else{
 		if(front_page_search!='')
 		{	
-		 last_search='';
 		 $('.searchvalue').html(front_page_search);			
 		}else{
 		 $('.searchvalue').html('The Frontpage');			
@@ -1150,6 +1149,14 @@ navigator.splashscreen.hide();
 }, 3000);
 var db = window.openDatabase("Ebbu_user", "1.0", "Ebbu user local Database", 200000); //will create database Dummy_DB or open it
 function onDeviceReady(){
+	
+	//GOOGLE ANALYTICS
+	gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, "UA-60586580-1", 10);
+	//GOOGLE ANALYTICS
+	
+	
+	
 db.transaction(populateDB, errorCB, successCB);
 }
 function start_timer(){
