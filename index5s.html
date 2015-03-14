@@ -591,7 +591,6 @@ opacity:0.2;
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content"  >
-        <div class="example-wrapper"  data-iscroll  >
         	<div class="swiper-container">
 	  			<div class="swiper-wrapper">
                       <div class="swiper-slide"> 
@@ -605,7 +604,6 @@ opacity:0.2;
                       </div>
   	            </div>
             </div>
-		</div>
 	</div><!-- /content -->
 </div>
 
@@ -635,7 +633,7 @@ opacity:0.2;
                      </center>
                      <br>
                      <span class="star_image">
-                       	<img style="padding-left:15px !important; " class="starclick" id="star1" src="icons/57x57/review.png">
+                       	<img style="padding-left:15px !important; 1" class="starclick" id="star1" src="icons/57x57/review.png">
                         <img id="star2" src="icons/57x57/review.png"  class="starclick" >
                         <img id="star3" src="icons/57x57/review.png"  class="starclick" >
                         <img id="star4" src="icons/57x57/review.png"  class="starclick" >
@@ -1691,7 +1689,7 @@ $.mobile.changePage('#5spage1' , { transition:'slidefade'  });
 });	
 $('#helpPage').on('click',function(){
 $.mobile.changePage('#5spagehelp' , { transition:'slidefade' });		 
-startswiperfunction();
+startswiperfunction1();
 }); 
 $('.starclick').on('click',function(e){
 var string_star=this.id;
@@ -1876,6 +1874,29 @@ function movedownFeedback()
 {
 	$('#dummytext').css('display','none');
 	$('#feedback_scroll').iscrollview('refresh');
+}
+
+function startswiperfunction1(){
+var mySwiper = $('.swiper-container').swiper({
+mode:'horizontal',
+loop: false,
+resistance:'0%',
+freeMode:false,
+momentumBounce:false,
+swipeToPrev:true,
+paginationClickable:true,
+watchActiveIndex:true
+});
+/* FULLSCREEN SWIPER*/
+$(window).resize(function(){
+var height = $(window).height();
+var width  = $(window).width();
+$('.swiper-container, .swiper-slide').height(height);
+$('.swiper-container, .swiper-slide').width(width);
+mySwiper.reInit();
+swiper.reInit();
+})
+$(window).resize(); 
 }
 
 </script>

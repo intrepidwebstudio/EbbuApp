@@ -1050,6 +1050,29 @@ load_trending();
 });
 function load_trending()
 {
+	
+		
+ //=======================================================================================GOOGLE ANALYTICS=======================================================================================
+					
+					
+						
+					var dataform = {};
+							dataform.v = 1;
+							dataform.tid = "UA-60583575-1";
+							dataform.cid = "device id";
+							dataform.t = "appview";
+							dataform.an = "name";
+							dataform.av = "0.0.1";
+							dataform.cd = "Ebbu App";
+					var url = "http://www.google-analytics.com/collect";
+							$.ajax(url, {
+								type: "post",
+								contentType: "text/plain",
+								data: dataform
+							});
+	
+ //=======================================================================================GOOGLE ANALYTICS=======================================================================================
+	
 last_search = '';
 front_page_search='';
 new_skip_rss_count = 0 ;
