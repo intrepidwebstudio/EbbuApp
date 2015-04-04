@@ -1,0 +1,37 @@
+<html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+<!--  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>-->
+<style>
+ .blurry-text {
+   color: transparent !important;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5) !important;
+}	
+
+</style>
+  </head>
+  
+  <body>
+
+  <div class="your-class">
+    <div class="blurry-text">your content</div>
+    <div>your content</div>
+    <div>your content</div>
+  </div>
+
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+		   prevArrow:'',
+		   nextArrow:'' 
+		  
+		  });
+    });
+  </script>
+
+  </body>
+</html>

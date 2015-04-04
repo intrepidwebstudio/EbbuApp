@@ -1,9 +1,10 @@
 
-var imagepath = 'http://ebbu.kurinchilion.com/';  			
-var ajax_path = 'http://ebbu.kurinchilion.com/app/';	
+//var imagepath = 'http://ebbu.kurinchilion.com/';  			
+//var ajax_path = 'http://ebbu.kurinchilion.com/app/';	
 
-//var imagepath = 'http://192.168.1.24/ebbu1/';  			
-//var ajax_path = 'http://192.168.1.24/ebbu1/app/';	
+var imagepath = 'http://192.168.1.29/ebbu/';  			
+var ajax_path = 'http://192.168.1.29/ebbu/app/';	
+
 var pageCount = 0;
 var contentCount = 10;
 var search_pageCount = 0;
@@ -34,6 +35,18 @@ var	showntwitterarticle=0;
 var	ebbu_twitter;
 var	ebbu_facebook;
 var front_page_search='';		
+
+var screenName='';
+var loadscreen=0;
+var source_viewed=0;
+var source_limit=28;
+
+var publication_source_id=0; 
+var selected_source=0;
+
+var singlecategory=0;
+
+
         var iabRef = null;
 	    function iabLoadStart(event) {
         }
